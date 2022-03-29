@@ -3,12 +3,12 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Medewerker {
-    String naam;
-    int werkTijd;
-    static ArrayList<Medewerker> MedewerkerList;
+    public String naam;
+    public int werkTijd;
+    public static ArrayList<Medewerker> MedewerkerList = new ArrayList<>();
+    public static ArrayList<Integer> PadKeerList;
     
-    /*
-    ff hiernaar kijken hoe dit het beste aangegeven kan worden misschien aparte class
+/*
     int padInter;
     int padPotjes;
     int padFris;
@@ -42,7 +42,7 @@ public class Medewerker {
         try{
             System.out.println ("Voer de voor- en achternaam in:");
             String naam = scanner.nextLine();
-            naam = naam.replace("\n", "");
+            naam = naam.replace("\n", ""); 
             System.out.println("Voer de werktijd in:");
             int nummer = scanner.nextInt();
             scanner.nextLine();
@@ -58,24 +58,32 @@ public class Medewerker {
     }
 
     public static void medewerkerDelete(Scanner scanner){
-        try{
-            int counter = 1;
-            for (Medewerker e : Medewerker.MedewerkerList){
-                System.out.println(counter+") "+e.getNaam());
-                counter++;
-            }
-            System.out.println("Kies een medewerker:");
-            int userRemoveStudentChoice = scanner.nextInt();
-            scanner.nextLine();
-            Medewerker.MedewerkerList.remove(userRemoveStudentChoice-1);
-            System.out.println("Medewerker succesvol verwijderd");
-            System.out.println("druk op enter om terug te gaan naar het menu");
-            scanner.nextLine();
+        int counter = 1;
+        for (Medewerker e : Medewerker.MedewerkerList){
+            System.out.println(counter+") "+e.getNaam());
+            counter++;
         }
-        catch(Exception e){
-            System.out.println("Medewerker bestaat niet.");
-            System.out.println(e);
+        System.out.println("Kies een medewerker:");
+        int userMedewerkerChoice = scanner.nextInt();
+        scanner.nextLine();
+        if (userMedewerkerChoice > 0){
+        Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
+        System.out.println("Medewerker succesvol verwijderd");
+        System.out.println("druk op enter om terug te gaan naar het menu");
+        scanner.nextLine();
+        }else{
+            System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
+            Vulplanning.mainMenu(scanner);
         }
     }
+/*
+    public void padSetup(){
+        this.padInter = 0;
+        this.padPotjes = 0;
+    }
+    */
 
+    public void padKeer(String gewerktOpPad){
+
+    }
 }

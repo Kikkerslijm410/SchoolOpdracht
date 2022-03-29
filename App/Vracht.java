@@ -5,5 +5,9 @@ public class Vracht {
     public Vracht (int aantalDozen){
         this.aantalDozen = aantalDozen;
     }
+
+    public void vrachtAdd(){
+        
+    }
     
 }

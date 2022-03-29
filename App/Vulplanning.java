@@ -12,15 +12,16 @@ public class Vulplanning {
         Scanner scanner = new Scanner(System.in);
         Medewerker medewerker = new Medewerker("Lucas Clavel", 400);
         mainMenu(scanner);
+        System.out.println(medewerker); //dit is tijdelijk
     }
 
         //mainMenu
-        public static void mainMenu(Scanner james) {
+        public static void mainMenu(Scanner Kaaskoekje) {
             clearScreen();
             mainMenuLoop: while (true) {
                 printMainMenu();
-                int chooseAction = james.nextInt();
-                james.nextLine();
+                int chooseAction = Kaaskoekje.nextInt();
+                Kaaskoekje.nextLine();
                 try {
                     switch (chooseAction) {
                         case (1):
@@ -30,16 +31,16 @@ public class Vulplanning {
                             break;
                         case (2):
                             clearScreen();
-                            getMedewerkers(james);
+                            getMedewerkers(Kaaskoekje);
                             clearScreen();
                             break;
                         case (3):
                             clearScreen();
-                            Medewerker.medewerkerAdd(james);
+                            Medewerker.medewerkerAdd(Kaaskoekje);
                             break;
                         case (4):
                             clearScreen();
-                            Medewerker.medewerkerDelete(james);
+                            Medewerker.medewerkerDelete(Kaaskoekje);
                             break;
                         case (5):
                             clearScreen();
