@@ -1,33 +1,42 @@
 package App;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Medewerker {
     public String naam;
     public int werkTijd;
-    public static ArrayList<Medewerker> MedewerkerList = new ArrayList<>();
-    public static ArrayList<Integer> PadKeerList;
-    
-/*
+    public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
+    public ArrayList <Integer> PadKeerList;
+
     int padInter;
     int padPotjes;
-    int padFris;
+    int padFrisdrank;
     int padBier;
-    int padChips;
-    int padWijn;
     int padCosmetica;
     int padDierenvoeding;
     int padKoek;
     int padOntbijt;
     int padDiepvries;
-    int padZuivel;
-    int padVVP;
-    */
-
+    int padZuivelVVP;
+    
     public Medewerker(String naam, int werkTijd){
             this.naam = naam;
             this.werkTijd = werkTijd;
             MedewerkerList.add(this);
+            this.padSetup();
+    }
+
+    public void padSetup(){
+        this.PadKeerList.add(padInter = 0); 
+        this.PadKeerList.add(padPotjes = 0);
+        this.PadKeerList.add(padFrisdrank = 0);
+        this.PadKeerList.add(padBier = 0);
+        this.PadKeerList.add(padCosmetica = 0);
+        this.PadKeerList.add(padDierenvoeding = 0);
+        this.PadKeerList.add(padKoek = 0);
+        this.PadKeerList.add(padOntbijt = 0);
+        this.PadKeerList.add(padZuivelVVP = 0);
     }
 
     public void setWerkTijd(int werkTijd){
@@ -48,7 +57,7 @@ public class Medewerker {
             scanner.nextLine();
             Medewerker medewerker = new Medewerker(naam, nummer);
             System.out.println(medewerker.getNaam() + " is toegevoegd aan de medewerker lijst.");
-            System.out.println("Press return to continue");
+            System.out.println("Press enter to continue");
             scanner.nextLine();
         }
         catch(Exception e){
@@ -76,12 +85,6 @@ public class Medewerker {
             Vulplanning.mainMenu(scanner);
         }
     }
-/*
-    public void padSetup(){
-        this.padInter = 0;
-        this.padPotjes = 0;
-    }
-    */
 
     public void padKeer(String gewerktOpPad){
 
