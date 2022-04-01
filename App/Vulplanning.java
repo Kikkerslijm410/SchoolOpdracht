@@ -95,7 +95,7 @@ public class Vulplanning {
             System.out.println("3) Nieuwe medewerker aanmaken");
             System.out.println("4) Medewerker verwijderen");
             System.out.println("5) Vracht toevoegen");
-            System.out.println("6) Vulnorm toepassen"); 
+            System.out.println("6) Vulnorm Aanpassen"); 
             System.out.println("7) ");
             System.out.println("8) ");
             System.out.println("0) Exit");
