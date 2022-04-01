@@ -10,9 +10,8 @@ public class Vulplanning {
     public static void main( String[] args){
         Medewerker.medewerkerAdd(Scanner);
         Scanner scanner = new Scanner(System.in);
-        Medewerker medewerker = new Medewerker("Lucas Clavel", 400);
+        //Medewerker medewerker = new Medewerker("Lucas Clavel", 400);
         mainMenu(scanner);
-        System.out.println(medewerker); //dit is tijdelijk
     }
 
         //mainMenu
@@ -37,26 +36,33 @@ public class Vulplanning {
                         case (3):
                             clearScreen();
                             Medewerker.medewerkerAdd(Kaaskoekje);
+                            clearScreen();
                             break;
                         case (4):
                             clearScreen();
                             Medewerker.medewerkerDelete(Kaaskoekje);
+                            clearScreen();
                             break;
                         case (5):
+                            clearScreen();
+                            //Vracht.vrachtAdd(Kaaskoekje);
                             clearScreen();
                             
                             break;
                         case (6):
                             clearScreen();
                             
+                            clearScreen();
                             break;
                         case (7):
                             clearScreen();
                             
+                            clearScreen();
                             break;
                         case (8):
                             clearScreen();
-                            ;
+                            
+                            clearScreen();
                             break;
                         case(0):
                             System.out.println("Saving Data.....");
@@ -88,8 +94,8 @@ public class Vulplanning {
             System.out.println("2) Lijst met medewerkers");
             System.out.println("3) Nieuwe medewerker aanmaken");
             System.out.println("4) Medewerker verwijderen");
-            System.out.println("5) ");
-            System.out.println("6) "); 
+            System.out.println("5) Vracht toevoegen");
+            System.out.println("6) Vulnorm toepassen"); 
             System.out.println("7) ");
             System.out.println("8) ");
             System.out.println("0) Exit");
