@@ -1,6 +1,6 @@
 package App;
 
-//import java.util.Scanner;
+import java.util.Scanner;
 
 public class Vracht {
     int aantalDozen;
@@ -8,10 +8,10 @@ public class Vracht {
     public Vracht (int aantalDozen){
         this.aantalDozen = aantalDozen;
     }
-/*
+
     public static void vrachtAdd(Scanner scanner){ 
         System.out.println("Voer het aantal dozen in van Internationaal:");
-        Integer padInter           = scanner.nextInt();
+        int padInter       = scanner.nextInt();
         System.out.println("Voer het aantal dozen in van Potjes:");
         int padPotjes          = scanner.nextInt();
         System.out.println("Voer het aantal dozen in van Frisdrank:");
@@ -30,6 +30,7 @@ public class Vracht {
         int padZuivelVVP       = scanner.nextInt();
         System.out.println("Voer het aantal dozen in van Diepvries:");
         int padDiepvries       = scanner.nextInt();
+        System.out.println(padInter + padPotjes + padFrisdrank + padBier + padCosmetica
+         + padDierenvoeding + padKoek + padOntbijt + padZuivelVVP + padDiepvries);
     }   
-    */
 }

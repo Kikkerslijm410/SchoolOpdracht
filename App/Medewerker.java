@@ -28,20 +28,36 @@ public class Medewerker {
     }
 
     public void padSetup(){
-        this.PadKeerList.add(padInter = 0); 
-        this.PadKeerList.add(padPotjes = 0);
-        this.PadKeerList.add(padFrisdrank = 0);
-        this.PadKeerList.add(padBier = 0);
-        this.PadKeerList.add(padCosmetica = 0);
-        this.PadKeerList.add(padDierenvoeding = 0);
-        this.PadKeerList.add(padKoek = 0);
-        this.PadKeerList.add(padOntbijt = 0);
-        this.PadKeerList.add(padZuivelVVP = 0);
+        this.PadKeerList.add(padInter); 
+        this.PadKeerList.add(padPotjes);
+        this.PadKeerList.add(padFrisdrank);
+        this.PadKeerList.add(padBier);
+        this.PadKeerList.add(padCosmetica);
+        this.PadKeerList.add(padDierenvoeding);
+        this.PadKeerList.add(padKoek);
+        this.PadKeerList.add(padOntbijt);
+        this.PadKeerList.add(padZuivelVVP);
+    }
+
+    /*
+    public static void setWerkTijd(Scanner scanner){
+        for ( Medewerker e : Medewerker.MedewerkerList){
+            int i = 1;
+            System.out.println(i + ")" + e.getNaam());
+            i++;
+        }
+        System.out.println("0) Terug naar het hoofdmenu");
+        System.out.println("Voor de naam van de medewerker in om deze aan te passen:");
+        String naam = scanner.nextLine();
+        System.out.println("Geef de nieuwe werktijd:");
+        int nummer = scanner.nextInt();
+        naam.werkTijd(nummer);
     }
 
     public void setWerkTijd(int werkTijd){
         this.werkTijd = werkTijd;
     }
+    */
 
     public String getNaam(){
         return this.naam;
@@ -72,6 +88,7 @@ public class Medewerker {
             System.out.println(counter+") "+e.getNaam());
             counter++;
         }
+        System.out.println("0) Terug naar het hoofdmenu");
         System.out.println("Kies een medewerker:");
         int userMedewerkerChoice = scanner.nextInt();
         scanner.nextLine();

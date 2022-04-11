@@ -45,9 +45,8 @@ public class Vulplanning {
                             break;
                         case (5):
                             clearScreen();
-                            //Vracht.vrachtAdd(Kaaskoekje);
+                            Vracht.vrachtAdd(Kaaskoekje);
                             clearScreen();
-                            
                             break;
                         case (6):
                             clearScreen();
@@ -56,7 +55,7 @@ public class Vulplanning {
                             break;
                         case (7):
                             clearScreen();
-                            
+                            //Medewerker.setWerkTijd(Kaaskoekje);
                             clearScreen();
                             break;
                         case (8):
@@ -95,14 +94,14 @@ public class Vulplanning {
             System.out.println("3) Nieuwe medewerker aanmaken");
             System.out.println("4) Medewerker verwijderen");
             System.out.println("5) Vracht toevoegen");
-            System.out.println("6) Vulnorm Aanpassen"); 
-            System.out.println("7) ");
-            System.out.println("8) ");
+            //System.out.println("6) Vulnorm Aanpassen"); 
+            //System.out.println("7) Werktijd aanpassen");
+            //System.out.println("8) ");
             System.out.println("0) Exit");
         }
         
         private static void maakPlanning() {
-
+            //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
 
         private static void getMedewerkers(Scanner james) {
