@@ -9,7 +9,7 @@ public class MedewerkerTest {
     Medewerker medewerkerTest = new Medewerker("Rachid van Dijk", 240);
 
     @Test
-    public void medewerkerDeleteTest(){
+    public void testMedewerkerDelete(){
 
         String juist = "gelukt";
         String test = "nietGelukt";
@@ -26,7 +26,7 @@ public class MedewerkerTest {
     }
     
     @Test
-    public void medewerkerAddTest(){
+    public void testMedewerkerAdd(){
             String naam = "Minte Eskes";
             String naamTest = "Minte Eskes";
             int werktijd = 240;

@@ -8,10 +8,10 @@ public class Vulplanning {
     private static final Scanner Scanner = null;
 
     public static void main( String[] args){
-        Medewerker.medewerkerAdd(Scanner);
-        Scanner scanner = new Scanner(System.in);
-        //Medewerker medewerker = new Medewerker("Lucas Clavel", 400);
-        mainMenu(scanner);
+        ScannerV3 scannakin = new ScannerV3();
+        Init.init(false,scannakin);
+        mainMenu(scannakin);
+        SaveManager.exitSave();
     }
 
         //mainMenu
