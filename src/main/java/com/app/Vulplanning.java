@@ -1,81 +1,76 @@
-package App;
+package com.app;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Vulplanning {
 
-    private static final Scanner Scanner = null;
-
     public static void main( String[] args){
         ScannerV3 scannakin = new ScannerV3();
-        Init.init(false,scannakin);
         mainMenu(scannakin);
-        SaveManager.exitSave();
     }
 
         //mainMenu
-        public static void mainMenu(Scanner Kaaskoekje) {
-            clearScreen();
-            mainMenuLoop: while (true) {
-                printMainMenu();
-                int chooseAction = Kaaskoekje.nextInt();
-                Kaaskoekje.nextLine();
-                try {
-                    switch (chooseAction) {
-                        case (1):
-                            clearScreen();
-                            maakPlanning();
-                            clearScreen();
-                            break;
-                        case (2):
-                            clearScreen();
-                            getMedewerkers(Kaaskoekje);
-                            clearScreen();
-                            break;
-                        case (3):
-                            clearScreen();
-                            Medewerker.medewerkerAdd(Kaaskoekje);
-                            clearScreen();
-                            break;
-                        case (4):
-                            clearScreen();
-                            Medewerker.medewerkerDelete(Kaaskoekje);
-                            clearScreen();
-                            break;
-                        case (5):
-                            clearScreen();
-                            Vracht.vrachtAdd(Kaaskoekje);
-                            clearScreen();
-                            break;
-                        case (6):
-                            clearScreen();
-                            
-                            clearScreen();
-                            break;
-                        case (7):
-                            clearScreen();
-                            //Medewerker.setWerkTijd(Kaaskoekje);
-                            clearScreen();
-                            break;
-                        case (8):
-                            clearScreen();
-                            
-                            clearScreen();
-                            break;
-                        case(0):
-                            System.out.println("Saving Data.....");
-                            break mainMenuLoop;
-                        default:
-                            System.out.println("Optie bestaat niet. Kies een juiste optie uit de lijst");
-                            break;
-                    }
-                } catch (Exception e) {
-                    System.out.println("Error in the mainMenu method!");
-                    System.out.println(e);
+    public static void mainMenu(ScannerV3 scannakin) {
+        clearScreen();
+        mainMenuLoop: while (true) {
+            printMainMenu();
+            int chooseAction = scannakin.nextInt();
+            scannakin.nextLine();
+            try {
+                switch (chooseAction) {
+                    case (1):
+                        clearScreen();
+                        maakPlanning();
+                        clearScreen();
+                        break;
+                    case (2):
+                        clearScreen();
+                        getMedewerkers(scannakin);
+                        clearScreen();
+                        break;
+                    case (3):
+                        clearScreen();
+                        Medewerker.medewerkerAdd(scannakin);
+                        clearScreen();
+                        break;
+                    case (4):
+                        clearScreen();
+                        Medewerker.medewerkerDelete(scannakin);
+                        clearScreen();
+                        break;
+                    case (5):
+                        clearScreen();
+                        Vracht.vrachtAdd(scannakin);
+                        clearScreen();
+                        break;
+                    case (6):
+                        clearScreen();
+                        
+                        clearScreen();
+                        break;
+                    case (7):
+                        clearScreen();
+                        //Medewerker.setWerkTijd(Kaaskoekje);
+                        clearScreen();
+                        break;
+                    case (8):
+                        clearScreen();
+                        
+                        clearScreen();
+                        break;
+                    case(0):
+                        System.out.println("Saving Data.....");
+                        break mainMenuLoop;
+                    default:
+                        System.out.println("Optie bestaat niet. Kies een juiste optie uit de lijst");
+                        break;
                 }
+            } catch (Exception e) {
+                System.out.println("Error in the mainMenu method!");
+                System.out.println(e);
             }
         }
+    }
 
         // clearScreen
         public static void clearScreen() {
@@ -104,7 +99,7 @@ public class Vulplanning {
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
 
-        private static void getMedewerkers(Scanner james) {
+        private static void getMedewerkers(ScannerV3 scannakin) {
             for (Medewerker e : Medewerker.MedewerkerList) {
                 System.out.println(e.getNaam());
             }

@@ -1,4 +1,4 @@
-package AppTest;
+package com.geerd;
 
 public class VulplanningTest {
     

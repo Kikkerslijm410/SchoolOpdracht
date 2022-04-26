@@ -1,6 +1,4 @@
-package App;
-
-import java.util.Scanner;
+package com.app;
 
 public class Vracht {
     int aantalDozen;
@@ -9,27 +7,27 @@ public class Vracht {
         this.aantalDozen = aantalDozen;
     }
 
-    public static void vrachtAdd(Scanner scanner){ 
+    public static void vrachtAdd(ScannerV3 scannakin){ 
         System.out.println("Voer het aantal dozen in van Internationaal:");
-        int padInter       = scanner.nextInt();
+        int padInter       = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Potjes:");
-        int padPotjes          = scanner.nextInt();
+        int padPotjes          = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Frisdrank:");
-        int padFrisdrank       = scanner.nextInt();
+        int padFrisdrank       = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Bier/Chips/Wijn:");
-        int padBier            = scanner.nextInt();
+        int padBier            = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Cosmetica:");
-        int padCosmetica       = scanner.nextInt();
+        int padCosmetica       = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Dierenvoeding:");
-        int padDierenvoeding   = scanner.nextInt();
+        int padDierenvoeding   = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Koek:");
-        int padKoek            = scanner.nextInt();
+        int padKoek            = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Ontbijt:");
-        int padOntbijt         = scanner.nextInt();
+        int padOntbijt         = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Zuivel/VVP:");
-        int padZuivelVVP       = scanner.nextInt();
+        int padZuivelVVP       = scannakin.nextInt();
         System.out.println("Voer het aantal dozen in van Diepvries:");
-        int padDiepvries       = scanner.nextInt();
+        int padDiepvries       = scannakin.nextInt();
         System.out.println(padInter + padPotjes + padFrisdrank + padBier + padCosmetica
          + padDierenvoeding + padKoek + padOntbijt + padZuivelVVP + padDiepvries);
     }   

@@ -1,8 +1,8 @@
-package AppTest;
+package com.geerd;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.app.Medewerker;
 import org.junit.jupiter.api.Test;
-import App.Medewerker;
 
 public class MedewerkerTest {
 

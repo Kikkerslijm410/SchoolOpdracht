@@ -1,4 +1,4 @@
-package App;
+package com.app;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,39 +7,13 @@ public class Medewerker {
     public String naam;
     public int werkTijd;
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
-    public ArrayList <Integer> PadKeerList;
-
-    int padInter;
-    int padPotjes;
-    int padFrisdrank;
-    int padBier;
-    int padCosmetica;
-    int padDierenvoeding;
-    int padKoek;
-    int padOntbijt;
-    int padDiepvries;
-    int padZuivelVVP;
     
     public Medewerker(String naam, int werkTijd){
             this.naam = naam;
             this.werkTijd = werkTijd;
             MedewerkerList.add(this);
-            this.padSetup();
     }
-
-    public void padSetup(){
-        this.PadKeerList.add(padInter); 
-        this.PadKeerList.add(padPotjes);
-        this.PadKeerList.add(padFrisdrank);
-        this.PadKeerList.add(padBier);
-        this.PadKeerList.add(padCosmetica);
-        this.PadKeerList.add(padDierenvoeding);
-        this.PadKeerList.add(padKoek);
-        this.PadKeerList.add(padOntbijt);
-        this.PadKeerList.add(padZuivelVVP);
-    }
-
-    /*
+    
     public static void setWerkTijd(Scanner scanner){
         for ( Medewerker e : Medewerker.MedewerkerList){
             int i = 1;
@@ -47,34 +21,31 @@ public class Medewerker {
             i++;
         }
         System.out.println("0) Terug naar het hoofdmenu");
-        System.out.println("Voor de naam van de medewerker in om deze aan te passen:");
-        String naam = scanner.nextLine();
+        System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
+        int medewerker = scanner.nextInt();
         System.out.println("Geef de nieuwe werktijd:");
         int nummer = scanner.nextInt();
-        naam.werkTijd(nummer);
+        Medewerker Heinrich = new Medewerker(MedewerkerList.get(medewerker).getNaam(), nummer);
+        MedewerkerList.remove(medewerker);
+        System.out.println("Medewerker " + Heinrich + " is succesvol aangepast");
     }
-
-    public void setWerkTijd(int werkTijd){
-        this.werkTijd = werkTijd;
-    }
-    */
-
+    
     public String getNaam(){
         return this.naam;
     }
 
-    public static void medewerkerAdd(Scanner scanner){
+    public static void medewerkerAdd(ScannerV3 scannakin){
         try{
             System.out.println ("Voer de voor- en achternaam in:");
-            String naam = scanner.nextLine();
+            String naam = scannakin.nextLine();
             naam = naam.replace("\n", ""); 
             System.out.println("Voer de werktijd in:");
-            int nummer = scanner.nextInt();
-            scanner.nextLine();
+            int nummer = scannakin.nextInt();
+            scannakin.nextLine();
             Medewerker medewerker = new Medewerker(naam, nummer);
             System.out.println(medewerker.getNaam() + " is toegevoegd aan de medewerker lijst.");
             System.out.println("Press enter to continue");
-            scanner.nextLine();
+            scannakin.nextLine();
         }
         catch(Exception e){
             System.out.println("Medewerker kon niet toegevoegd worden");
@@ -82,7 +53,7 @@ public class Medewerker {
         }
     }
 
-    public static void medewerkerDelete(Scanner scanner){
+    public static void medewerkerDelete(ScannerV3 scannakin){
         int counter = 1;
         for (Medewerker e : Medewerker.MedewerkerList){
             System.out.println(counter+") "+e.getNaam());
@@ -90,20 +61,16 @@ public class Medewerker {
         }
         System.out.println("0) Terug naar het hoofdmenu");
         System.out.println("Kies een medewerker:");
-        int userMedewerkerChoice = scanner.nextInt();
-        scanner.nextLine();
+        int userMedewerkerChoice = scannakin.nextInt();
+        scannakin.nextLine();
         if (userMedewerkerChoice > 0){
         Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
         System.out.println("Medewerker succesvol verwijderd");
         System.out.println("druk op enter om terug te gaan naar het menu");
-        scanner.nextLine();
+        scannakin.nextLine();
         }else{
             System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
-            Vulplanning.mainMenu(scanner);
+            Vulplanning.mainMenu(scannakin);
         }
-    }
-
-    public void padKeer(String gewerktOpPad){
-
     }
 }
