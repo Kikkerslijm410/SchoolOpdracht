@@ -96,10 +96,40 @@ public class Vulplanning {
         }
         
         private static void maakPlanning() {
+        if(checkVracht() && checkMedewerkers() && checkVulnorm()) {
+
+        }
+        if (!checkMedewerkers()){
+            System.out.println("Er zijn geen medewerkers beschikbaar. Voeg medewerkers toe om de planning te kunnen maken.");
+        }
+        if (!checkVulnorm()){
+            System.out.println("Er is geen vulnorm beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
+        }
+        if (!checkVracht()){
+            System.out.println("Er is geen vracht beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
+        }
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
 
-        private static void getMedewerkers(ScannerV3 scannakin) {
+    public static boolean checkVracht() {
+        if (Pad.padDiepvries.getAantalDozen() == 0){
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean checkMedewerkers() {
+        return true;
+    }
+
+    private static boolean checkVulnorm() {
+        if (Pad.padDiepvries.getVulnorm() == 0){
+            return false;
+        }
+        return true;
+    }
+
+    private static void getMedewerkers(ScannerV3 scannakin) {
             for (Medewerker e : Medewerker.MedewerkerList) {
                 System.out.println(e.getNaam());
             }
