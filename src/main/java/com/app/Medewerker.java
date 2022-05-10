@@ -20,11 +20,11 @@ public class Medewerker {
             System.out.println(i + ")" + e.getNaam());
             i++;
         }
-        System.out.println("0) Terug naar het hoofdmenu");
+        UI.KeerTerugGetal();
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
         int medewerker = scanner.nextInt();
-        System.out.println("Geef de nieuwe werktijd:");
-        int nummer = scanner.nextInt();
+        UI.VoerWerktijdIn();
+        int nummer = (scanner.nextInt() * 60);
         Medewerker Heinrich = new Medewerker(MedewerkerList.get(medewerker).getNaam(), nummer);
         MedewerkerList.remove(medewerker);
         System.out.println("Medewerker " + Heinrich + " is succesvol aangepast");
@@ -34,18 +34,18 @@ public class Medewerker {
         return this.naam;
     }
 
-    public static void medewerkerAdd(ScannerV3 scannakin){
+    public static void medewerkerAdd(ScannerV3 scanner){
         try{
-            System.out.println ("Voer de voor- en achternaam in:");
-            String naam = scannakin.nextLine();
+            UI.VoerNaamin();
+            String naam = scanner.nextLine();
             naam = naam.replace("\n", ""); 
-            System.out.println("Voer de werktijd in:");
-            int nummer = scannakin.nextInt();
-            scannakin.nextLine();
+            UI.VoerWerktijdIn();
+            int nummer = (scanner.nextInt() * 60);
+            scanner.nextLine();
             Medewerker medewerker = new Medewerker(naam, nummer);
-            System.out.println(medewerker.getNaam() + " is toegevoegd aan de medewerker lijst.");
-            System.out.println("Press enter to continue");
-            scannakin.nextLine();
+            UI.toegevoegdAanLijst(medewerker.getNaam());
+            UI.KeerTerugEnter();
+            scanner.nextLine();
         }
         catch(Exception e){
             System.out.println("Medewerker kon niet toegevoegd worden");
@@ -59,14 +59,14 @@ public class Medewerker {
             System.out.println(counter+") "+e.getNaam());
             counter++;
         }
-        System.out.println("0) Terug naar het hoofdmenu");
+        UI.KeerTerugGetal();
         System.out.println("Kies een medewerker:");
         int userMedewerkerChoice = scannakin.nextInt();
         scannakin.nextLine();
         if (userMedewerkerChoice > 0){
         Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
         System.out.println("Medewerker succesvol verwijderd");
-        System.out.println("druk op enter om terug te gaan naar het menu");
+        UI.KeerTerugEnter();
         scannakin.nextLine();
         }else{
             System.out.println("Deze medewerker bestaat niet of is al verwijderd.");

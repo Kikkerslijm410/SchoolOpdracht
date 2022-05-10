@@ -1,7 +1,5 @@
 package com.app;
 
-import java.io.IOException;
-
 public class Vulplanning {
 
     public static void main( String[] args){
@@ -9,104 +7,81 @@ public class Vulplanning {
         mainMenu(scannakin);
     }
 
-        //mainMenu
+    //mainMenu
     public static void mainMenu(ScannerV3 scannakin) {
-        clearScreen();
+        UI.clearScreen();
         mainMenuLoop: while (true) {
-            printMainMenu();
+            UI.printMainMenu();
             int chooseAction = scannakin.nextInt();
             scannakin.nextLine();
             try {
                 switch (chooseAction) {
                     case (1):
-                        clearScreen();
+                        UI.clearScreen();
                         maakPlanning();
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (2):
-                        clearScreen();
+                        UI.clearScreen();
                         getMedewerkers(scannakin);
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (3):
-                        clearScreen();
+                        UI.clearScreen();
                         Medewerker.medewerkerAdd(scannakin);
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (4):
-                        clearScreen();
+                        UI.clearScreen();
                         Medewerker.medewerkerDelete(scannakin);
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (5):
-                        clearScreen();
+                        UI.clearScreen();
                         Vracht.vrachtAdd(scannakin);
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (6):
-                        clearScreen();
+                        UI.clearScreen();
                         
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (7):
-                        clearScreen();
+                        UI.clearScreen();
                         //Medewerker.setWerkTijd(Kaaskoekje);
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case (8):
-                        clearScreen();
+                        UI.clearScreen();
                         
-                        clearScreen();
+                        UI.clearScreen();
                         break;
                     case(0):
-                        System.out.println("Saving Data.....");
+                        UI.Exit();
                         break mainMenuLoop;
                     default:
-                        System.out.println("Optie bestaat niet. Kies een juiste optie uit de lijst");
+                        UI.OnjuisteOptie();
                         break;
                 }
             } catch (Exception e) {
-                System.out.println("Error in the mainMenu method!");
+                UI.Error("Vulplanning");
                 System.out.println(e);
             }
         }
     }
-
-        // clearScreen
-        public static void clearScreen() {
-            try {
-                if (System.getProperty("os.name").contains("Windows"))
-                    new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-                else
-                    Runtime.getRuntime().exec("clear");
-            } catch (IOException | InterruptedException ex) {}
-        }
-    
-        // printMainMenu
-        private static void printMainMenu() {
-            System.out.println("1) Maak de planning");
-            System.out.println("2) Lijst met medewerkers");
-            System.out.println("3) Nieuwe medewerker aanmaken");
-            System.out.println("4) Medewerker verwijderen");
-            System.out.println("5) Vracht toevoegen");
-            //System.out.println("6) Vulnorm Aanpassen"); 
-            //System.out.println("7) Werktijd aanpassen");
-            //System.out.println("8) ");
-            System.out.println("0) Exit");
-        }
         
         private static void maakPlanning() {
         if(checkVracht() && checkMedewerkers() && checkVulnorm()) {
 
         }
         if (!checkMedewerkers()){
-            System.out.println("Er zijn geen medewerkers beschikbaar. Voeg medewerkers toe om de planning te kunnen maken.");
+            UI.geenMedewerkers();
         }
         if (!checkVulnorm()){
-            System.out.println("Er is geen vulnorm beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
+            UI.geenVulnorm();
         }
         if (!checkVracht()){
-            System.out.println("Er is geen vracht beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
+            UI.geenVracht();
         }
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
