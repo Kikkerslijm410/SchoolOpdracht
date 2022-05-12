@@ -14,15 +14,9 @@ public class Medewerker {
             MedewerkerList.add(this);
     }
     
-<<<<<<< HEAD
     public static void setWerkTijd(IScanner scanner){
         int i = 1;
         for ( Medewerker e : Medewerker.MedewerkerList){
-=======
-    public static void setWerkTijd(ScannerV3 scanner){
-        for (Medewerker e : Medewerker.MedewerkerList){
-            int i = 1;
->>>>>>> 646a743c4220ed6df39701929733e36a0233d15c
             System.out.println(i + ")" + e.getNaam());
             i++;
         }
@@ -59,11 +53,7 @@ public class Medewerker {
         }
     }
 
-<<<<<<< HEAD
-    public static void medewerkerDelete(IScanner scannakin){
-=======
-    public static void medewerkerDelete(ScannerV3 scanner){
->>>>>>> 646a743c4220ed6df39701929733e36a0233d15c
+    public static void medewerkerDelete(IScanner scanner){
         int counter = 1;
         for (Medewerker e : Medewerker.MedewerkerList){
             System.out.println(counter+") "+e.getNaam());
