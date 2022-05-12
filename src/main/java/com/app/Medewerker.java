@@ -4,17 +4,17 @@ import java.util.ArrayList;
 
 public class Medewerker {
     public String naam;
-    public double werkTijd;
+    public double werktijd;
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
-        
-    public String getNaam(){
-        return this.naam;
+
+    public Medewerker(String naam, double werktijd){
+            this.naam = naam;
+            this.werktijd = werktijd;
+            MedewerkerList.add(this);
     }
 
-    public Medewerker(String naam, double werkTijd){
-            this.naam = naam;
-            this.werkTijd = werkTijd;
-            MedewerkerList.add(this);
+    public String getNaam(){
+        return this.naam;
     }
 
     public static void getMedewerkers() {
@@ -50,7 +50,7 @@ public class Medewerker {
             int nummer = (scanner.nextInt() * 60);
             scanner.nextLine();
             Medewerker medewerker = new Medewerker(naam, nummer);
-            UI.toegevoegdAanLijst(medewerker.getNaam());
+            UI.AddedToList(medewerker.getNaam());
             UI.KeerTerugEnter();
             scanner.nextLine();
         }

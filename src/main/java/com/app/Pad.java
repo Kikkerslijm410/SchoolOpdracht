@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Pad {
 
-    String padNaam;
-    int vulnorm;
-    int aantalDozen;
+    public String padNaam;
+    public int vulnorm;
+    public int aantalDozen;
     public ArrayList <Pad> PadList = new ArrayList<>();
 
     public static Pad padInter = new Pad ("Internationaal", 60);
@@ -33,13 +33,6 @@ public class Pad {
     public Pad (String padNaam, int vulnorm){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
-        this.aantalDozen = 0;
-        PadList.add(this);
-    }
-
-    public Pad (String padNaam){
-        this.padNaam = padNaam;
-        this.vulnorm = 0;
         this.aantalDozen = 0;
         PadList.add(this);
     }
@@ -74,32 +67,32 @@ public class Pad {
         return true;
     }
 
-    public static void vrachtAdd(IScanner scannakin){
+    public static void vrachtAdd(IScanner scanner){
         System.out.println("Voer het aantal dozen in van Internationaal:");
-        padInter.setAantalDozen(scannakin.nextInt());
+        padInter.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Potjes:");
-        padPotjes.setAantalDozen(scannakin.nextInt());
+        padPotjes.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Frisdrank:");
-        padFrisdrank.setAantalDozen(scannakin.nextInt());
+        padFrisdrank.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Bier:");
-        padBier.setAantalDozen(scannakin.nextInt());
+        padBier.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Chips:");
-        padChips.setAantalDozen(scannakin.nextInt());
+        padChips.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Wijn:");
-        padWijn.setAantalDozen(scannakin.nextInt());
+        padWijn.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Cosmetica:");
-        padCosmetica.setAantalDozen(scannakin.nextInt());
+        padCosmetica.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Dierenvoeding:");
-        padDierenvoeding.setAantalDozen(scannakin.nextInt());
+        padDierenvoeding.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Koek:");
-        padKoek.setAantalDozen(scannakin.nextInt());
+        padKoek.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Ontbijt:");
-        padOntbijt.setAantalDozen(scannakin.nextInt());
+        padOntbijt.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Zuivel/VVP:");
-        padZuivelVVP.setAantalDozen(scannakin.nextInt());
+        padZuivelVVP.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van VVP:");
-        padVVP.setAantalDozen(scannakin.nextInt());
+        padVVP.setAantalDozen(scanner.nextInt());
         System.out.println("Voer het aantal dozen in van Diepvries:");
-        padDiepvries.setAantalDozen(scannakin.nextInt());
+        padDiepvries.setAantalDozen(scanner.nextInt());
     }
 }

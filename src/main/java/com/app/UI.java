@@ -4,6 +4,8 @@ import java.io.IOException;
 
 public class UI {
 
+    private UI (){} //private constructor so no objects can be made of this class
+
     // printMainMenu
     public static void printMainMenu() {
         System.out.println("1) Maak de planning");
@@ -67,7 +69,7 @@ public class UI {
         System.out.println("Er is geen vracht beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
     }
 
-    public static void toegevoegdAanLijst(String naam) {
+    public static void AddedToList(String naam) {
         System.out.println(naam + " is toegevoegd aan de medewerker lijst.");
     }
 }
