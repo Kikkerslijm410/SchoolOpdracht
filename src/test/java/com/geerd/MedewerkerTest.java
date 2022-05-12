@@ -1,13 +1,13 @@
 package com.geerd;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-
 import com.app.Medewerker;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class MedewerkerTest {
 
@@ -29,10 +29,7 @@ public class MedewerkerTest {
 
     @Test
     public void testMedewerkerDelete(){
-
-        String juist = "gelukt";
-        String test = "nietGelukt";
-
+        String test = "";
         int userRemoveStudentChoice = 1;
         if (userRemoveStudentChoice > 0){
         Medewerker.MedewerkerList.remove(userRemoveStudentChoice-1);
@@ -41,30 +38,13 @@ public class MedewerkerTest {
         test = "niet gelukt";
         }
         
-        assertEquals(juist, test);
+        assertEquals("gelukt", test);
+        assertNotEquals("niet gelukt", test);
     }
-    
+
     @Test
     public void testMedewerkerAdd(){
-            String naam = "Minte Eskes";
-            String naamTest = "Minte Eskes";
-            int werktijd = 240;
-            Medewerker medewerker = new Medewerker(naam, werktijd);
-           assertEquals(naamTest, medewerker.getNaam());
-    }
-    // Deze test is er om een methode aan te kunnen roepen voor het aanmaken van een nieuwe medewerker
-
-    @Test
-    public void testNewStudent3(){
-        rescanner.sendlist.add("Lucas");
-        rescanner.sendlist.add("1200923");
-        Medewerker.medewerkerAdd(rescanner);
-
-        //Test of de naam goed doorkomt
-        String testName = "Lucas";
-        String foutTestName = "Geerd";
-        assertEquals(testName, Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
-        assertNotEquals(foutTestName, Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
+        assertEquals("Geerd", Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
+        assertNotEquals("Lucas", Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
     }
 }
-

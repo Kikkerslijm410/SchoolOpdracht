@@ -1,17 +1,28 @@
 package com.app;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Medewerker {
     public String naam;
     public double werkTijd;
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
-    
+        
+    public String getNaam(){
+        return this.naam;
+    }
+
     public Medewerker(String naam, double werkTijd){
             this.naam = naam;
             this.werkTijd = werkTijd;
             MedewerkerList.add(this);
+    }
+
+    public static void getMedewerkers() {
+        int i = 1;
+        for ( Medewerker e : Medewerker.MedewerkerList){
+            System.out.println(i + ")" + e.getNaam());
+            i++;
+        }
     }
     
     public static void setWerkTijd(IScanner scanner){
@@ -28,10 +39,6 @@ public class Medewerker {
         Medewerker Heinrich = new Medewerker(MedewerkerList.get(medewerker).getNaam(), nummer);
         MedewerkerList.remove(medewerker);
         System.out.println("Medewerker " + Heinrich + " is succesvol aangepast");
-    }
-    
-    public String getNaam(){
-        return this.naam;
     }
 
     public static void medewerkerAdd(IScanner scanner){

@@ -23,7 +23,6 @@ public class Pad {
     public static Pad padVVP = new Pad ("VVP", 60);
     public static Pad padDiepvries = new Pad("Diepvries", 60);
 
-
     public Pad (String padNaam, int vulnorm, int dozen){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
@@ -59,6 +58,20 @@ public class Pad {
 
     public int getAantalDozen(){
         return this.aantalDozen;
+    }
+
+    public static boolean checkVracht() {
+        if (padDiepvries.getAantalDozen() == 0){
+            return false;
+        }
+            return true;
+    }
+
+    public static boolean checkVulnorm() {
+        if (Pad.padDiepvries.getVulnorm() == 0){
+            return false;
+        }
+        return true;
     }
 
     public static void vrachtAdd(IScanner scannakin){

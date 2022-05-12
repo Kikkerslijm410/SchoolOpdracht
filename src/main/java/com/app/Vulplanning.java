@@ -5,6 +5,7 @@ public class Vulplanning {
     public static void main( String[] args){
         ScannerV3 scannakin = new ScannerV3();
         mainMenu(scannakin);
+        Medewerker Lucas = new Medewerker("Lucas", 3);
     }
 
     //mainMenu
@@ -23,7 +24,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        getMedewerkers();
+                        Medewerker.getMedewerkers();
                         UI.clearScreen();
                         break;
                     case (3):
@@ -73,42 +74,22 @@ public class Vulplanning {
     }
         
         private static void maakPlanning() {
-        if(checkVracht() && checkMedewerkers() && checkVulnorm()) {
+        if(Pad.checkVracht() && checkMedewerkers() && Pad.checkVulnorm()) {
 
         }
         if (!checkMedewerkers()){
             UI.geenMedewerkers();
         }
-        if (!checkVulnorm()){
+        if (!Pad.checkVulnorm()){
             UI.geenVulnorm();
         }
-        if (!checkVracht()){
+        if (!Pad.checkVracht()){
             UI.geenVracht();
         }
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
 
-    public static boolean checkVracht() {
-        if (Pad.padDiepvries.getAantalDozen() == 0){
-            return false;
-        }
-        return true;
-    }
-
     private static boolean checkMedewerkers() {
         return true;
     }
-
-    private static boolean checkVulnorm() {
-        if (Pad.padDiepvries.getVulnorm() == 0){
-            return false;
-        }
-        return true;
-    }
-
-    private static void getMedewerkers() {
-            for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(e.getNaam());
-            }
-        }
 }

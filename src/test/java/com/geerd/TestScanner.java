@@ -64,4 +64,10 @@ class RepeatingTestScanner extends TestScanner{
         this.intCounter = 0;
         this.intlist.clear();
     }
+
+    /*
+        rescanner.sendlist.add("Lucas");
+        rescanner.sendlist.add("1200923");
+        Medewerker.medewerkerAdd(rescanner);
+    */
 }
