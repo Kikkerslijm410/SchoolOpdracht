@@ -31,7 +31,6 @@ public class MedewerkerTest {
             String naamTest = "Minte Eskes";
             int werktijd = 240;
             Medewerker medewerker = new Medewerker(naam, werktijd);
-
            assertEquals(naamTest, medewerker.getNaam());
     }
     // Deze test is er om een methode aan te kunnen roepen voor het aanmaken van een nieuwe medewerker

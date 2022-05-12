@@ -14,8 +14,8 @@ public class Medewerker {
             MedewerkerList.add(this);
     }
     
-    public static void setWerkTijd(Scanner scanner){
-        for ( Medewerker e : Medewerker.MedewerkerList){
+    public static void setWerkTijd(ScannerV3 scanner){
+        for (Medewerker e : Medewerker.MedewerkerList){
             int i = 1;
             System.out.println(i + ")" + e.getNaam());
             i++;
@@ -53,7 +53,7 @@ public class Medewerker {
         }
     }
 
-    public static void medewerkerDelete(ScannerV3 scannakin){
+    public static void medewerkerDelete(ScannerV3 scanner){
         int counter = 1;
         for (Medewerker e : Medewerker.MedewerkerList){
             System.out.println(counter+") "+e.getNaam());
@@ -61,16 +61,16 @@ public class Medewerker {
         }
         UI.KeerTerugGetal();
         System.out.println("Kies een medewerker:");
-        int userMedewerkerChoice = scannakin.nextInt();
-        scannakin.nextLine();
+        int userMedewerkerChoice = scanner.nextInt();
+        scanner.nextLine(); //just to wait for input
         if (userMedewerkerChoice > 0){
-        Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
-        System.out.println("Medewerker succesvol verwijderd");
-        UI.KeerTerugEnter();
-        scannakin.nextLine();
+            Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
+            System.out.println("Medewerker succesvol verwijderd");
+            UI.KeerTerugEnter();
+            scanner.nextLine();
         }else{
             System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
-            Vulplanning.mainMenu(scannakin);
+            Vulplanning.mainMenu(scanner);
         }
     }
 }
