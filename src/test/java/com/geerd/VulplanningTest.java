@@ -1,7 +1,6 @@
 package com.geerd;
 
 import com.app.Pad;
-import com.app.Vracht;
 import com.app.Vulplanning;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +10,6 @@ public class VulplanningTest {
 
     @BeforeEach
     public void init(){
-        Vracht.padInit();
         Pad.padDiepvries.setAantalDozen(10);
         Pad.padDiepvries.setVulnorm(10);
     }
@@ -20,4 +18,5 @@ public class VulplanningTest {
     public void testcheckVracht(){
         assertEquals(false, Vulplanning.checkVracht());
     }
+
 }

@@ -8,7 +8,7 @@ public class Vulplanning {
     }
 
     //mainMenu
-    public static void mainMenu(ScannerV3 scannakin) {
+    public static void mainMenu(IScanner scannakin) {
         UI.clearScreen();
         mainMenuLoop: while (true) {
             UI.printMainMenu();
@@ -23,7 +23,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        getMedewerkers(scannakin);
+                        getMedewerkers();
                         UI.clearScreen();
                         break;
                     case (3):
@@ -38,7 +38,7 @@ public class Vulplanning {
                         break;
                     case (5):
                         UI.clearScreen();
-                        Vracht.vrachtAdd(scannakin);
+                        Pad.vrachtAdd(scannakin);
                         UI.clearScreen();
                         break;
                     case (6):
@@ -60,7 +60,9 @@ public class Vulplanning {
                         UI.Exit();
                         break mainMenuLoop;
                     default:
+                        UI.clearScreen();
                         UI.OnjuisteOptie();
+                        UI.clearScreen();
                         break;
                 }
             } catch (Exception e) {
@@ -104,7 +106,7 @@ public class Vulplanning {
         return true;
     }
 
-    private static void getMedewerkers(ScannerV3 scannakin) {
+    private static void getMedewerkers() {
             for (Medewerker e : Medewerker.MedewerkerList) {
                 System.out.println(e.getNaam());
             }

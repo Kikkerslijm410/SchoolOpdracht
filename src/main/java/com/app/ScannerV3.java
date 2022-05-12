@@ -23,4 +23,9 @@ public class ScannerV3 implements IScanner{
     public String nextLine() {
         return scanner.nextLine();
     }
+
+    @Override
+    public double nextDouble() {
+        return scanner.nextDouble();
+    }
 }

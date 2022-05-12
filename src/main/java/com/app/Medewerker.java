@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 public class Medewerker {
     public String naam;
-    public int werkTijd;
+    public double werkTijd;
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
     
-    public Medewerker(String naam, int werkTijd){
+    public Medewerker(String naam, double werkTijd){
             this.naam = naam;
             this.werkTijd = werkTijd;
             MedewerkerList.add(this);
     }
     
-    public static void setWerkTijd(Scanner scanner){
+    public static void setWerkTijd(IScanner scanner){
+        int i = 1;
         for ( Medewerker e : Medewerker.MedewerkerList){
-            int i = 1;
             System.out.println(i + ")" + e.getNaam());
             i++;
         }
@@ -24,7 +24,7 @@ public class Medewerker {
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
         int medewerker = scanner.nextInt();
         UI.VoerWerktijdIn();
-        int nummer = (scanner.nextInt() * 60);
+        double nummer = (scanner.nextDouble() * 60);
         Medewerker Heinrich = new Medewerker(MedewerkerList.get(medewerker).getNaam(), nummer);
         MedewerkerList.remove(medewerker);
         System.out.println("Medewerker " + Heinrich + " is succesvol aangepast");
@@ -34,7 +34,7 @@ public class Medewerker {
         return this.naam;
     }
 
-    public static void medewerkerAdd(ScannerV3 scanner){
+    public static void medewerkerAdd(IScanner scanner){
         try{
             UI.VoerNaamin();
             String naam = scanner.nextLine();
@@ -48,12 +48,12 @@ public class Medewerker {
             scanner.nextLine();
         }
         catch(Exception e){
-            System.out.println("Medewerker kon niet toegevoegd worden");
+            UI.Error("medewerkerAdd");
             System.out.println(e);
         }
     }
 
-    public static void medewerkerDelete(ScannerV3 scannakin){
+    public static void medewerkerDelete(IScanner scannakin){
         int counter = 1;
         for (Medewerker e : Medewerker.MedewerkerList){
             System.out.println(counter+") "+e.getNaam());
