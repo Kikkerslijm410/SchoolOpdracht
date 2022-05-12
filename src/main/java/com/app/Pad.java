@@ -20,6 +20,7 @@ public class Pad {
     public static Pad padKoek = new Pad ("Koek", 60);
     public static Pad padOntbijt = new Pad ("Ontbijt", 60);
     public static Pad padZuivelVVP = new Pad ("ZuivelVVP", 60);
+    public static Pad padVVP = new Pad ("VVP", 60);
     public static Pad padDiepvries = new Pad("Diepvries", 60);
 
 
@@ -83,6 +84,8 @@ public class Pad {
         padOntbijt.setAantalDozen(scannakin.nextInt());
         System.out.println("Voer het aantal dozen in van Zuivel/VVP:");
         padZuivelVVP.setAantalDozen(scannakin.nextInt());
+        System.out.println("Voer het aantal dozen in van VVP:");
+        padVVP.setAantalDozen(scannakin.nextInt());
         System.out.println("Voer het aantal dozen in van Diepvries:");
         padDiepvries.setAantalDozen(scannakin.nextInt());
     }
