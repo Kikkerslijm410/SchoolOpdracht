@@ -44,19 +44,20 @@ public class Vulplanning {
                         break;
                     case (6):
                         UI.clearScreen();
-                        
+                        Pad.vulnormAdd(scannakin);
                         UI.clearScreen();
                         break;
                     case (7):
                         UI.clearScreen();
-                        //Medewerker.setWerkTijd(Kaaskoekje);
+                        Medewerker.werkTijdAdd(scannakin);
                         UI.clearScreen();
                         break;
+                    /*
                     case (8):
                         UI.clearScreen();
-                        
+
                         UI.clearScreen();
-                        break;
+                        break; */
                     case(0):
                         UI.Exit();
                         break mainMenuLoop;
@@ -75,7 +76,7 @@ public class Vulplanning {
         
         private static void maakPlanning() {
         if(Pad.checkVracht() && checkMedewerkers() && Pad.checkVulnorm()) {
-
+            System.out.println("gefeliciteerd alles is in orde");
         }
         if (!checkMedewerkers()){
             UI.geenMedewerkers();

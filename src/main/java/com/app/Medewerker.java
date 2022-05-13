@@ -17,15 +17,19 @@ public class Medewerker {
         return this.naam;
     }
 
+    public void setWerktijd(double werktijd){
+        this.werktijd = werktijd;
+    }
+
     public static void getMedewerkers() {
         int i = 1;
-        for ( Medewerker e : Medewerker.MedewerkerList){
+        for (Medewerker e : Medewerker.MedewerkerList){
             System.out.println(i + ")" + e.getNaam());
             i++;
         }
     }
     
-    public static void setWerkTijd(IScanner scanner){
+    public static void werkTijdAdd(IScanner scanner){
         int i = 1;
         for ( Medewerker e : Medewerker.MedewerkerList){
             System.out.println(i + ")" + e.getNaam());
@@ -34,11 +38,12 @@ public class Medewerker {
         UI.KeerTerugGetal();
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
         int medewerker = scanner.nextInt();
-        UI.VoerWerktijdIn();
-        double nummer = (scanner.nextDouble() * 60);
-        Medewerker Heinrich = new Medewerker(MedewerkerList.get(medewerker).getNaam(), nummer);
-        MedewerkerList.remove(medewerker);
-        System.out.println("Medewerker " + Heinrich + " is succesvol aangepast");
+        if (medewerker > 0 ) {
+            UI.VoerWerktijdIn();
+            double werktijd = (scanner.nextDouble() * 60);
+            MedewerkerList.get(medewerker).werktijd = werktijd;
+            System.out.println("Medewerker " + MedewerkerList.get(medewerker) + " is succesvol aangepast");
+        }
     }
 
     public static void medewerkerAdd(IScanner scanner){
@@ -47,7 +52,7 @@ public class Medewerker {
             String naam = scanner.nextLine();
             naam = naam.replace("\n", ""); 
             UI.VoerWerktijdIn();
-            int nummer = (scanner.nextInt() * 60);
+            double nummer = (scanner.nextDouble() * 60);
             scanner.nextLine();
             Medewerker medewerker = new Medewerker(naam, nummer);
             UI.AddedToList(medewerker.getNaam());

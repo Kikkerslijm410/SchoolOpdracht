@@ -1,13 +1,14 @@
 package com.app;
 
+import org.apache.poi.ddf.EscherColorRef;
+
 import java.io.IOException;
 
-public class UI {
-
-    private UI (){} //private constructor so no objects can be made of this class
+public abstract class UI {
 
     // printMainMenu
     public static void printMainMenu() {
+        clearScreen();
         System.out.println("1) Maak de planning");
         System.out.println("2) Lijst met medewerkers");
         System.out.println("3) Nieuwe medewerker aanmaken");
@@ -71,5 +72,13 @@ public class UI {
 
     public static void AddedToList(String naam) {
         System.out.println(naam + " is toegevoegd aan de medewerker lijst.");
+    }
+
+    public static void KiesPad() {
+        System.out.println("Kies een pad om de vulnorm aan te passen.");
+    }
+
+    public static void GeefVulnorm() {
+        System.out.println("Geef de nieuw vulnorm voor het pad.");
     }
 }
