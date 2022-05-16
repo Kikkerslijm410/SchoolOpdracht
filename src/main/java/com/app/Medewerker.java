@@ -29,11 +29,9 @@ public class Medewerker {
         if(MedewerkerList.size() != 0){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") " + e.getNaam());
+                System.out.println(i + ") " + e.getNaam() + e.getWerktijd());
                 i++;
             }
-            UI.KeerTerugEnter();
-            scanner.nextLine(); //just to wait for input
         }else{
          System.out.println("Geen medewerkers beschikbaar om aan te passen.");
          UI.KeerTerugEnter();
@@ -59,6 +57,8 @@ public class Medewerker {
             MedewerkerList.get(medewerker).werktijd = werktijd;
             System.out.println("Medewerker " + MedewerkerList.get(medewerker) + " is succesvol aangepast");
         }
+        UI.KeerTerugEnter();
+        scanner.nextLine(); //just to wait for input
     }
 
     public static void medewerkerAdd(IScanner scanner){

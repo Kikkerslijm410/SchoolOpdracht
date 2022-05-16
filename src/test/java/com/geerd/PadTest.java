@@ -10,17 +10,17 @@ public class PadTest {
 
     @Test
     public void testcheckVracht(){
-        Pad.padDiepvries.setAantalDozen(10);
+        Pad.padInter.setAantalDozen(10);
         assertEquals(true, Pad.checkVracht());
-        Pad.padDiepvries.setAantalDozen(0);
+        Pad.padInter.setAantalDozen(0);
         assertEquals(false, Pad.checkVracht());
     }
 
     @Test
     public void testcheckVulnorm(){
-        Pad.padDiepvries.setVulnorm(10);
+        Pad.padInter.setVulnorm(10);
         assertEquals(true, Pad.checkVulnorm());
-        Pad.padDiepvries.setVulnorm(0);
+        Pad.padInter.setVulnorm(0);
         assertEquals(false, Pad.checkVulnorm());
     }
     

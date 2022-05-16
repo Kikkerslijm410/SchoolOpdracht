@@ -76,11 +76,17 @@ public class Pad {
     }
 
     public static boolean checkVracht() {
-        return padInter.getAantalDozen() > 0;
+        if (padInter.getAantalDozen() > 0){
+            return true;
+        }
+        return false;
     }
 
     public static boolean checkVulnorm() {
-        return Pad.padInter.getVulnorm() > 0;
+        if (padInter.getVulnorm() > 0){
+            return true;
+        }
+        return false;
     }
 
     public static void vrachtAdd(IScanner scanner){
