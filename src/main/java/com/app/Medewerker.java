@@ -8,9 +8,9 @@ public class Medewerker {
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
 
     public Medewerker(String naam, double werktijd){
-            this.naam = naam;
-            this.werktijd = werktijd;
-            MedewerkerList.add(this);
+        this.naam = naam;
+        this.werktijd = werktijd;
+        MedewerkerList.add(this);
     }
 
     public String getNaam(){
@@ -25,15 +25,19 @@ public class Medewerker {
         this.werktijd = werktijd;
     }
 
-    public static void getMedewerkers() {
+    public static void getMedewerkers(IScanner scanner) {
         if(MedewerkerList.size() != 0){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ")" + e.getNaam());
+                System.out.println(i + ") " + e.getNaam());
                 i++;
             }
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
         }else{
          System.out.println("Geen medewerkers beschikbaar om aan te passen.");
+         UI.KeerTerugEnter();
+         scanner.nextLine(); //just to wait for input
         }
     }
 
@@ -45,12 +49,11 @@ public class Medewerker {
     }
     
     public static void werkTijdAdd(IScanner scanner){
-        getMedewerkers();
+        getMedewerkers(scanner);
         UI.KeerTerugGetal();
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
-        int medewerker = scanner.nextInt();
-        String naam = "";
-        if (medewerker > 0 ) {
+        int medewerker = scanner.nextInt() - 1;
+        if (medewerker >= 0) {
             UI.VoerWerktijdIn();
             double werktijd = (scanner.nextDouble() * 60);
             MedewerkerList.get(medewerker).werktijd = werktijd;
@@ -69,7 +72,7 @@ public class Medewerker {
             Medewerker medewerker = new Medewerker(naam, nummer);
             UI.AddedToList(medewerker.getNaam());
             UI.KeerTerugEnter();
-            scanner.nextLine();
+            scanner.nextLine(); //just to wait for input
         }
         catch(Exception e){
             UI.Error("medewerkerAdd");

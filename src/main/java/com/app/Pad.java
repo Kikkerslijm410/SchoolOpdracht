@@ -54,10 +54,13 @@ public class Pad {
         UI.KeerTerugGetal();
         UI.KiesPad();
         int pad = scanner.nextInt() - 1;
-        UI.GeefVulnorm();
-        int vulnorm = scanner.nextInt();
-        PadList.get(pad).vulnorm = vulnorm;
-        //PadList.get(pad).setVulnorm(vulnorm);
+        if (pad >= 0){
+            UI.GeefVulnorm();
+            int vulnorm = scanner.nextInt();
+            PadList.get(pad).vulnorm = vulnorm;
+            System.out.println("Medewerker " + PadList.get(pad) + " is succesvol aangepast");
+            //PadList.get(pad).setVulnorm(vulnorm);
+        }
     }
 
     public int getVulnorm(){
@@ -73,11 +76,11 @@ public class Pad {
     }
 
     public static boolean checkVracht() {
-        return padDiepvries.getAantalDozen() != 0;
+        return padInter.getAantalDozen() > 0;
     }
 
     public static boolean checkVulnorm() {
-        return Pad.padDiepvries.getVulnorm() != 0;
+        return Pad.padInter.getVulnorm() > 0;
     }
 
     public static void vrachtAdd(IScanner scanner){

@@ -5,7 +5,6 @@ public class Vulplanning {
     public static void main( String[] args){
         ScannerV3 scannakin = new ScannerV3();
         mainMenu(scannakin);
-        Medewerker Lucas = new Medewerker("Lucas", 3);
     }
 
     //mainMenu
@@ -14,6 +13,7 @@ public class Vulplanning {
         mainMenuLoop: while (true) {
             UI.printMainMenu();
             int chooseAction = scannakin.nextInt();
+            UI.KeerTerugEnter();
             scannakin.nextLine();
             try {
                 switch (chooseAction) {
@@ -24,7 +24,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        Medewerker.getMedewerkers();
+                        Medewerker.getMedewerkers(scannakin);
                         UI.clearScreen();
                         break;
                     case (3):

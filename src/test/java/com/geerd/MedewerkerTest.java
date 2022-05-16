@@ -13,12 +13,12 @@ public class MedewerkerTest {
 
     private RepeatingTestScanner rescanner;
     private Medewerker testMedewerker;
-    private TestScanner testScanner;
+    // private TestScanner testScanner;
 
     @BeforeEach
     public void init(){
         testMedewerker = new Medewerker("Geerd", 3);
-        testScanner = new TestScanner();
+        //testScanner = new TestScanner();
         rescanner = new RepeatingTestScanner();
     }
 
