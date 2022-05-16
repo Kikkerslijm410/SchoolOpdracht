@@ -72,11 +72,19 @@ public abstract class UI {
         System.out.println(naam + " is toegevoegd aan de medewerker lijst.");
     }
 
-    public static void KiesPad() {
+    public static void KiesPadVulnorm() {
         System.out.println("Kies een pad om de vulnorm aan te passen.");
     }
 
+    public static void KiesPadVracht() {
+        System.out.println("Kies een pad om de vracht aan te passen.");
+    }
+
     public static void GeefVulnorm() {
-        System.out.println("Geef de nieuw vulnorm voor het pad.");
+        System.out.println("Geef de nieuwe vulnorm voor het pad.");
+    }
+
+    public static void GeefVracht() {
+        System.out.println("Geef de nieuwe vracht voor het pad");
     }
 }

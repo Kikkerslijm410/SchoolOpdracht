@@ -38,6 +38,11 @@ public class Pad {
         this.aantalDozen = dozen;
     }
 
+    /**
+     * min vulnorm = 20
+     * max vulnorm = 100
+     * @param scanner
+     */
     public static void vulnormAdd (IScanner scanner) {
         int i = 1;
         for (Pad e : Pad.PadList){
@@ -45,14 +50,52 @@ public class Pad {
             i++;
         }
         UI.KeerTerugGetal();
-        UI.KiesPad();
+        UI.KiesPadVulnorm();
         int pad = scanner.nextInt() - 1;
         if (pad >= 0){
             UI.GeefVulnorm();
             int vulnorm = scanner.nextInt();
-            PadList.get(pad).vulnorm = vulnorm;
-            System.out.println("Medewerker " + PadList.get(pad) + " is succesvol aangepast");
-            //PadList.get(pad).setVulnorm(vulnorm);
+            if (vulnorm >= 10 && vulnorm <= 100){
+                PadList.get(pad).vulnorm = vulnorm;
+                System.out.println("De vulnorm van " + PadList.get(pad).getPadNaam() + " is succesvol aangepast");
+                //PadList.get(pad).setVulnorm(vulnorm);
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just here to wait for input
+            }else{
+                System.out.println("Probeer opnieuw");
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just here to wait for input
+            }
+        }
+    }
+
+        /**
+     * min vulnorm = 20
+     * max vulnorm = 100
+     * @param scanner
+     */
+    public static void vrachtAdd (IScanner scanner) {
+        int i = 1;
+        for (Pad e : Pad.PadList){
+            System.out.println(i + ") Pad " + e.getPadNaam() + " heeft als vracht " + e.getAantalDozen());
+            i++;
+        }
+        UI.KeerTerugGetal();
+        UI.KiesPadVracht();
+        int pad = scanner.nextInt() - 1;
+        if (pad >= 0){
+            UI.GeefVracht();
+            int vracht = scanner.nextInt();
+            if (vracht <= 400 && vracht >= 0){
+                PadList.get(pad).aantalDozen = vracht;
+                System.out.println("De vracht van " + PadList.get(pad).getPadNaam() + " is succesvol aangepast");
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just here to wait for input
+            }else{
+                System.out.println("Probeer opnieuw");
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just here to wait for input
+            }
         }
     }
 
@@ -69,50 +112,85 @@ public class Pad {
     }
 
     public static boolean checkVracht() {
-        if (padInter.getAantalDozen() > 0){
+        if (padInter.aantalDozen <= 400 && padInter.aantalDozen >= 0){
             return true;
         }
         return false;
     }
 
+    /**
+     * 
+     * @return
+     */
     public static boolean checkVulnorm() {
-        if (padInter.getVulnorm() > 0){
+        if (padInter.getVulnorm() >= 10 && padInter.getVulnorm() <= 100){
             return true;
         }
         return false;
     }
 
-    public static void vrachtAdd(IScanner scanner){
+    /**
+     * 
+     * @param scanner
+     * @int aantalDozen
+     */
+    public static void vrachtAdd2(IScanner scanner){
+        int aantalDozen = 0;
         System.out.println("Voer het aantal dozen in van Internationaal:");
-        padInter.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Potjes:");
-        padPotjes.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Frisdrank:");
-        padFrisdrank.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Bier:");
-        padBier.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Chips:");
-        padChips.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Wijn:");
-        padWijn.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Cosmetica:");
-        padCosmetica.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Dierenvoeding:");
-        padDierenvoeding.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Koek:");
-        padKoek.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Ontbijt:");
-        padOntbijt.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Zuivel:");
-        padZuivelVVP.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van VVP:");
-        padVVP.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
         System.out.println("Voer het aantal dozen in van Diepvries:");
-        padDiepvries.aantalDozen = scanner.nextInt();
+        aantalDozen = scanner.nextInt();
+        setVracht(padInter, aantalDozen);
+        System.out.println(padInter.getAantalDozen() + padBier.getAantalDozen());
+        scanner.nextLine(); //just here to wait for input
+        UI.KeerTerugEnter();
+    }
+
+    /**
+     * min aantal dozen = 0
+     * max aantal dozen = 400
+     * @param pad
+     * @param vracht
+     */
+    private static void setVracht(Pad pad, int vracht) {
+        if (vracht <= 400 && vracht >= 0){
+            System.out.println("Voer een geldige vracht tussen de 0 en 400 in.");
+        }else{
+            pad.aantalDozen = vracht;
+        }
     }
 }
-
-//min aantal dozen = 0
-//max aantal dozen = 400
-//min vulnorm = 20
-//max vulnorm = 100

@@ -25,36 +25,34 @@ public class Medewerker {
         this.werktijd = werktijd;
     }
 
-    public static void getMedewerkers(IScanner scanner) {
-        if(MedewerkerList.size() != 0){
+    /**
+     * Checkt of er medewerkers zijn
+     * Bij medewerkers aanwezig worden deze uitgeprint en word er true teruggegeven
+     * Bij geen medewerkers word geenMedewerkers() aangeroepen en false teruggegeven
+     * @param scanner
+     * @return
+     */
+    public static boolean getMedewerkers(IScanner scanner) {
+        if(MedewerkerList.size() > 0){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
                 System.out.println(i + ") " + e.getNaam());
                 i++;
             }
-        }else{
-            System.out.println("Geen medewerkers beschikbaar om aan te passen.");
             UI.KeerTerugEnter();
-            scanner.nextLine(); //just to wait for input
+            return true;
+        }else{
+            geenMedewerkers(scanner);
+            return false;
         }
     }
-
-    public static void printMedewerkers(IScanner scanner) {
-        if(MedewerkerList.size() != 0){
-            int i = 1;
-            for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") " + e.getNaam());
-                i++;
-            }
-            UI.KeerTerugEnter();
-            scanner.nextLine(); //just to wait for input
-        }else{
+    //Hoort bij getMedewerkers() 
+    public static void geenMedewerkers(IScanner scanner) {
          System.out.println("Geen medewerkers beschikbaar om aan te passen.");
          UI.KeerTerugEnter();
          scanner.nextLine(); //just to wait for input
-        }
     }
-
+    //Medewerker check zonder print statements
     public static boolean checkMedewerkers() {
         if (MedewerkerList.size() == 0){
             return false;
@@ -63,8 +61,7 @@ public class Medewerker {
     }
     
     public static void werkTijdAdd(IScanner scanner){
-        getMedewerkers(scanner);
-        UI.KeerTerugGetal();
+        if (getMedewerkers(scanner)){
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
         int medewerker = scanner.nextInt() - 1;
         if (medewerker >= 0) {
@@ -75,6 +72,7 @@ public class Medewerker {
         }
         UI.KeerTerugEnter();
         scanner.nextLine(); //just to wait for input
+        }
     }
 
     public static void medewerkerAdd(IScanner scanner){

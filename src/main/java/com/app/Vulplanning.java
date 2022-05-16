@@ -24,7 +24,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        Medewerker.printMedewerkers(scannakin);
+                        Medewerker.getMedewerkers(scannakin);
                         UI.clearScreen();
                         break;
                     case (3):
