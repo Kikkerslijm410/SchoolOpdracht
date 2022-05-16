@@ -47,4 +47,18 @@ public class MedewerkerTest {
         assertEquals("Geerd", Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
         assertNotEquals("Lucas", Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size()-1).getNaam());
     }
+
+    @Test
+    public void testCheckMedewerkers(){
+        assertEquals(true, Medewerker.checkMedewerkers());
+    }
+
+    @Test
+    public void testWerktijdAdd(){
+        rescanner.intlist.add(1);
+        rescanner.sendlist.add("");
+        rescanner.intlist.add(4);
+        Medewerker.werkTijdAdd(rescanner);
+        assertEquals(4, testMedewerker.getWerktijd());
+    }
 }

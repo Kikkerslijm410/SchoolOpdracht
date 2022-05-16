@@ -17,27 +17,39 @@ public class Medewerker {
         return this.naam;
     }
 
+    public double getWerktijd(){
+        return this.werktijd;
+    }
+
     public void setWerktijd(double werktijd){
         this.werktijd = werktijd;
     }
 
     public static void getMedewerkers() {
-        int i = 1;
-        for (Medewerker e : Medewerker.MedewerkerList){
-            System.out.println(i + ")" + e.getNaam());
-            i++;
+        if(MedewerkerList.size() != 0){
+            int i = 1;
+            for (Medewerker e : Medewerker.MedewerkerList) {
+                System.out.println(i + ")" + e.getNaam());
+                i++;
+            }
+        }else{
+         System.out.println("Geen medewerkers beschikbaar om aan te passen.");
         }
+    }
+
+    public static boolean checkMedewerkers() {
+        if (MedewerkerList.size() == 0){
+            return false;
+        }
+        return true;
     }
     
     public static void werkTijdAdd(IScanner scanner){
-        int i = 1;
-        for ( Medewerker e : Medewerker.MedewerkerList){
-            System.out.println(i + ")" + e.getNaam());
-            i++;
-        }
+        getMedewerkers();
         UI.KeerTerugGetal();
         System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
         int medewerker = scanner.nextInt();
+        String naam = "";
         if (medewerker > 0 ) {
             UI.VoerWerktijdIn();
             double werktijd = (scanner.nextDouble() * 60);

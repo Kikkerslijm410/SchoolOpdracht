@@ -75,10 +75,10 @@ public class Vulplanning {
     }
         
         private static void maakPlanning() {
-        if(Pad.checkVracht() && checkMedewerkers() && Pad.checkVulnorm()) {
+        if(Pad.checkVracht() && Medewerker.checkMedewerkers() && Pad.checkVulnorm()) {
             System.out.println("gefeliciteerd alles is in orde");
         }
-        if (!checkMedewerkers()){
+        if (!Medewerker.checkMedewerkers()){
             UI.geenMedewerkers();
         }
         if (!Pad.checkVulnorm()){
@@ -89,8 +89,4 @@ public class Vulplanning {
         }
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
         }
-
-    private static boolean checkMedewerkers() {
-        return true;
-    }
 }
