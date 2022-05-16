@@ -29,9 +29,25 @@ public class Medewerker {
         if(MedewerkerList.size() != 0){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") " + e.getNaam() + e.getWerktijd());
+                System.out.println(i + ") " + e.getNaam());
                 i++;
             }
+        }else{
+            System.out.println("Geen medewerkers beschikbaar om aan te passen.");
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
+        }
+    }
+
+    public static void printMedewerkers(IScanner scanner) {
+        if(MedewerkerList.size() != 0){
+            int i = 1;
+            for (Medewerker e : Medewerker.MedewerkerList) {
+                System.out.println(i + ") " + e.getNaam());
+                i++;
+            }
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
         }else{
          System.out.println("Geen medewerkers beschikbaar om aan te passen.");
          UI.KeerTerugEnter();

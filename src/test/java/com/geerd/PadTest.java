@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class PadTest {
 
     @Test
-    public void testcheckVracht(){
+    public void testCheckVracht(){
         Pad.padInter.setAantalDozen(10);
         assertEquals(true, Pad.checkVracht());
         Pad.padInter.setAantalDozen(0);
@@ -17,7 +17,7 @@ public class PadTest {
     }
 
     @Test
-    public void testcheckVulnorm(){
+    public void testCheckVulnorm(){
         Pad.padInter.setVulnorm(10);
         assertEquals(true, Pad.checkVulnorm());
         Pad.padInter.setVulnorm(0);

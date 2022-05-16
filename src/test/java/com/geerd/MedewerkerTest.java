@@ -51,6 +51,9 @@ public class MedewerkerTest {
     @Test
     public void testCheckMedewerkers(){
         assertEquals(true, Medewerker.checkMedewerkers());
+        Medewerker.MedewerkerList.clear();
+        assertEquals(false, Medewerker.checkMedewerkers());
+        testMedewerker = new Medewerker("Geerd", 3);
     }
 
     //@Test

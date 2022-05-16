@@ -2,7 +2,7 @@ package com.app;
 
 public class Vulplanning {
 
-    public static void main( String[] args){
+    public static void main(String[] args){
         ScannerV3 scannakin = new ScannerV3();
         mainMenu(scannakin);
     }
@@ -24,7 +24,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        Medewerker.getMedewerkers(scannakin);
+                        Medewerker.printMedewerkers(scannakin);
                         UI.clearScreen();
                         break;
                     case (3):
