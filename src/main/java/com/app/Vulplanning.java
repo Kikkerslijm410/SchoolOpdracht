@@ -73,20 +73,29 @@ public class Vulplanning {
             }
         }
     }
+
+        public static void maakPlanning(){
+            checkPlanning();
+        }
         
-        private static void maakPlanning() {
+    public static boolean checkPlanning() {
         if(Pad.checkVracht() && Medewerker.checkMedewerkers() && Pad.checkVulnorm()) {
             System.out.println("gefeliciteerd alles is in orde");
+            return true;
         }
         if (!Medewerker.checkMedewerkers()){
             UI.geenMedewerkers();
+            return false;
         }
         if (!Pad.checkVulnorm()){
             UI.geenVulnorm();
+            return false;
         }
         if (!Pad.checkVracht()){
             UI.geenVracht();
+            return false;
         }
+        return false;
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
-        }
+    }
 }

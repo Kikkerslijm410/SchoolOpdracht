@@ -9,31 +9,24 @@ public class Pad {
     public int aantalDozen;
     public static ArrayList <Pad> PadList = new ArrayList<>();
 
-    public static Pad padInter = new Pad ("Internationaal", 60);
-    public static Pad padPotjes = new Pad ("Potjes", 60);
-    public static Pad padFrisdrank = new Pad ("Frisdrank", 60);
-    public static Pad padBier = new Pad ("BierChipsWijn", 60);
-    public static Pad padChips= new Pad ("Chips", 60);
-    public static Pad padWijn = new Pad ("Wijn", 60);
-    public static Pad padDierenvoeding = new Pad ("Internationaal", 60);
-    public static Pad padCosmetica = new Pad ("Cosmetica", 60);
-    public static Pad padKoek = new Pad ("Koek", 60);
-    public static Pad padOntbijt = new Pad ("Ontbijt", 60);
-    public static Pad padZuivelVVP = new Pad ("ZuivelVVP", 60);
-    public static Pad padVVP = new Pad ("VVP", 60);
-    public static Pad padDiepvries = new Pad("Diepvries", 60);
+    public static Pad padInter = new Pad ("Internationaal", 60, 0);
+    public static Pad padPotjes = new Pad ("Potjes", 60, 0);
+    public static Pad padFrisdrank = new Pad ("Frisdrank", 60, 0);
+    public static Pad padBier = new Pad ("BierChipsWijn", 60, 0);
+    public static Pad padChips= new Pad ("Chips", 60, 0);
+    public static Pad padWijn = new Pad ("Wijn", 60, 0);
+    public static Pad padDierenvoeding = new Pad ("Internationaal", 60, 0);
+    public static Pad padCosmetica = new Pad ("Cosmetica", 60, 0);
+    public static Pad padKoek = new Pad ("Koek", 60, 0);
+    public static Pad padOntbijt = new Pad ("Ontbijt", 60, 0);
+    public static Pad padZuivelVVP = new Pad ("ZuivelVVP", 60, 0);
+    public static Pad padVVP = new Pad ("VVP", 60, 0);
+    public static Pad padDiepvries = new Pad("Diepvries", 60, 0);
 
     public Pad (String padNaam, int vulnorm, int dozen){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
         this.aantalDozen = dozen;
-        PadList.add(this);
-    }
-
-    public Pad (String padNaam, int vulnorm){
-        this.padNaam = padNaam;
-        this.vulnorm = vulnorm;
-        this.aantalDozen = 0;
         PadList.add(this);
     }
 
@@ -118,3 +111,8 @@ public class Pad {
         padDiepvries.aantalDozen = scanner.nextInt();
     }
 }
+
+//min aantal dozen = 0
+//max aantal dozen = 400
+//min vulnorm = 20
+//max vulnorm = 100
