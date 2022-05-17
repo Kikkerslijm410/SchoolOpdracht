@@ -87,4 +87,8 @@ public abstract class UI {
     public static void GeefVracht() {
         System.out.println("Geef de nieuwe vracht voor het pad");
     }
+
+    public static void AlleVrachtAanpassen() {
+        System.out.println("14) Pas alle vracht in één keer aan.");
+    }
 }
