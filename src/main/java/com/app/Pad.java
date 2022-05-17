@@ -126,10 +126,6 @@ public class Pad {
         return false;
     }
 
-    /**
-     * 
-     * @return
-     */
     public static boolean checkVulnorm() {
         if (padInter.getVulnorm() >= 10 && padInter.getVulnorm() <= 100){
             return true;
@@ -137,7 +133,6 @@ public class Pad {
         return false;
     }
 
-    
     /**
      * 
      * @param scanner

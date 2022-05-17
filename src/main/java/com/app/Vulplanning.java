@@ -74,9 +74,9 @@ public class Vulplanning {
         }
     }
 
-        public static void maakPlanning(){
-            checkPlanning();
-        }
+    public static void maakPlanning(){
+        checkPlanning();
+    }
         
     public static boolean checkPlanning() {
         if(Pad.checkVracht() && Medewerker.checkMedewerkers() && Pad.checkVulnorm()) {
