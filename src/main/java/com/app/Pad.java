@@ -49,6 +49,7 @@ public class Pad {
             System.out.println(i + ") Pad " + e.getPadNaam() + " heeft als vulnorm " + e.getVulnorm());
             i++;
         }
+        UI.AllesAanpassen("vulnormen");
         UI.KeerTerugGetal();
         UI.KiesPadVulnorm();
         int pad = scanner.nextInt() - 1;
@@ -82,7 +83,7 @@ public class Pad {
             System.out.println(i + ") Pad " + e.getPadNaam() + " heeft als vracht " + e.getAantalDozen());
             i++;
         }
-        UI.AlleVrachtAanpassen();
+        UI.AllesAanpassen("vracht");
         UI.KeerTerugGetal();
         UI.KiesPadVracht();
         int pad = scanner.nextInt() - 1;
@@ -119,20 +120,6 @@ public class Pad {
         return this.padNaam;
     }
 
-    public static boolean checkVracht() {
-        if (padInter.aantalDozen <= 400 && padInter.aantalDozen >= 0){
-            return true;
-        }
-        return false;
-    }
-
-    public static boolean checkVulnorm() {
-        if (padInter.getVulnorm() >= 10 && padInter.getVulnorm() <= 100){
-            return true;
-        }
-        return false;
-    }
-
     /**
      * 
      * @param scanner
@@ -165,7 +152,8 @@ public class Pad {
         padVVP.aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Diepvries:");
         padDiepvries.aantalDozen = vrachtMethod(scanner);
-        scanner.nextLine(); //just here to wait for input
+        UI.AllePadenAangepast();
         UI.KeerTerugEnter();
+        scanner.nextLine(); //just here to wait for input
     }
 }

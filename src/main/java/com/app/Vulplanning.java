@@ -13,8 +13,6 @@ public class Vulplanning {
         mainMenuLoop: while (true) {
             UI.printMainMenu();
             int chooseAction = scannakin.nextInt();
-            UI.KeerTerugEnter();
-            scannakin.nextLine();
             try {
                 switch (chooseAction) {
                     case (1):
@@ -25,6 +23,7 @@ public class Vulplanning {
                     case (2):
                         UI.clearScreen();
                         Medewerker.getMedewerkers(scannakin);
+                        scannakin.nextLine();//just to wait for input
                         UI.clearScreen();
                         break;
                     case (3):
@@ -49,7 +48,7 @@ public class Vulplanning {
                         break;
                     case (7):
                         UI.clearScreen();
-                        Medewerker.werkTijdAdd(scannakin);
+                        Medewerker.werktijdAdd(scannakin);
                         UI.clearScreen();
                         break;
                     /*
@@ -73,29 +72,8 @@ public class Vulplanning {
             }
         }
     }
-
-    public static void maakPlanning(){
-        checkPlanning();
-    }
         
-    public static boolean checkPlanning() {
-        if(Pad.checkVracht() && Medewerker.checkMedewerkers() && Pad.checkVulnorm()) {
-            System.out.println("gefeliciteerd alles is in orde");
-            return true;
-        }
-        if (!Medewerker.checkMedewerkers()){
-            UI.geenMedewerkers();
-            return false;
-        }
-        if (!Pad.checkVulnorm()){
-            UI.geenVulnorm();
-            return false;
-        }
-        if (!Pad.checkVracht()){
-            UI.geenVracht();
-            return false;
-        }
-        return false;
+    public static void maakPlanning() {
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
     }
 }

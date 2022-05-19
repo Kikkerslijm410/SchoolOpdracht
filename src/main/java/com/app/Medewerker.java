@@ -32,46 +32,44 @@ public class Medewerker {
      * @param scanner
      * @return
      */
-    public static boolean getMedewerkers(IScanner scanner) {
-        if(MedewerkerList.size() > 0){
+    public static void getMedewerkers(IScanner scanner) {
+        if(checkMedewerkers(scanner)){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
                 System.out.println(i + ") " + e.getNaam());
                 i++;
             }
-            UI.KeerTerugEnter();
-            return true;
-        }else{
-            geenMedewerkers(scanner);
-            return false;
+                UI.KeerTerugGetal();
         }
     }
-    //Hoort bij getMedewerkers() 
-    public static void geenMedewerkers(IScanner scanner) {
-         System.out.println("Geen medewerkers beschikbaar om aan te passen.");
-         UI.KeerTerugEnter();
-         scanner.nextLine(); //just to wait for input
-    }
-    //Medewerker check zonder print statements
-    public static boolean checkMedewerkers() {
+
+    public static boolean checkMedewerkers(IScanner scanner) {
         if (MedewerkerList.size() == 0){
+            System.out.println("Geen medewerkers beschikbaar.");
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
             return false;
         }
         return true;
     }
     
-    public static void werkTijdAdd(IScanner scanner){
-        if (getMedewerkers(scanner)){
-        System.out.println("Voer het nummer van de medewerker in om de werktijd aan te passen:");
-        int medewerker = scanner.nextInt() - 1;
-        if (medewerker >= 0) {
-            UI.VoerWerktijdIn();
-            double werktijd = (scanner.nextDouble() * 60);
-            MedewerkerList.get(medewerker).werktijd = werktijd;
-            System.out.println("Medewerker " + MedewerkerList.get(medewerker) + " is succesvol aangepast");
-        }
-        UI.KeerTerugEnter();
-        scanner.nextLine(); //just to wait for input
+    public static void werktijdAdd(IScanner scanner){
+        if (checkMedewerkers(scanner)){
+            getMedewerkers(scanner);
+            UI.medewerkerAanpassen();
+            int medewerker = scanner.nextInt() - 1;
+            if (medewerker >= 0 && medewerker <= MedewerkerList.size()) {
+                UI.VoerWerktijdIn();
+                double werktijd = (scanner.nextDouble() * 60);
+                MedewerkerList.get(medewerker).setWerktijd(werktijd);
+                System.out.println("Medewerker " + MedewerkerList.get(medewerker) + " is succesvol aangepast");
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just to wait for input
+            }else{
+                UI.ongeldigeMedewerker();    
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just to wait for input
+            }
         }
     }
 
@@ -95,23 +93,20 @@ public class Medewerker {
     }
 
     public static void medewerkerDelete(IScanner scanner){
-        int counter = 1;
-        for (Medewerker e : Medewerker.MedewerkerList){
-            System.out.println(counter+") "+e.getNaam());
-            counter++;
-        }
-        UI.KeerTerugGetal();
-        System.out.println("Kies een medewerker:");
-        int userMedewerkerChoice = scanner.nextInt();
-        scanner.nextLine(); //just to wait for input
-        if (userMedewerkerChoice > 0){
-            Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
-            System.out.println("Medewerker succesvol verwijderd");
-            UI.KeerTerugEnter();
-            scanner.nextLine();
-        }else{
-            System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
-            Vulplanning.mainMenu(scanner);
+        if (checkMedewerkers(scanner)){
+            getMedewerkers(scanner);
+            UI.medewerkerAanpassen();
+            int userMedewerkerChoice = scanner.nextInt();
+            scanner.nextLine(); //just to wait for input
+            if (userMedewerkerChoice > 0){
+                Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
+                System.out.println("Medewerker succesvol verwijderd");
+                UI.KeerTerugEnter();
+                scanner.nextLine();
+            }else{
+                UI.ongeldigeMedewerker();
+                Vulplanning.mainMenu(scanner);
+            }
         }
     }
 }

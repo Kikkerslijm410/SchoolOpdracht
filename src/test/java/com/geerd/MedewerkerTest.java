@@ -13,12 +13,12 @@ public class MedewerkerTest {
 
     private RepeatingTestScanner rescanner;
     private Medewerker testMedewerker;
-    // private TestScanner testScanner;
+    private TestScanner testScanner;
 
     @BeforeEach
     public void init(){
         testMedewerker = new Medewerker("Geerd", 3);
-        //testScanner = new TestScanner();
+        testScanner = new TestScanner();
         rescanner = new RepeatingTestScanner();
     }
 
@@ -50,9 +50,9 @@ public class MedewerkerTest {
 
     @Test
     public void testCheckMedewerkers(){
-        assertEquals(true, Medewerker.checkMedewerkers());
+        assertEquals(true, Medewerker.checkMedewerkers(testScanner));
         Medewerker.MedewerkerList.clear();
-        assertEquals(false, Medewerker.checkMedewerkers());
+        assertEquals(false, Medewerker.checkMedewerkers(testScanner));
         testMedewerker = new Medewerker("Geerd", 3);
     }
 
@@ -60,7 +60,7 @@ public class MedewerkerTest {
     public void testWerktijdAdd(){
         rescanner.intlist.add(1);
         rescanner.intlist.add(4);
-        Medewerker.werkTijdAdd(rescanner);
+        Medewerker.werktijdAdd(rescanner);
         assertEquals(4, testMedewerker.getWerktijd());
     }
 }

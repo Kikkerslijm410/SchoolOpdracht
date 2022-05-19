@@ -14,7 +14,7 @@ public abstract class UI {
         System.out.println("5) Vracht toevoegen");
         System.out.println("6) Vulnorm Aanpassen"); 
         System.out.println("7) Werktijd aanpassen");
-        System.out.println("8) "); //Deze is nog leeg.
+        //System.out.println("8) "); //Deze is nog leeg.
         System.out.println("0) Exit");
     }
 
@@ -56,18 +56,6 @@ public abstract class UI {
         System.out.println("Optie bestaat niet kies een geldige optie.");
     }
 
-    public static void geenMedewerkers() {
-        System.out.println("Er zijn geen medewerkers beschikbaar. Voeg medewerkers toe om de planning te kunnen maken.");
-    }
-
-    public static void geenVulnorm() {
-        System.out.println("Er is geen vulnorm beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
-    }
-
-    public static void geenVracht() {
-        System.out.println("Er is geen vracht beschikbaar voor de paden voeg deze toe om de planning te kunnen maken.");
-    }
-
     public static void AddedToList(String naam) {
         System.out.println(naam + " is toegevoegd aan de medewerker lijst.");
     }
@@ -88,7 +76,19 @@ public abstract class UI {
         System.out.println("Geef de nieuwe vracht voor het pad");
     }
 
-    public static void AlleVrachtAanpassen() {
-        System.out.println("14) Pas alle vracht in één keer aan.");
+    public static void AllesAanpassen(String string) {
+        System.out.println("14) Pas alle " + string + " in één keer aan.");
+    }
+
+    public static void ongeldigeMedewerker() {
+        System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
+    }
+
+    public static void medewerkerAanpassen() {
+        System.out.println("Voer het nummer van de medewerker in om deze aan te passen.");
+    }
+
+    public static void AllePadenAangepast() {
+        System.out.println("Alle paden zijn aangepast.");
     }
 }
