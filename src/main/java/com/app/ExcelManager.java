@@ -1,5 +1,5 @@
 package com.app;
-/*
+
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -13,11 +13,11 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public abstract class FileManager {
+public abstract class ExcelManager {
 
     public void Start(){
 
         XSSFWorkbook workbook = new XSSFWorkbook();
     }
 }
-*/
+

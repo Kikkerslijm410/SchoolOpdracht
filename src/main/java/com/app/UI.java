@@ -91,4 +91,8 @@ public abstract class UI {
     public static void AllePadenAangepast() {
         System.out.println("Alle paden zijn aangepast.");
     }
+
+    public static void GeefGeldigeGetal(int i, int j) {
+        System.out.println("Voer een geldige getal in tussen de " + i + " en " + j + ".");
+    }
 }

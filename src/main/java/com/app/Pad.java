@@ -38,6 +38,18 @@ public class Pad {
         this.aantalDozen = dozen;
     }
 
+    public int getVulnorm(){
+        return this.vulnorm;
+    }
+
+    public int getAantalDozen(){
+        return this.aantalDozen;
+    }
+
+    public String getPadNaam(){
+        return this.padNaam;
+    }
+
     /**
      * min vulnorm = 20
      * max vulnorm = 100
@@ -52,11 +64,14 @@ public class Pad {
         UI.AllesAanpassen("vulnormen");
         UI.KeerTerugGetal();
         UI.KiesPadVulnorm();
-        int pad = scanner.nextInt() - 1;
-        if (pad >= 0){
+        int vulnorm = scanner.nextInt() - 1;
+        if (vulnorm == 13){
+            vulnormAddTotaal(scanner);
+        }
+        if (vulnorm >= 0){
             UI.GeefVulnorm();
-                PadList.get(pad).vulnorm = vulnormMethod(scanner);
-                System.out.println("De vulnorm van " + PadList.get(pad).getPadNaam() + " is succesvol aangepast");
+                PadList.get(vulnorm).vulnorm = vulnormMethod(scanner);
+                System.out.println("De vulnorm van " + PadList.get(vulnorm).getPadNaam() + " is succesvol aangepast");
                 //PadList.get(pad).setVulnorm(vulnorm);
                 UI.KeerTerugEnter();
                 scanner.nextLine(); //just here to wait for input
@@ -66,10 +81,43 @@ public class Pad {
     public static int vulnormMethod(IScanner scanner){
         while (true){
             int vulnorm = scanner.nextInt();
-            if (vulnorm <= 400 && vulnorm >= 0){ 
+            if (vulnorm <= 100 && vulnorm >= 10){ 
             return vulnorm;
             }
+            UI.GeefGeldigeGetal(10, 100);
         }
+    }
+
+    public static void vulnormAddTotaal(IScanner scanner){
+        System.out.println("Voer de nieuwe vulnorm in voor Internationaal:");
+        padInter.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Potjes:");
+        padPotjes.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Frisdrank:");
+        padFrisdrank.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Bier:");
+        padBier.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Chips:");
+        padChips.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Wijn:");
+        padWijn.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Cosmetica:");
+        padCosmetica.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Dierenvoeding:");
+        padDierenvoeding.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Koek:");
+        padKoek.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Ontbijt:");
+        padOntbijt.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Zuivel:");
+        padZuivel.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor VVP:");
+        padVVP.vulnorm = vulnormMethod(scanner);
+        System.out.println("Voer de nieuwe vulnorm in voor Diepvries:");
+        padDiepvries.vulnorm = vulnormMethod(scanner);
+        UI.AllePadenAangepast();
+        UI.KeerTerugEnter();
+        scanner.nextLine(); //just here to wait for input
     }
 
     /**
@@ -88,7 +136,7 @@ public class Pad {
         UI.KiesPadVracht();
         int pad = scanner.nextInt() - 1;
         if (pad == 13){
-            vrachtAdd2(scanner);
+            vrachtAddTotaal(scanner);
         }
         if (pad >= 0){
             UI.GeefVracht();
@@ -105,27 +153,11 @@ public class Pad {
             if (vracht <= 400 && vracht >= 0){ 
             return vracht;
             }
+            UI.GeefGeldigeGetal(00, 400);
         }
     }
 
-    public int getVulnorm(){
-        return this.vulnorm;
-    }
-
-    public int getAantalDozen(){
-        return this.aantalDozen;
-    }
-
-    public String getPadNaam(){
-        return this.padNaam;
-    }
-
-    /**
-     * 
-     * @param scanner
-     */
-    
-    public static void vrachtAdd2(IScanner scanner){
+    public static void vrachtAddTotaal(IScanner scanner){
         System.out.println("Voer het aantal dozen in van Internationaal:");
         padInter.aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Potjes:");

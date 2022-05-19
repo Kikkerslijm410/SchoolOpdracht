@@ -49,6 +49,7 @@ public class Vulplanning {
                     case (7):
                         UI.clearScreen();
                         Medewerker.werktijdAdd(scannakin);
+                        UI.KeerTerugEnter();
                         UI.clearScreen();
                         break;
                     /*
@@ -75,5 +76,7 @@ public class Vulplanning {
         
     public static void maakPlanning() {
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
+            //https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
+            //https://howtodoinjava.com/gson/gson-installation-maven-gradle-jar/
     }
 }

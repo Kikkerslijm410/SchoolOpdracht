@@ -53,7 +53,7 @@ public class Medewerker {
         return true;
     }
     
-    public static void werktijdAdd(IScanner scanner){
+    public static void werktijdAdd(IScanner scanner) {
         if (checkMedewerkers(scanner)){
             getMedewerkers(scanner);
             UI.medewerkerAanpassen();
@@ -62,13 +62,9 @@ public class Medewerker {
                 UI.VoerWerktijdIn();
                 double werktijd = (scanner.nextDouble() * 60);
                 MedewerkerList.get(medewerker).setWerktijd(werktijd);
-                System.out.println("Medewerker " + MedewerkerList.get(medewerker) + " is succesvol aangepast");
-                UI.KeerTerugEnter();
-                scanner.nextLine(); //just to wait for input
+                System.out.println("Medewerker " + MedewerkerList.get(medewerker).getNaam() + " is succesvol aangepast");
             }else{
                 UI.ongeldigeMedewerker();    
-                UI.KeerTerugEnter();
-                scanner.nextLine(); //just to wait for input
             }
         }
     }
@@ -102,10 +98,9 @@ public class Medewerker {
                 Medewerker.MedewerkerList.remove(userMedewerkerChoice-1);
                 System.out.println("Medewerker succesvol verwijderd");
                 UI.KeerTerugEnter();
-                scanner.nextLine();
+                scanner.nextLine(); //just to wait for input
             }else{
                 UI.ongeldigeMedewerker();
-                Vulplanning.mainMenu(scanner);
             }
         }
     }
