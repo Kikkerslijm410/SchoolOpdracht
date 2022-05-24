@@ -1,18 +1,21 @@
 package com.app;
 
+import java.io.IOException;
+
 import com.GsonManager;
 
 public class Vulplanning {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException{
         ScannerV3 scannakin = new ScannerV3();
         mainMenu(scannakin);
     }
 
     //mainMenu
-    public static void mainMenu(IScanner scannakin) {
+    public static void mainMenu(IScanner scannakin) throws IOException {
         GsonManager.loadFile();
-        //UI.clearScreen();
+        ExcelManager.Start();
+        UI.clearScreen();
 
         mainMenuLoop: while (true) {
             UI.printMainMenu();
@@ -75,6 +78,7 @@ public class Vulplanning {
                 System.out.println(e);
             }
         }
+
     }
         
     public static void maakPlanning() {

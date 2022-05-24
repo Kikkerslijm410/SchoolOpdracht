@@ -20,7 +20,6 @@ public class GsonManager {
   }
   /**
    * Writes the given {@link Medewerker} in JSON format to the Medewerkers file.
-   * @param medewerker the to be written User object
    */
   public static void writeToSaveMedewerker() {
       String dir = System.getProperty("user.dir")+"\\data\\";
@@ -32,7 +31,6 @@ public class GsonManager {
   }
   /**
    * Writes the given {@link Pad} in JSON format to the Pad file.
-   * @param pad the to be written pad object
    */
   public static void writeToSavePad() {
     String dir = System.getProperty("user.dir")+"\\data\\";
@@ -44,11 +42,7 @@ public class GsonManager {
   }
 
   /**
-   * Support method
-   * <p>
-   * Writes any given object in JSON format to the given file.
-   * @param  savefile The {@link File} where the data is saved to.
-   * @param object Any {@link Object} will do.
+   * Writes the given object in the correct savefile
    */
   private static void write(File savefile, Object object) {
     try{
@@ -71,13 +65,13 @@ public class GsonManager {
       return gson.toJson(object);
   }
 
-public static void loadFile (){  
-  for(String s : readFile("Medewerkers")){
-      Medewerker newMedewerker = gson.fromJson(s, Medewerker.class);
-      System.out.println(newMedewerker.naam);
+  public static void loadFile (){  
+    for(String s : readFile("Medewerkers")){
+        Medewerker newMedewerker = gson.fromJson(s, Medewerker.class);
+        System.out.println(newMedewerker.naam);
+    }
+    System.out.println("==========");
   }
-  System.out.println("==========");
-}
 
     /**
    * Reads the lines of an JSON file located in ~\data and returns them as entries in an ArrayList
