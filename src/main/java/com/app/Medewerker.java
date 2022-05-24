@@ -30,16 +30,16 @@ public class Medewerker {
      * Bij medewerkers aanwezig worden deze uitgeprint en word er true teruggegeven
      * Bij geen medewerkers word geenMedewerkers() aangeroepen en false teruggegeven
      * @param scanner
-     * @return
      */
     public static void getMedewerkers(IScanner scanner) {
         if(checkMedewerkers(scanner)){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") " + e.getNaam());
+                System.out.println(i + ") " + e.getNaam() + e.getWerktijd());
                 i++;
             }
-                UI.KeerTerugGetal();
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
         }
     }
 
@@ -58,11 +58,13 @@ public class Medewerker {
             getMedewerkers(scanner);
             UI.medewerkerAanpassen();
             int medewerker = scanner.nextInt() - 1;
-            if (medewerker >= 0 && medewerker <= MedewerkerList.size()) {
+            if (medewerker >= 0) {
                 UI.VoerWerktijdIn();
-                double werktijd = (scanner.nextDouble() * 60);
-                MedewerkerList.get(medewerker).setWerktijd(werktijd);
+                Medewerker.MedewerkerList.get(medewerker).setWerktijd(scanner.nextDouble() * 60);
                 System.out.println("Medewerker " + MedewerkerList.get(medewerker).getNaam() + " is succesvol aangepast");
+                UI.KeerTerugEnter();
+                scanner.nextLine(); //just to wait for input
+                scanner.nextLine(); //just to wait for input
             }else{
                 UI.ongeldigeMedewerker();    
             }

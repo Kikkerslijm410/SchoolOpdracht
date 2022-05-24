@@ -1,5 +1,7 @@
 package com.app;
 
+import com.GsonManager;
+
 public class Vulplanning {
 
     public static void main(String[] args){
@@ -9,7 +11,9 @@ public class Vulplanning {
 
     //mainMenu
     public static void mainMenu(IScanner scannakin) {
-        UI.clearScreen();
+        GsonManager.loadFile();
+        //UI.clearScreen();
+
         mainMenuLoop: while (true) {
             UI.printMainMenu();
             int chooseAction = scannakin.nextInt();
@@ -23,7 +27,6 @@ public class Vulplanning {
                     case (2):
                         UI.clearScreen();
                         Medewerker.getMedewerkers(scannakin);
-                        scannakin.nextLine();//just to wait for input
                         UI.clearScreen();
                         break;
                     case (3):
@@ -49,7 +52,6 @@ public class Vulplanning {
                     case (7):
                         UI.clearScreen();
                         Medewerker.werktijdAdd(scannakin);
-                        UI.KeerTerugEnter();
                         UI.clearScreen();
                         break;
                     /*
@@ -60,6 +62,7 @@ public class Vulplanning {
                         break; */
                     case(0):
                         UI.Exit();
+                        GsonManager.saveFile();
                         break mainMenuLoop;
                     default:
                         UI.clearScreen();
