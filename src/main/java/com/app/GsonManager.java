@@ -51,10 +51,10 @@ public class GsonManager {
 
             for(String s : readLines){
                 //Not clean or efficient in the slightest but afaik its impossible to store Class.class .
-                if(f.getName().contains("Users")){
+                if(f.getName().contains("Medewerker")){
                     Medewerker.MedewerkerList.add(gson.fromJson(s, Medewerker.class));
                 }
-                else if(f.getName().contains("Verhicles")){
+                else if(f.getName().contains("Pad")){
                     Pad.PadList.add(gson.fromJson(s, Pad.class));                    
                 }
             }

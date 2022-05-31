@@ -6,6 +6,7 @@ public class Vulplanning {
 
     public static void main(String[] args) throws IOException{
         ScannerV3 scannakin = new ScannerV3();
+        //Pad.init();
         mainMenu(scannakin);
     }
 
@@ -80,7 +81,5 @@ public class Vulplanning {
         
     public static void maakPlanning() {
             //https://www.geeksforgeeks.org/how-to-write-data-into-excel-sheet-using-java/
-            //https://howtodoinjava.com/java/library/json-simple-read-write-json-examples/
-            //https://howtodoinjava.com/gson/gson-installation-maven-gradle-jar/
     }
 }

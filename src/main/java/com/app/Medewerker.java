@@ -106,10 +106,6 @@ public class Medewerker {
         }
     }
 
-    public static void addMedewerker(Medewerker user){
-        MedewerkerList.add(user);
-    }
-
     public static void medewerkerDelete(IScanner scanner){
         if (getMedewerkers(scanner)){
             UI.medewerkerAanpassen("verwijderen");

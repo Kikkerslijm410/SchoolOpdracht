@@ -9,20 +9,6 @@ public class Pad {
     public int aantalDozen;
     public static ArrayList <Pad> PadList = new ArrayList<>();
 
-    public static Pad padInter = new Pad ("Internationaal", 60, 0);
-    public static Pad padPotjes = new Pad ("Potjes", 60, 0);
-    public static Pad padFrisdrank = new Pad ("Frisdrank", 60, 0);
-    public static Pad padBier = new Pad ("BierChipsWijn", 60, 0);
-    public static Pad padChips= new Pad ("Chips", 60, 0);
-    public static Pad padWijn = new Pad ("Wijn", 60, 0);
-    public static Pad padDierenvoeding = new Pad ("Internationaal", 60, 0);
-    public static Pad padCosmetica = new Pad ("Cosmetica", 60, 0);
-    public static Pad padKoek = new Pad ("Koek", 60, 0);
-    public static Pad padOntbijt = new Pad ("Ontbijt", 60, 0);
-    public static Pad padZuivel = new Pad ("ZuivelVVP", 60, 0);
-    public static Pad padVVP = new Pad ("VVP", 60, 0);
-    public static Pad padDiepvries = new Pad("Diepvries", 60, 0);
-
     public Pad (String padNaam, int vulnorm, int dozen){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
@@ -90,31 +76,31 @@ public class Pad {
 
     public static void vulnormAddTotaal(IScanner scanner){
         System.out.println("Voer de nieuwe vulnorm in voor Internationaal:");
-        padInter.vulnorm = vulnormMethod(scanner);
+        PadList.get(0).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Potjes:");
-        padPotjes.vulnorm = vulnormMethod(scanner);
+        PadList.get(1).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Frisdrank:");
-        padFrisdrank.vulnorm = vulnormMethod(scanner);
+        PadList.get(2).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Bier:");
-        padBier.vulnorm = vulnormMethod(scanner);
+        PadList.get(3).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Chips:");
-        padChips.vulnorm = vulnormMethod(scanner);
+        PadList.get(4).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Wijn:");
-        padWijn.vulnorm = vulnormMethod(scanner);
+        PadList.get(5).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Cosmetica:");
-        padCosmetica.vulnorm = vulnormMethod(scanner);
+        PadList.get(6).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Dierenvoeding:");
-        padDierenvoeding.vulnorm = vulnormMethod(scanner);
+        PadList.get(7).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Koek:");
-        padKoek.vulnorm = vulnormMethod(scanner);
+        PadList.get(8).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Ontbijt:");
-        padOntbijt.vulnorm = vulnormMethod(scanner);
+        PadList.get(9).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Zuivel:");
-        padZuivel.vulnorm = vulnormMethod(scanner);
+        PadList.get(10).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor VVP:");
-        padVVP.vulnorm = vulnormMethod(scanner);
+        PadList.get(11).vulnorm = vulnormMethod(scanner);
         System.out.println("Voer de nieuwe vulnorm in voor Diepvries:");
-        padDiepvries.vulnorm = vulnormMethod(scanner);
+        PadList.get(12).vulnorm = vulnormMethod(scanner);
         UI.AllePadenAangepast();
         UI.KeerTerugEnter();
         scanner.nextLine(); //just here to wait for input
@@ -159,33 +145,52 @@ public class Pad {
 
     public static void vrachtAddTotaal(IScanner scanner){
         System.out.println("Voer het aantal dozen in van Internationaal:");
-        padInter.aantalDozen = vrachtMethod(scanner);
+        PadList.get(0).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Potjes:");
-        padPotjes.aantalDozen = vrachtMethod(scanner);
+        PadList.get(1).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Frisdrank:");
-        padFrisdrank.aantalDozen = vrachtMethod(scanner);
+        PadList.get(2).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Bier:");
-        padBier.aantalDozen = vrachtMethod(scanner);
+        PadList.get(3).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Chips:");
-        padChips.aantalDozen = vrachtMethod(scanner);
+        PadList.get(4).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Wijn:");
-        padWijn.aantalDozen = vrachtMethod(scanner);
+        PadList.get(5).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Cosmetica:");
-        padCosmetica.aantalDozen = vrachtMethod(scanner);
+        PadList.get(6).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Dierenvoeding:");
-        padDierenvoeding.aantalDozen = vrachtMethod(scanner);
+        PadList.get(7).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Koek:");
-        padKoek.aantalDozen = vrachtMethod(scanner);
+        PadList.get(8).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Ontbijt:");
-        padOntbijt.aantalDozen = vrachtMethod(scanner);
+        PadList.get(9).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Zuivel:");
-        padZuivel.aantalDozen = vrachtMethod(scanner);
+        PadList.get(10).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van VVP:");
-        padVVP.aantalDozen = vrachtMethod(scanner);
+        PadList.get(11).aantalDozen = vrachtMethod(scanner);
         System.out.println("Voer het aantal dozen in van Diepvries:");
-        padDiepvries.aantalDozen = vrachtMethod(scanner);
+        PadList.get(12).aantalDozen = vrachtMethod(scanner);
         UI.AllePadenAangepast();
         UI.KeerTerugEnter();
         scanner.nextLine(); //just here to wait for input
     }
+
+    /*
+    Legacy code dont touch
+    public static void init(){
+        Pad padInter = new Pad ("Internationaal", 60, 0);
+        Pad padPotjes = new Pad ("Potjes", 60, 0);
+        Pad padFrisdrank = new Pad ("Frisdrank", 60, 0);
+        Pad padBier = new Pad ("BierChipsWijn", 60, 0);
+        Pad padChips= new Pad ("Chips", 60, 0);
+        Pad padWijn = new Pad ("Wijn", 60, 0);
+        Pad padDierenvoeding = new Pad ("Internationaal", 60, 0);
+        Pad padCosmetica = new Pad ("Cosmetica", 60, 0);
+        Pad padKoek = new Pad ("Koek", 60, 0);
+        Pad padOntbijt = new Pad ("Ontbijt", 60, 0);
+        Pad padZuivel = new Pad ("ZuivelVVP", 60, 0);
+        Pad padVVP = new Pad ("VVP", 60, 0);
+        Pad padDiepvries = new Pad("Diepvries", 60, 0);
+        }
+        */
 }
