@@ -9,11 +9,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
-public class MedewerkerTest {
+public class testMedewerker {
 
     private RepeatingTestScanner rescanner;
-    private Medewerker testMedewerker;
     private TestScanner testScanner;
+    public Medewerker testMedewerker;
 
     @BeforeEach
     public void init(){
@@ -25,6 +25,10 @@ public class MedewerkerTest {
     @AfterEach
     public void clear(){
         rescanner.clear();
+        for (int i = 0; i < 10; i++){
+        testScanner.setInt(i);
+        Medewerker.medewerkerDelete(testScanner);
+        }
     }  
 
     @Test
@@ -37,7 +41,6 @@ public class MedewerkerTest {
         }else{
         test = "niet gelukt";
         }
-        
         assertEquals("gelukt", test);
         assertNotEquals("niet gelukt", test);
     }
@@ -50,17 +53,17 @@ public class MedewerkerTest {
 
     @Test
     public void testCheckMedewerkers(){
-        assertEquals(true, Medewerker.checkMedewerkers(testScanner));
+        assertEquals(true, Medewerker.getMedewerkers(testScanner));
         Medewerker.MedewerkerList.clear();
-        assertEquals(false, Medewerker.checkMedewerkers(testScanner));
-        testMedewerker = new Medewerker("Geerd", 3);
+        assertEquals(false, Medewerker.getMedewerkers(testScanner));
     }
 
-    //@Test
+    @Test
     public void testWerktijdAdd(){
-        rescanner.intlist.add(1);
-        rescanner.intlist.add(4);
-        Medewerker.werktijdAdd(rescanner);
-        assertEquals(4, testMedewerker.getWerktijd());
+        testScanner.setInt(1);
+        testScanner.setDouble(0);
+        testScanner.setString("x");
+        Medewerker.werktijdAdd(testScanner);
+        assertEquals(0, Medewerker.MedewerkerList.get(Medewerker.MedewerkerList.size() - 1).getWerktijd());
     }
 }

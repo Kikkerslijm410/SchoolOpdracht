@@ -76,16 +76,16 @@ public abstract class UI {
         System.out.println("Geef de nieuwe vracht voor het pad");
     }
 
-    public static void AllesAanpassen(String string) {
-        System.out.println("14) Pas alle " + string + " in één keer aan.");
+    public static void AllesAanpassen(String soort) {
+        System.out.println("14) Pas alle " + soort + " in één keer aan.");
     }
 
     public static void ongeldigeMedewerker() {
         System.out.println("Deze medewerker bestaat niet of is al verwijderd.");
     }
 
-    public static void medewerkerAanpassen() {
-        System.out.println("Voer het nummer van de medewerker in om deze aan te passen.");
+    public static void medewerkerAanpassen(String type) {
+        System.out.println("Voer het nummer van de medewerker in om deze te " + type + ".");
     }
 
     public static void AllePadenAangepast() {

@@ -2,8 +2,6 @@ package com.app;
 
 import java.io.IOException;
 
-import com.GsonManager;
-
 public class Vulplanning {
 
     public static void main(String[] args) throws IOException{
@@ -13,7 +11,7 @@ public class Vulplanning {
 
     //mainMenu
     public static void mainMenu(IScanner scannakin) throws IOException {
-        GsonManager.loadFile();
+        GsonManager.loadAllFiles();
         ExcelManager.Start();
         UI.clearScreen();
 
@@ -29,7 +27,7 @@ public class Vulplanning {
                         break;
                     case (2):
                         UI.clearScreen();
-                        Medewerker.getMedewerkers(scannakin);
+                        Medewerker.getMedewerkers2(scannakin);
                         UI.clearScreen();
                         break;
                     case (3):
@@ -78,7 +76,6 @@ public class Vulplanning {
                 System.out.println(e);
             }
         }
-
     }
         
     public static void maakPlanning() {

@@ -31,42 +31,58 @@ public class Medewerker {
      * Bij geen medewerkers word geenMedewerkers() aangeroepen en false teruggegeven
      * @param scanner
      */
-    public static void getMedewerkers(IScanner scanner) {
-        if(checkMedewerkers(scanner)){
+    public static boolean getMedewerkers(IScanner scanner) {
+        if(MedewerkerList.size() != 0){
             int i = 1;
             for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") " + e.getNaam() + e.getWerktijd());
+                System.out.println(i + ") naam: " + e.getNaam() + " werktijd: " + e.getWerktijd());
                 i++;
             }
-            UI.KeerTerugEnter();
-            scanner.nextLine(); //just to wait for input
-        }
-    }
-
-    public static boolean checkMedewerkers(IScanner scanner) {
-        if (MedewerkerList.size() == 0){
+            UI.KeerTerugGetal();
+            return true;
+        }else{
             System.out.println("Geen medewerkers beschikbaar.");
             UI.KeerTerugEnter();
             scanner.nextLine(); //just to wait for input
             return false;
         }
-        return true;
     }
-    
+    public static boolean getMedewerkers2(IScanner scanner) {
+        if(MedewerkerList.size() != 0){
+            int i = 1;
+            for (Medewerker e : Medewerker.MedewerkerList) {
+                System.out.println(i + ") naam: " + e.getNaam() + " werktijd: " + e.getWerktijd());
+                i++;
+            }
+            UI.KeerTerugGetal();
+            scanner.nextLine(); //just to wait for input
+            return true;
+        }else{
+            System.out.println("Geen medewerkers beschikbaar.");
+            UI.KeerTerugEnter();
+            scanner.nextLine(); //just to wait for input
+            return false;
+        }
+    }
+
     public static void werktijdAdd(IScanner scanner) {
-        if (checkMedewerkers(scanner)){
-            getMedewerkers(scanner);
-            UI.medewerkerAanpassen();
+        if (getMedewerkers(scanner)){
+            UI.medewerkerAanpassen("bewerken");
             int medewerker = scanner.nextInt() - 1;
             if (medewerker >= 0) {
-                UI.VoerWerktijdIn();
-                Medewerker.MedewerkerList.get(medewerker).setWerktijd(scanner.nextDouble() * 60);
-                System.out.println("Medewerker " + MedewerkerList.get(medewerker).getNaam() + " is succesvol aangepast");
-                UI.KeerTerugEnter();
-                scanner.nextLine(); //just to wait for input
-                scanner.nextLine(); //just to wait for input
-            }else{
-                UI.ongeldigeMedewerker();    
+                for (Medewerker e : Medewerker.MedewerkerList) {
+                    if (e.getNaam().equals(MedewerkerList.get(medewerker).getNaam())){
+                        System.out.println("U heeft " + e.getNaam() + " gekozen om aan te passen.");
+                        UI.VoerWerktijdIn();
+                        double x = scanner.nextDouble();
+                        x = x * 60;
+                        e.setWerktijd(x);
+                        System.out.println("Medewerker " + e.getNaam() + " is succesvol aangepast"); 
+                        UI.KeerTerugEnter();
+                        scanner.nextLine(); //just to wait for input 
+                        scanner.nextLine(); //just to wait for input
+                    }
+                }
             }
         }
     }
@@ -90,10 +106,13 @@ public class Medewerker {
         }
     }
 
+    public static void addMedewerker(Medewerker user){
+        MedewerkerList.add(user);
+    }
+
     public static void medewerkerDelete(IScanner scanner){
-        if (checkMedewerkers(scanner)){
-            getMedewerkers(scanner);
-            UI.medewerkerAanpassen();
+        if (getMedewerkers(scanner)){
+            UI.medewerkerAanpassen("verwijderen");
             int userMedewerkerChoice = scanner.nextInt();
             scanner.nextLine(); //just to wait for input
             if (userMedewerkerChoice > 0){

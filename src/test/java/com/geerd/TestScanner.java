@@ -40,8 +40,12 @@ class TestScanner implements IScanner{
 class RepeatingTestScanner extends TestScanner{
     ArrayList<String> sendlist = new ArrayList<>();
     ArrayList<Integer> intlist = new ArrayList<>();
+    ArrayList<Integer> doublelist = new ArrayList<>();
+
     int counter = 0;
     int intCounter = 0;
+    int doubleCounter = 0;
+
 
     @Override
     public String nextLine() {
@@ -57,11 +61,20 @@ class RepeatingTestScanner extends TestScanner{
             intCounter++;
         return super.nextInt();
     }
+    @Override
+    public double nextDouble() {
+        this.doubleValue = doublelist.get(doubleCounter);
+        if(doubleCounter < doublelist.size()-1)
+            doubleCounter++;
+        return super.nextDouble();
+    }
 
     public void clear() {
+        this.intlist.clear();
+        this.doublelist.clear();
         this.sendlist.clear();
         this.counter = 0;
         this.intCounter = 0;
-        this.intlist.clear();
+        this.doubleCounter = 0;
     }
 }
