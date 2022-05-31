@@ -60,20 +60,12 @@ public abstract class UI {
         System.out.println(naam + " is toegevoegd aan de medewerker lijst.");
     }
 
-    public static void KiesPadVulnorm() {
-        System.out.println("Kies een pad om de vulnorm aan te passen.");
+    public static void KiesPad(String padvulnorm) {
+        System.out.println("Kies een pad om de " + padvulnorm + " aan te passen.");
     }
 
-    public static void KiesPadVracht() {
-        System.out.println("Kies een pad om de vracht aan te passen.");
-    }
-
-    public static void GeefVulnorm() {
-        System.out.println("Geef de nieuwe vulnorm voor het pad.");
-    }
-
-    public static void GeefVracht() {
-        System.out.println("Geef de nieuwe vracht voor het pad");
+    public static void GeefWaarde(String padvulnorm) {
+        System.out.println("Geef de nieuwe " + padvulnorm + " voor het pad.");
     }
 
     public static void AllesAanpassen(String soort) {
@@ -95,4 +87,10 @@ public abstract class UI {
     public static void GeefGeldigeGetal(int i, int j) {
         System.out.println("Voer een geldige getal in tussen de " + i + " en " + j + ".");
     }
+
+    /*
+    public static boolean assertDominance(){
+        return true;
+    }
+    */
 }

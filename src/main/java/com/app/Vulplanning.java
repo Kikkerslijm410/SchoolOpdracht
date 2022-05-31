@@ -6,16 +6,16 @@ public class Vulplanning {
 
     public static void main(String[] args) throws IOException{
         ScannerV3 scannakin = new ScannerV3();
-        //Pad.init();
         mainMenu(scannakin);
     }
 
     //mainMenu
     public static void mainMenu(IScanner scannakin) throws IOException {
+        //loads all Gson files
         GsonManager.loadAllFiles();
-        ExcelManager.Start();
         UI.clearScreen();
 
+        //starts the main program
         mainMenuLoop: while (true) {
             UI.printMainMenu();
             int chooseAction = scannakin.nextInt();
@@ -56,12 +56,6 @@ public class Vulplanning {
                         Medewerker.werktijdAdd(scannakin);
                         UI.clearScreen();
                         break;
-                    /*
-                    case (8):
-                        UI.clearScreen();
-
-                        UI.clearScreen();
-                        break; */
                     case(0):
                         UI.Exit();
                         GsonManager.saveFile();

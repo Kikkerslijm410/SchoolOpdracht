@@ -28,8 +28,8 @@ public class Medewerker {
     /**
      * Checkt of er medewerkers zijn
      * Bij medewerkers aanwezig worden deze uitgeprint en word er true teruggegeven
-     * Bij geen medewerkers word geenMedewerkers() aangeroepen en false teruggegeven
      * @param scanner
+     * @return boolean
      */
     public static boolean getMedewerkers(IScanner scanner) {
         if(MedewerkerList.size() != 0){

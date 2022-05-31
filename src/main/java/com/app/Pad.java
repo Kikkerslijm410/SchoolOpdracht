@@ -49,13 +49,13 @@ public class Pad {
         }
         UI.AllesAanpassen("vulnormen");
         UI.KeerTerugGetal();
-        UI.KiesPadVulnorm();
+        UI.KiesPad("vulnorm");
         int vulnorm = scanner.nextInt() - 1;
         if (vulnorm == 13){
             vulnormAddTotaal(scanner);
         }
         if (vulnorm >= 0){
-            UI.GeefVulnorm();
+            UI.GeefWaarde("vulnorm");
                 PadList.get(vulnorm).vulnorm = vulnormMethod(scanner);
                 System.out.println("De vulnorm van " + PadList.get(vulnorm).getPadNaam() + " is succesvol aangepast");
                 //PadList.get(pad).setVulnorm(vulnorm);
@@ -119,13 +119,13 @@ public class Pad {
         }
         UI.AllesAanpassen("vracht");
         UI.KeerTerugGetal();
-        UI.KiesPadVracht();
+        UI.KiesPad("vracht");
         int pad = scanner.nextInt() - 1;
         if (pad == 13){
             vrachtAddTotaal(scanner);
         }
         if (pad >= 0){
-            UI.GeefVracht();
+            UI.GeefWaarde("vracht");
                 PadList.get(pad).aantalDozen = vrachtMethod(scanner);
                 System.out.println("De vracht van " + PadList.get(pad).getPadNaam() + " is succesvol aangepast");
                 UI.KeerTerugEnter();
