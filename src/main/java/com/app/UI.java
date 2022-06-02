@@ -88,6 +88,12 @@ public abstract class UI {
         System.out.println("Voer een geldige getal in tussen de " + i + " en " + j + ".");
     }
 
+    public static void medewerkerStart() {
+        System.out.println("1) Medewerker toevoegen");
+        System.out.println("2) Avondleider toevoegen");
+        System.out.println("3) magazijnman toevoegen");
+    }
+
     /*
     public static boolean assertDominance(){
         return true;

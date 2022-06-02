@@ -45,7 +45,6 @@ public abstract class ExcelManager {
         int rowid = 0;
   
         // writing the data into the sheets...
-  
         for (String key : keyid) {
   
             row = spreadsheet.createRow(rowid++);
@@ -60,8 +59,7 @@ public abstract class ExcelManager {
 
         //Stuff for saving the Excel file        
         String dir = System.getProperty("user.dir")+"\\data\\";
-        FileOutputStream out = new FileOutputStream(
-            new File(dir+"Vulplanning.xlsx"));
+        FileOutputStream out = new FileOutputStream(new File(dir+"Vulplanning.xlsx"));
         workbook.write(out);
         out.close();
     }

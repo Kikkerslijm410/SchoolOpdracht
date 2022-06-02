@@ -13,14 +13,14 @@ import com.google.gson.Gson;
 public class GsonManager {
     //Methods for points/reis may be unneccesary
     public static Gson gson = new Gson();
-    static String dir = System.getProperty("user.dir")+"\\data\\";
+    static String dirt = System.getProperty("user.dir")+"\\data\\"; //dirt
     static ArrayList<File> fileList = new ArrayList<>(seedSaveFiles());
 
     //Temp solution
     public static ArrayList<File> seedSaveFiles() {
         ArrayList<File> fileList = new ArrayList<>();
-        fileList.add(new File(dir+"Medewerker.json"));
-        fileList.add(new File(dir+"Pad.json"));
+        fileList.add(new File(dirt+"Medewerker.json"));
+        fileList.add(new File(dirt+"Pad.json"));
         return fileList;
     }
 
@@ -62,20 +62,19 @@ public class GsonManager {
     }
 
     /**
-     * Writes the given {@link User} in JSON format to the Users file.
-     * @param user the to be written User object
+     * Writes the given {@link Medewerker} in JSON format to the Medewerker file.
+     * @param medewerker the to be written User object
      */
     public static void writeToSave(Medewerker medewerker) {
-        File savefile = new File(dir+"Medewerker.json");
+        File savefile = new File(dirt+"Medewerker.json");
         write(savefile, medewerker);
     }
-
     /**
-     * Writes the given {@link Reis} in JSON format to the Travels file.
-     * @param reis the to be written Reis object
+     * Writes the given {@link Pad} in JSON format to the Pad file.
+     * @param pad the to be written Reis object
      */
     public static void writeToSave(Pad pad) {
-        File savefile = new File(dir+"Pad.json");
+        File savefile = new File(dirt+"Pad.json");
         write(savefile, pad);
     }
 
@@ -187,8 +186,7 @@ public class GsonManager {
             return false;
         }
         catch(Exception e){System.out.println(e);}
-        return false;
-        
+        return false;    
     }
 
     /**
