@@ -4,11 +4,6 @@ import java.io.IOException;
 
 public class Vulplanning {
 
-    public static void main(String[] args) throws IOException{
-        ScannerV3 scannakin = new ScannerV3();
-        mainMenu(scannakin);
-    }
-
     //mainMenu
     public static void mainMenu(IScanner scannakin) throws IOException {
         //loads all Gson files
