@@ -1,10 +1,10 @@
 package com.gui;
 
-import java.io.IOException;
+//import java.io.IOException;
 
 import com.app.Medewerker;
 
-import javafx.fxml.FXML;
+//import javafx.fxml.FXML;
 
 public abstract class AController {
 

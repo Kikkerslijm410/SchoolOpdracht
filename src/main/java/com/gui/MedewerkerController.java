@@ -24,7 +24,7 @@ public class MedewerkerController extends AController implements Initializable {
 
     Medewerker medewerker;
 
-    //switch statement
+    //switch statements
     @FXML
     private void switchToMedewerker() throws IOException {
         Main.show("medewerker", medewerker);
@@ -46,9 +46,6 @@ public class MedewerkerController extends AController implements Initializable {
     private TableView<Medewerker> leaderboard;
 
     @FXML
-    private final TableColumn<Object, Object> rankKolom = new TableColumn<>();
-
-    @FXML
     private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
 
     @FXML
@@ -57,9 +54,8 @@ public class MedewerkerController extends AController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = LeaderBoard.getUsers();
-        rankKolom.setCellValueFactory(new PropertyValueFactory<>("rank"));
         namesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
-        puntenKolom.setCellValueFactory(new PropertyValueFactory<>("points"));
+        puntenKolom.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
         ObservableList<Medewerker> data = FXCollections.observableArrayList(users);
         leaderboard.setItems(data);
         namesKolom.setSortable(false);

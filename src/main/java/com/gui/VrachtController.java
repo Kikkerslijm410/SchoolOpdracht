@@ -1,28 +1,39 @@
 package com.gui;
 
-import javafx.event.ActionEvent;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import com.app.Medewerker;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
-public class VrachtController {
+public class VrachtController extends AController implements Initializable{
 
+    Medewerker medewerker;
+
+    //switch statements
     @FXML
-    void switchToDash (ActionEvent event) {
-
+    private void switchToMedewerker() throws IOException {
+        Main.show("medewerker", medewerker);
     }
-
     @FXML
-    void switchToLeaderboard(ActionEvent event) {
-
+    private void switchToPlanning() throws IOException {
+        Main.show("planning", medewerker);
     }
-
     @FXML
-    void switchToReisGegevens(ActionEvent event) {
-
+    private void switchToHome() throws IOException {
+        Main.show("dashboard", medewerker);
     }
-
     @FXML
-    void switchToShop(ActionEvent event) {
-
-    }
-
+    private void switchToVracht() throws IOException {
+        Main.show("vracht", medewerker);
+    }  
+    
+    //Override just here because implementations
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
+    @Override
+    void setUser(Medewerker medewerker) {}  
 }

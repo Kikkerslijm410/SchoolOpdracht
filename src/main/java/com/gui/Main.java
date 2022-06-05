@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 import com.app.Medewerker;
+import com.app.GsonManager;
 
 public class Main extends Application{
 
@@ -24,6 +25,7 @@ public class Main extends Application{
     public void start(Stage ps) throws Exception {
         primaryStage = ps;
         primaryStage.getIcons().add(new Image("file:src/main/resources/com/gui/Images/logo.jpg"));
+        GsonManager.loadAllFiles();
         Medewerker medewerker = null;
         show("dashboard", medewerker);
     }

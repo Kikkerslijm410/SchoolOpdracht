@@ -25,7 +25,6 @@ public class Medewerker {
     public void setWerktijd(double werktijd){
         this.werktijd = werktijd;
     }
-    
     public void setRank(int rank) {
         this.rank = rank;
     }
