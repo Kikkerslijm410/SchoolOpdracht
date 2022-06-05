@@ -31,7 +31,7 @@ public class GsonManager {
         System.out.println("================");//Debug
         System.out.println("Making savestate");//Debug
         cleanAllFiles();
-        for(Medewerker u : Medewerker.MedewerkerList){
+        for(Medewerker u : LeaderBoard.medewerkers){
             GsonManager.writeToSave(u);
         }
         for(Pad t : Pad.PadList){
@@ -52,7 +52,7 @@ public class GsonManager {
             for(String s : readLines){
                 //Not clean or efficient in the slightest but afaik its impossible to store Class.class .
                 if(f.getName().contains("Medewerker")){
-                    Medewerker.MedewerkerList.add(gson.fromJson(s, Medewerker.class));
+                    LeaderBoard.medewerkers.add(gson.fromJson(s, Medewerker.class));
                 }
                 else if(f.getName().contains("Pad")){
                     Pad.PadList.add(gson.fromJson(s, Pad.class));                    

@@ -1,32 +1,6 @@
 package com.app;
 
-import java.io.IOException;
-
 public abstract class UI {
-
-    // printMainMenu
-    public static void printMainMenu() {
-        clearScreen();
-        System.out.println("1) Maak de planning");
-        System.out.println("2) Lijst met medewerkers");
-        System.out.println("3) Nieuwe medewerker aanmaken");
-        System.out.println("4) Medewerker verwijderen");
-        System.out.println("5) Vracht toevoegen");
-        System.out.println("6) Vulnorm Aanpassen"); 
-        System.out.println("7) Werktijd aanpassen");
-        //System.out.println("8) "); //Deze is nog leeg.
-        System.out.println("0) Exit");
-    }
-
-    // clearScreen
-    public static void clearScreen() {
-        try {
-            if (System.getProperty("os.name").contains("Windows"))
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            else
-                Runtime.getRuntime().exec("clear");
-        } catch (IOException | InterruptedException ex) {}
-    }
 
     public static void VoerWerktijdIn(){
         System.out.println("Voer de werktijd in uren in:");
@@ -93,10 +67,4 @@ public abstract class UI {
         System.out.println("2) Avondleider toevoegen");
         System.out.println("3) magazijnman toevoegen");
     }
-
-    /*
-    public static boolean assertDominance(){
-        return true;
-    }
-    */
 }

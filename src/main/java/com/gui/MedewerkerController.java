@@ -41,6 +41,14 @@ public class MedewerkerController extends AController implements Initializable {
     private void switchToVracht() throws IOException {
         Main.show("vracht", medewerker);
     }
+    @FXML
+    private void switchToAdd() throws IOException {
+        Main.show("MAdd", medewerker);
+    }
+    @FXML
+    private void switchToDelete() throws IOException {
+        Main.show("MDelete", medewerker);
+    }
 
     @FXML
     private TableView<Medewerker> leaderboard;

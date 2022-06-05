@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class LeaderBoard {
 
-    private static ArrayList<Medewerker> medewerkers = new ArrayList<>();
+    public static ArrayList<Medewerker> medewerkers = new ArrayList<>();
 
     public static ArrayList<Medewerker> getUsers(){
         updateRanking();

@@ -9,6 +9,12 @@
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0" stylesheets="@Css/dash.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MedewerkerController">
    <children>
+      <AnchorPane layoutX="66.0" layoutY="393.0" prefHeight="106.0" prefWidth="367.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToDelete" prefHeight="70.0" prefWidth="162.0" text="Medewerker Toevoegen" textAlignment="CENTER" textOverrun="CLIP" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="184.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToAdd" prefHeight="70.0" prefWidth="162.0" text="Medewerker Verwijderen" />
+         </children>
+      </AnchorPane>
       <Label alignment="CENTER" layoutY="4.0" minWidth="454.0" prefHeight="18.0" prefWidth="480.0" text="Medewerker" />
       <AnchorPane layoutX="31.0" layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="418.0">
          <children>
@@ -18,7 +24,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Vracht" />
          </children>
       </AnchorPane>
-      <TableView fx:id="leaderboard" layoutX="66.0" layoutY="35.0" prefHeight="513.0" prefWidth="367.0">
+      <TableView fx:id="leaderboard" layoutX="66.0" layoutY="35.0" prefHeight="302.0" prefWidth="367.0">
          <columns>
             <TableColumn id="namesKolom" editable="false" prefWidth="241.60003662109375" text="Naam">
                <cellValueFactory>
