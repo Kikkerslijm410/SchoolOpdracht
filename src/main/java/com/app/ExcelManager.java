@@ -90,5 +90,3 @@ public abstract class ExcelManager {
         return "" + getal;
     }
 }
-
-

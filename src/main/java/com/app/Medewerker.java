@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Medewerker {
     public String naam;
+    public int rank;
     public double werktijd;
     public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
 
@@ -23,6 +24,14 @@ public class Medewerker {
 
     public void setWerktijd(double werktijd){
         this.werktijd = werktijd;
+    }
+    
+    public void setRank(int rank) {
+        this.rank = rank;
+    }
+
+    public int getRank() {
+        return this.rank;
     }
 
     /**

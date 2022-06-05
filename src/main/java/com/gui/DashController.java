@@ -34,8 +34,20 @@ public class DashController extends AController implements Initializable{
 
     //switch statement
     @FXML
-    private void switchTo() throws IOException {
-        Main.show("reisgegevens", medewerker);
+    private void switchToMedewerker() throws IOException {
+        Main.show("medewerker", medewerker);
+    }
+    @FXML
+    private void switchToPlanning() throws IOException {
+        Main.show("planning", medewerker);
+    }
+    @FXML
+    private void switchToHome() throws IOException {
+        Main.show("dashboard", medewerker);
+    }
+    @FXML
+    private void switchToVracht() throws IOException {
+        Main.show("vracht", medewerker);
     }
 
     //Parent methods overrides
