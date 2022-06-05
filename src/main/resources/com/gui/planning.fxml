@@ -7,19 +7,13 @@
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0" stylesheets="@Css/dash.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DashController">
    <children>
-      <Label alignment="CENTER" layoutY="4.0" minWidth="454.0" prefHeight="18.0" prefWidth="480.0" text="Dashboard" />
+      <Label alignment="CENTER" layoutY="4.0" minWidth="454.0" prefHeight="18.0" prefWidth="480.0" text="Planning" />
       <AnchorPane layoutX="31.0" layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="418.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToReisGegevens" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToLeaderboard" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
-               <font>
-                  <Font size="10.0" />
-               </font></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToInstellingen" prefHeight="70.0" prefWidth="97.0" text="Home">
-               <font>
-                  <Font size="11.0" />
-               </font></Button>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToShop" prefHeight="70.0" prefWidth="97.0" text="Vracht" />
+            <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Vracht" />
          </children>
       </AnchorPane>
    </children>

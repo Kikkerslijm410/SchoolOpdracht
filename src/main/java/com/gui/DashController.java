@@ -34,7 +34,7 @@ public class DashController extends AController implements Initializable{
 
     //switch statement
     @FXML
-    private void switchToReisGegevens() throws IOException {
+    private void switchTo() throws IOException {
         Main.show("reisgegevens", medewerker);
     }
 
@@ -45,6 +45,7 @@ public class DashController extends AController implements Initializable{
     }
 
     @Override
-    void setUser(Medewerker medewerker) {       
+    void setUser(Medewerker medewerker) { 
+        this.medewerker = medewerker;      
     }
 }

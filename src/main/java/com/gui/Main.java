@@ -24,6 +24,8 @@ public class Main extends Application{
     public void start(Stage ps) throws Exception {
         primaryStage = ps;
         primaryStage.getIcons().add(new Image("file:src/main/resources/com/gui/Images/logo.jpg"));
+        Medewerker medewerker = null;
+        show("dashboard", medewerker);
     }
 
     public static void show(String fxml, Medewerker user) throws IOException {
