@@ -45,13 +45,15 @@ public class MAddController extends AController implements Initializable{
 
     @FXML
     private void MedewerkerAdd() throws IOException {
-        if(naam.getText().isBlank()){}
-        else if (!naam.getText().isBlank()){
-            Double km = (double) Integer.parseInt(werktijd.getText());
-            km = km * 60;
-            Medewerker medewerker = new Medewerker(naam.getText(), km);
-            MedewerkerNaam.setText(medewerker.getNaam() + " is succesvol toegevoegd.");
+        if (!naam.getText().isBlank() && !werktijd.getText().isBlank()){
+            Double wt = (double) Integer.parseInt(werktijd.getText());
+            // bij false is het in minuten ingevoerd, bij true is het in uren ingevuld
+            if (wt < 10){
+                wt = wt * 60;
+            } 
+            Medewerker medewerker = new Medewerker(naam.getText(), wt);
             GsonManager.saveFile();
+            Main.show("MAdd", medewerker);
         }
     }
 
