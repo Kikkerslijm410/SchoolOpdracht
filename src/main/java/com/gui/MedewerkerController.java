@@ -54,33 +54,22 @@ public class MedewerkerController extends AController implements Initializable {
     private TableView<Medewerker> leaderboard;
 
     @FXML
+    private final TableColumn<Object, Object> rankColumn = new TableColumn<>();
+
+    @FXML
     private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Object, Object> puntenKolom = new TableColumn<>();
+    private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = LeaderBoard.getUsers();
+        rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
         namesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
-        puntenKolom.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
+        werktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
         ObservableList<Medewerker> data = FXCollections.observableArrayList(users);
         leaderboard.setItems(data);
-        namesKolom.setSortable(false);
-            leaderboard.setRowFactory(tv -> new TableRow<>() {
-            @Override
-            protected void updateItem(Medewerker item, boolean empty) {
-                super.updateItem(item, empty);
-                if (item.getWerktijd() == 270)
-                    setStyle("-fx-background-color: green;");
-                else if (item.getWerktijd() == 180)
-                    setStyle("-fx-background-color: orange;");
-                else if (item.getWerktijd() == 0)
-                    setStyle("-fx-background-color: red;");
-                else
-                    setStyle("-fx-background-color: blue");
-            }
-        });
     }
 
     //Override just here because implementations

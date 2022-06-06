@@ -1,17 +1,14 @@
 package com.app;
 
-import java.util.ArrayList;
-
 public class Medewerker {
     public String naam;
     public int rank;
     public double werktijd;
-    public static ArrayList <Medewerker> MedewerkerList = new ArrayList<>();
 
     public Medewerker(String naam, double werktijd){
         this.naam = naam;
         this.werktijd = werktijd;
-        MedewerkerList.add(this);
+        LeaderBoard.medewerkers.add(this);
     }
 
     public String getNaam(){
@@ -22,23 +19,51 @@ public class Medewerker {
         return this.werktijd;
     }
 
+    public int getRank() {
+        return this.rank;
+    }
+
+    public void setNaam(String naam){
+        this.naam = naam;
+    }
+
     public void setWerktijd(double werktijd){
         this.werktijd = werktijd;
     }
+
     public void setRank(int rank) {
         this.rank = rank;
     }
 
-    public int getRank() {
-        return this.rank;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Checkt of er medewerkers zijn
      * Bij medewerkers aanwezig worden deze uitgeprint en word er true teruggegeven
      * @param scanner
      * @return boolean
-     */
+     
     public static boolean getMedewerkers(IScanner scanner) {
         if(MedewerkerList.size() != 0){
             int i = 1;
@@ -47,23 +72,6 @@ public class Medewerker {
                 i++;
             }
             UI.KeerTerugGetal();
-            return true;
-        }else{
-            System.out.println("Geen medewerkers beschikbaar.");
-            UI.KeerTerugEnter();
-            scanner.nextLine(); //just to wait for input
-            return false;
-        }
-    }
-    public static boolean getMedewerkers2(IScanner scanner) {
-        if(MedewerkerList.size() != 0){
-            int i = 1;
-            for (Medewerker e : Medewerker.MedewerkerList) {
-                System.out.println(i + ") naam: " + e.getNaam() + " werktijd: " + e.getWerktijd());
-                i++;
-            }
-            UI.KeerTerugGetal();
-            scanner.nextLine(); //just to wait for input
             return true;
         }else{
             System.out.println("Geen medewerkers beschikbaar.");
@@ -129,4 +137,5 @@ public class Medewerker {
             }
         }
     }
+    */
 }
