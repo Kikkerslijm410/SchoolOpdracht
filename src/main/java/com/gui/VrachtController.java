@@ -87,26 +87,20 @@ public class VrachtController extends AController implements Initializable{
         Main.show("dashboard", medewerker);
     }
     @FXML
-    void switchToVulnorm() throws IOException {
+    private void switchToVulnorm() throws IOException {
         Main.show("Vulnorm", medewerker);
     }
 
     @FXML
     public void Reset() throws IOException {
-        Pad.setAantalDozen(0, 0);
-        Pad.setAantalDozen(1, 0);
-        Pad.setAantalDozen(2, 0);
-        Pad.setAantalDozen(3, 0);
-        Pad.setAantalDozen(4, 0);
-        Pad.setAantalDozen(5, 0);
-        Pad.setAantalDozen(6, 0);
-        Pad.setAantalDozen(7, 0);
-        Pad.setAantalDozen(8, 0);
-        Pad.setAantalDozen(9, 0);
-        Pad.setAantalDozen(10, 0);
-        Pad.setAantalDozen(11, 0);
-        Pad.setAantalDozen(12, 0);
+        setZero();
         Opslaan();
+    }
+
+    public static void setZero(){
+        for (int i = 0; i < Pad.PadList.size(); i++){
+            Pad.setAantalDozen(i, 0);
+        }
     }
 
     @FXML
@@ -127,7 +121,7 @@ public class VrachtController extends AController implements Initializable{
         start();
     }
 
-    private int StringToInt(int pad, String text) {
+    public static int StringToInt(int pad, String text) {
         if (text.isBlank()){
             return Pad.PadList.get(pad).aantalDozen ;
         }
@@ -135,12 +129,12 @@ public class VrachtController extends AController implements Initializable{
     }
 
     @FXML 
-    public void Opslaan() throws IOException {
+    private void Opslaan() throws IOException {
         GsonManager.saveFile();
         Main.show("vracht", medewerker);
     }
 
-    public void start(){
+    private void start(){
         inter.setText(Pad.getAantalDozenString(0));
         potjes.setText(Pad.getAantalDozenString(1));
         fris.setText(Pad.getAantalDozenString(2));

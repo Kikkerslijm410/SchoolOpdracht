@@ -93,20 +93,14 @@ public class VulnormController extends AController implements Initializable {
 
     @FXML
     public void Reset() throws IOException {
-        Pad.setVulnorm(0, 60);
-        Pad.setVulnorm(1, 60);
-        Pad.setVulnorm(2, 60);
-        Pad.setVulnorm(3, 60);
-        Pad.setVulnorm(4, 60);
-        Pad.setVulnorm(5, 60);
-        Pad.setVulnorm(6, 60);
-        Pad.setVulnorm(7, 60);
-        Pad.setVulnorm(8, 60);
-        Pad.setVulnorm(9, 60);
-        Pad.setVulnorm(10, 60);
-        Pad.setVulnorm(11, 60);
-        Pad.setVulnorm(12, 60);
+        setZero();
         Opslaan();
+    }
+
+    public static void setZero(){
+        for (int i = 0; i < Pad.PadList.size(); i++){
+            Pad.setVulnorm(i, 0);
+        }
     }
 
     @FXML
@@ -127,7 +121,7 @@ public class VulnormController extends AController implements Initializable {
         start();
     }
 
-    public int StringToInt(int pad, String text) {
+    public static int StringToInt(int pad, String text) {
         if (text.isBlank()){
             return Pad.PadList.get(pad).vulnorm ;
         }
