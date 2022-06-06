@@ -4,21 +4,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.app.GsonManager;
 import com.app.Medewerker;
 
-import javafx.beans.binding.ObjectExpression;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
-import javafx.scene.layout.Pane;
 
-public class DashController extends AController implements Initializable{
+public class VulnormController extends AController implements Initializable {
+
     Medewerker medewerker;
 
-
-    //switch statement
+    //switch statements
     @FXML
     private void switchToMedewerker() throws IOException {
         Main.show("medewerker", medewerker);
@@ -36,14 +31,10 @@ public class DashController extends AController implements Initializable{
         Main.show("vracht", medewerker);
     }
 
-    //Parent methods overrides
+    //Override just here because implementations
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        GsonManager.saveFile();
-    }
-
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
     @Override
-    void setUser(Medewerker medewerker) { 
-        this.medewerker = medewerker;      
-    }
+    void setUser(Medewerker medewerker) {}    
 }
+
