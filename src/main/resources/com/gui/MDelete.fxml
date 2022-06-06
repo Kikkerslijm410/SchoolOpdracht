@@ -14,11 +14,11 @@
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToPlanning" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="314.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
-      <TableView fx:id="leaderboard" layoutX="66.0" layoutY="35.0" prefHeight="302.0" prefWidth="367.0">
+      <TableView fx:id="leaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
          <columns>
             <TableColumn id="rankKolom" editable="false" prefWidth="65" text="">
                <cellValueFactory>
@@ -40,14 +40,14 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
-      <AnchorPane layoutX="82.0" layoutY="341.0" prefHeight="200.0" prefWidth="316.0">
+      <AnchorPane layoutX="76.0" layoutY="335.0" prefHeight="200.0" prefWidth="328.0">
          <children>
-            <TextField fx:id="nummer" alignment="CENTER" layoutX="18.0" layoutY="32.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="280.0" promptText="Geef het nummer van de medewerker">
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerDelete" prefHeight="48.0" prefWidth="97.0" text="Verwijderen" />
+            <TextField fx:id="nummer" alignment="CENTER" layoutX="24.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="280.0" promptText="Geef het nummer van de medewerker">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="109.0" layoutY="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerDelete" prefHeight="70.0" prefWidth="97.0" text="Verwijderen" />
          </children>
       </AnchorPane>
    </children>

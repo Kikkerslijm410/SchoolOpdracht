@@ -14,7 +14,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="184.0" layoutY="17.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToDelete" prefHeight="70.0" prefWidth="162.0" text="Medewerker Verwijderen" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="33.0" layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="418.0">
+      <AnchorPane layoutX="31.0" layoutY="560.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="418.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToPlanning" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
@@ -22,7 +22,7 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
-      <TableView fx:id="leaderboard" layoutX="66.0" layoutY="35.0" prefHeight="302.0" prefWidth="367.0">
+      <TableView fx:id="leaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
          <columns>
             <TableColumn id="rankKolom" editable="false" prefWidth="65" text="">
                <cellValueFactory>

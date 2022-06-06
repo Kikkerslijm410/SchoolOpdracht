@@ -12,8 +12,8 @@
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToPlanning" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="320.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="209.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="97.0" text="Paden" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="31.0" layoutY="26.0" prefHeight="518.0" prefWidth="418.0">
