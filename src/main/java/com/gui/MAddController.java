@@ -11,6 +11,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 public class MAddController extends AController implements Initializable{
 
@@ -56,10 +58,40 @@ public class MAddController extends AController implements Initializable{
             Main.show("MAdd", medewerker);
         }
     }
+        /**
+     * Deze methode zorgt ervoor dat het invoerveld van de kilometers louter cijfers kan bevatten.
+     */
+    public void addNumberLimiter(){
+        werktijd.textProperty().addListener((observable, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                werktijd.setText(newValue.replaceAll("\\D", ""));
+            }
+        });
+    }
+
+    /**
+     * Deze methode zorgt voor een maximaal aantal tekens die het invoerveld van de kilometers kan bevatten.
+     * @param maxLength aantal maximale tekens
+     */
+    public void addTextLimiter(int maxLength) {
+        werktijd.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(final ObservableValue<? extends String> ov, final String oldValue, final String newValue) {
+                if (werktijd.getText().length() > maxLength) {
+                    String s = werktijd.getText().substring(0, maxLength);
+                    werktijd.setText(s);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        addNumberLimiter();
+        addTextLimiter(3);
+    }
 
     //Override just here because implementations
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}
     @Override
     void setUser(Medewerker medewerker) {}   
 }

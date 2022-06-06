@@ -20,8 +20,8 @@ public class Pad {
         this.vulnorm = norm;
     }
 
-    public void setAantalDozen(int dozen){
-        this.aantalDozen = dozen;
+    public static void setAantalDozen(int pad, int dozen){
+        PadList.get(pad).aantalDozen = dozen;
     }
 
     public int getVulnorm(){

@@ -83,8 +83,8 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Opslaan" prefHeight="70.0" prefWidth="97.0" text="Opslaan" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="319.0" layoutY="440.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToVulnorm" prefHeight="70.0" prefWidth="97.0" text="Vulnorm" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="468.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Opslaan" prefHeight="42.0" prefWidth="98.0" text="Opslaan" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="319.0" layoutY="468.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToVulnorm" prefHeight="42.0" prefWidth="98.0" text="Vulnorm" />
             <Label fx:id="inter" alignment="CENTER" layoutX="175.0" layoutY="30.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
@@ -150,6 +150,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutY="468.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Reset" prefHeight="42.0" prefWidth="98.0" text="Reset Vracht" />
          </children>
       </AnchorPane>
    </children>

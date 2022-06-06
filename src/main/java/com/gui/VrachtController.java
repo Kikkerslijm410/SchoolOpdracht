@@ -14,6 +14,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class VrachtController extends AController implements Initializable{
+    
+    Medewerker medewerker;
 
     //Alle textfields
     @FXML
@@ -71,8 +73,6 @@ public class VrachtController extends AController implements Initializable{
     @FXML
     private Label diepvries;
 
-    Medewerker medewerker;
-
     //switch statements
     @FXML
     private void switchToMedewerker() throws IOException {
@@ -96,17 +96,55 @@ public class VrachtController extends AController implements Initializable{
     }
 
     @FXML
-    private void VrachtVulnormOpslaan()throws IOException {
-
+    public void Reset() throws IOException {
+        Pad.setAantalDozen(0, 0);
+        Pad.setAantalDozen(1, 0);
+        Pad.setAantalDozen(2, 0);
+        Pad.setAantalDozen(3, 0);
+        Pad.setAantalDozen(4, 0);
+        Pad.setAantalDozen(5, 0);
+        Pad.setAantalDozen(6, 0);
+        Pad.setAantalDozen(7, 0);
+        Pad.setAantalDozen(8, 0);
+        Pad.setAantalDozen(9, 0);
+        Pad.setAantalDozen(10, 0);
+        Pad.setAantalDozen(11, 0);
+        Pad.setAantalDozen(12, 0);
+        Opslaan();
     }
 
-    @FXML void Opslaan() throws IOException {
+    @FXML
+    private void VrachtVulnormOpslaan()throws IOException {
+        Pad.setAantalDozen(0, StringToInt(0, VrachtInternationaal.getText()));
+        Pad.setAantalDozen(1, StringToInt(1, VrachtPotjes.getText()));
+        Pad.setAantalDozen(2, StringToInt(2, VrachtFrisdrank.getText()));
+        Pad.setAantalDozen(3, StringToInt(3, VrachtBier.getText()));
+        Pad.setAantalDozen(4, StringToInt(4, VrachtWijn.getText()));
+        Pad.setAantalDozen(5, StringToInt(5, VrachtChips.getText()));
+        Pad.setAantalDozen(6, StringToInt(6, VrachtCosmetica.getText()));
+        Pad.setAantalDozen(7, StringToInt(7, VrachtDierenvoeding.getText()));
+        Pad.setAantalDozen(8, StringToInt(8, VrachtKoek.getText()));
+        Pad.setAantalDozen(9, StringToInt(9, VrachtOntbijt.getText()));
+        Pad.setAantalDozen(10, StringToInt(10, VrachtZuivel.getText()));
+        Pad.setAantalDozen(11, StringToInt(11, VrachtVVP.getText()));
+        Pad.setAantalDozen(12, StringToInt(12, VrachtDiepvries.getText()));
+        start();
+    }
+
+    private int StringToInt(int pad, String text) {
+        if (text.isBlank()){
+            return Pad.PadList.get(pad).aantalDozen ;
+        }
+        return Integer.parseInt(text);
+    }
+
+    @FXML 
+    public void Opslaan() throws IOException {
         GsonManager.saveFile();
         Main.show("vracht", medewerker);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void start(){
         inter.setText(Pad.getAantalDozenString(0));
         potjes.setText(Pad.getAantalDozenString(1));
         fris.setText(Pad.getAantalDozenString(2));
@@ -114,12 +152,17 @@ public class VrachtController extends AController implements Initializable{
         wijn.setText(Pad.getAantalDozenString(4));
         chips.setText(Pad.getAantalDozenString(5));
         cosmetica.setText(Pad.getAantalDozenString(6));
-        dierenvoeding.setText(Pad.getAantalDozenString(6));
-        koek.setText(Pad.getAantalDozenString(7));
-        ontbijt.setText(Pad.getAantalDozenString(8));
-        zuivel.setText(Pad.getAantalDozenString(9));
-        vvp.setText(Pad.getAantalDozenString(10));
-        diepvries.setText(Pad.getAantalDozenString(11));
+        dierenvoeding.setText(Pad.getAantalDozenString(7));
+        koek.setText(Pad.getAantalDozenString(8));
+        ontbijt.setText(Pad.getAantalDozenString(9));
+        zuivel.setText(Pad.getAantalDozenString(10));
+        vvp.setText(Pad.getAantalDozenString(11));
+        diepvries.setText(Pad.getAantalDozenString(12));
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        start();
     }
     
     //Override. Empty just because of the implementations
