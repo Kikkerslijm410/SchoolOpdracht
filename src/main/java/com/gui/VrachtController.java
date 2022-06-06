@@ -114,7 +114,7 @@ public class VrachtController extends AController implements Initializable{
     }
 
     @FXML
-    private void VrachtVulnormOpslaan()throws IOException {
+    private void VrachtOpslaan()throws IOException {
         Pad.setAantalDozen(0, StringToInt(0, VrachtInternationaal.getText()));
         Pad.setAantalDozen(1, StringToInt(1, VrachtPotjes.getText()));
         Pad.setAantalDozen(2, StringToInt(2, VrachtFrisdrank.getText()));

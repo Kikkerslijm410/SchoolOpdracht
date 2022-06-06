@@ -16,8 +16,8 @@ public class Pad {
         PadList.add(this);
     }
 
-    public void setVulnorm (int norm){
-        this.vulnorm = norm;
+    public static void setVulnorm (int pad, int norm){
+        PadList.get(pad).vulnorm = norm;
     }
 
     public static void setAantalDozen(int pad, int dozen){
@@ -32,7 +32,7 @@ public class Pad {
         return this.aantalDozen;
     }
 
-    public String getVulnormString(int pad){
+    public static String getVulnormString(int pad){
         return "" + PadList.get(pad).getVulnorm();
     }
 
