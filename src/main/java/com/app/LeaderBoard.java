@@ -7,11 +7,18 @@ import java.util.Comparator;
 public abstract class LeaderBoard {
 
     public static ArrayList<Medewerker> medewerkers = new ArrayList<>();
+    public static ArrayList<Medewerker> planningMedewerkers = new ArrayList<>();
 
     public static ArrayList<Medewerker> getUsers(){
         comparator();
         updateRanking();
         return medewerkers;
+    }
+
+    public static ArrayList<Medewerker> getPlanningUsers(){
+        comparator();
+        updateRanking();
+        return planningMedewerkers;
     }
 
     private static void comparator(){
