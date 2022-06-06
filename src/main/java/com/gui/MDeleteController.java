@@ -60,9 +60,11 @@ public class MDeleteController extends AController implements Initializable{
 
     @FXML
     private void MedewerkerDelete() throws IOException {
-        int getal = Integer.parseInt(nummer.getText());
-        LeaderBoard.medewerkers.remove(getal-1);
-        GsonManager.saveFile();
+        if (nummer.getText().isBlank()){
+            int getal = Integer.parseInt(nummer.getText());
+            LeaderBoard.medewerkers.remove(getal-1);
+            GsonManager.saveFile();
+        }
         Main.show("MDelete", medewerker);
     }
 
