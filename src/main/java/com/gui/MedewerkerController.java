@@ -23,11 +23,19 @@ public class MedewerkerController extends AController implements Initializable {
 
     Medewerker medewerker;
 
-    //switch statements
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
-    }
+    private TableView<Medewerker> leaderboard;
+
+    @FXML
+    private final TableColumn<Object, Object> rankColumn = new TableColumn<>();
+
+    @FXML
+    private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
+
+    @FXML
+    private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
+
+    //switch statements
     @FXML
     private void switchToPlanning() throws IOException {
         Main.show("planning", medewerker);
@@ -49,18 +57,6 @@ public class MedewerkerController extends AController implements Initializable {
         Main.show("MDelete", medewerker);
     }
 
-    @FXML
-    private TableView<Medewerker> leaderboard;
-
-    @FXML
-    private final TableColumn<Object, Object> rankColumn = new TableColumn<>();
-
-    @FXML
-    private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
-
-    @FXML
-    private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = LeaderBoard.getUsers();
@@ -73,5 +69,5 @@ public class MedewerkerController extends AController implements Initializable {
 
     //Override just here because implementations
     @Override
-    void setUser(Medewerker medewerker) {}
+    public void setUser(Medewerker medewerker) {}
 }

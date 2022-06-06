@@ -87,10 +87,6 @@ public class VrachtController extends AController implements Initializable{
         Main.show("dashboard", medewerker);
     }
     @FXML
-    private void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
-    }  
-    @FXML
     void switchToVulnorm() throws IOException {
         Main.show("Vulnorm", medewerker);
     }
@@ -167,5 +163,5 @@ public class VrachtController extends AController implements Initializable{
     
     //Override. Empty just because of the implementations
     @Override
-    void setUser(Medewerker medewerker) {}  
+    public void setUser(Medewerker medewerker) {}  
 }

@@ -78,5 +78,5 @@ public class MDeleteController extends AController implements Initializable{
 
     //Override just here because implementations
     @Override
-    void setUser(Medewerker medewerker) {}   
+    public void setUser(Medewerker medewerker) {}   
 }

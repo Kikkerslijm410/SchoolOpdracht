@@ -19,10 +19,6 @@ public class PlanningController extends AController implements Initializable {
         Main.show("medewerker", medewerker);
     }
     @FXML
-    private void switchToPlanning() throws IOException {
-        Main.show("planning", medewerker);
-    }
-    @FXML
     private void switchToHome() throws IOException {
         Main.show("dashboard", medewerker);
     }
@@ -35,5 +31,5 @@ public class PlanningController extends AController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {}
     @Override
-    void setUser(Medewerker medewerker) {}    
+    public void setUser(Medewerker medewerker) {}    
 }

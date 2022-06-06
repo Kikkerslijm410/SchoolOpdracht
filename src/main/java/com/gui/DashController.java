@@ -24,10 +24,6 @@ public class DashController extends AController implements Initializable{
         Main.show("planning", medewerker);
     }
     @FXML
-    private void switchToHome() throws IOException {
-        Main.show("dashboard", medewerker);
-    }
-    @FXML
     private void switchToVracht() throws IOException {
         Main.show("vracht", medewerker);
     }
@@ -39,7 +35,7 @@ public class DashController extends AController implements Initializable{
     }
 
     @Override
-    void setUser(Medewerker medewerker) { 
+    public void setUser(Medewerker medewerker) { 
         this.medewerker = medewerker;      
     }
 }
