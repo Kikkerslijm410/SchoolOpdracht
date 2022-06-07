@@ -75,20 +75,20 @@ public class VrachtController extends AController implements Initializable{
 
     //switch statements
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
+    public void switchToMedewerker() throws IOException {
+        super.switchToMedewerker();
     }
     @FXML
-    private void switchToPlanning() throws IOException {
-        Main.show("planning", medewerker);
+    public void switchToPlanning() throws IOException {
+        super.switchToPlanning();
     }
     @FXML
-    private void switchToHome() throws IOException {
-        Main.show("dashboard", medewerker);
+    public void switchToHome() throws IOException {
+        super.switchToHome();
     }
     @FXML
-    private void switchToVulnorm() throws IOException {
-        Main.show("Vulnorm", medewerker);
+    public void switchToVulnorm() throws IOException {
+        super.switchToVulnorm();
     }
 
     @FXML
@@ -152,7 +152,7 @@ public class VrachtController extends AController implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        start();
+        
     }
     
     //Override. Empty just because of the implementations

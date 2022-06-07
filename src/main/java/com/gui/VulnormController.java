@@ -75,21 +75,21 @@ public class VulnormController extends AController implements Initializable {
 
     //switch statements
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
+    public void switchToMedewerker() throws IOException {
+        super.switchToMedewerker();
     }
     @FXML
-    private void switchToPlanning() throws IOException {
-        Main.show("planning", medewerker);
+    public void switchToPlanning() throws IOException {
+        super.switchToPlanning();
     }
     @FXML
-    private void switchToHome() throws IOException {
-        Main.show("dashboard", medewerker);
+    public void switchToHome() throws IOException {
+        super.switchToHome();
     }
     @FXML
-    private void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
-    }  
+    public void switchToVracht() throws IOException {
+        super.switchToVracht();
+    }
 
     @FXML
     public void Reset() throws IOException {
@@ -152,7 +152,7 @@ public class VulnormController extends AController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        start();
+       
     }
     
     //Override. Empty just because of the implementations

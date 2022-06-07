@@ -13,19 +13,18 @@ import javafx.fxml.Initializable;
 public class DashController extends AController implements Initializable{
     Medewerker medewerker;
 
-
     //switch statement
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
+    public void switchToMedewerker() throws IOException {
+        super.switchToMedewerker();
     }
     @FXML
-    private void switchToPlanning() throws IOException {
-        Main.show("planning", medewerker);
+    public void switchToPlanning() throws IOException {
+        super.switchToPlanning();
     }
     @FXML
-    private void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
+    public void switchToVracht() throws IOException {
+        super.switchToVracht();
     }
 
     //Parent methods overrides

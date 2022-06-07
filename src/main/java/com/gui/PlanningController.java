@@ -35,23 +35,18 @@ public class PlanningController extends AController implements Initializable {
     @FXML
     private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
 
-
     //switch statements
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
+    public void switchToMedewerker() throws IOException {
+        super.switchToMedewerker();
     }
     @FXML
-    private void switchToHome() throws IOException {
-        Main.show("dashboard", medewerker);
+    public void switchToHome() throws IOException {
+        super.switchToHome();
     }
     @FXML
-    private void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
-    }
-    @FXML
-    private void switchToPlanningMedewerkers() throws IOException {
-        Main.show("MPlanning", medewerker);
+    public void switchToVracht() throws IOException {
+        super.switchToVracht();
     }
 
     //managing planningUsers leaderboard

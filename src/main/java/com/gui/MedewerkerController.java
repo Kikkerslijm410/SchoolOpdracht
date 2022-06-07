@@ -37,24 +37,24 @@ public class MedewerkerController extends AController implements Initializable {
 
     //switch statements
     @FXML
-    private void switchToPlanning() throws IOException {
-        Main.show("planning", medewerker);
+    public void switchToPlanning() throws IOException {
+        super.switchToPlanning();
     }
     @FXML
-    private void switchToHome() throws IOException {
-        Main.show("dashboard", medewerker);
+    public void switchToHome() throws IOException {
+        super.switchToHome();
     }
     @FXML
-    private void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
+    public void switchToVracht() throws IOException {
+        super.switchToVracht();
     }
     @FXML
-    private void switchToAdd() throws IOException {
-        Main.show("MAdd", medewerker);
+    public void switchToAdd() throws IOException {
+        super.switchToAdd();
     }
     @FXML
-    private void switchToDelete() throws IOException {
-        Main.show("MDelete", medewerker);
+    public void switchToDelete() throws IOException {
+        super.switchToDelete();
     }
 
     @Override
