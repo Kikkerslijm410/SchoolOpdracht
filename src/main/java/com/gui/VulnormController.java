@@ -75,14 +75,8 @@ public class VulnormController extends AController implements Initializable {
 
     @FXML
     public void Reset() throws IOException {
-        setZero();
+        VrachtController.setZero(2);
         Opslaan();
-    }
-
-    public static void setZero(){
-        for (int i = 0; i < Pad.PadList.size(); i++){
-            Pad.setVulnorm(i, 60);
-        }
     }
 
     @FXML

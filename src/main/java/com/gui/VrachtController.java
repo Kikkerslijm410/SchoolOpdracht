@@ -75,13 +75,19 @@ public class VrachtController extends AController implements Initializable{
 
     @FXML
     public void Reset() throws IOException {
-        setZero();
+        setZero(1);
         Opslaan();
     }
 
-    public static void setZero(){
-        for (int i = 0; i < Pad.PadList.size(); i++){
-            Pad.setAantalDozen(i, 0);
+    public static void setZero(int getal){
+        if (getal == 1){
+            for (int i = 0; i < Pad.PadList.size(); i++){
+                Pad.setAantalDozen(i, 0);
+            }
+        }else if( getal == 2){
+            for (int i = 0; i < Pad.PadList.size(); i++){
+                Pad.setVulnorm(i, 0);
+            }
         }
     }
 
