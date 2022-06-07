@@ -19,59 +19,59 @@ public class VulnormController extends AController implements Initializable {
 
     //Alle textfields
     @FXML
-    private TextField VrachtInternationaal;
+    private TextField VulnormInternationaal;
     @FXML
-    private TextField VrachtPotjes;
+    private TextField VulnormPotjes;
     @FXML
-    private TextField VrachtFrisdrank;
+    private TextField VulnormFrisdrank;
     @FXML
-    private TextField VrachtBier;
+    private TextField VulnormBier;
     @FXML
-    private TextField VrachtWijn;
+    private TextField VulnormWijn;
     @FXML
-    private TextField VrachtChips;
+    private TextField VulnormChips;
     @FXML
-    private TextField VrachtCosmetica;
+    private TextField VulnormCosmetica;
     @FXML
-    private TextField VrachtDierenvoeding;
+    private TextField VulnormDierenvoeding;
     @FXML
-    private TextField VrachtKoek;
+    private TextField VulnormKoek;
     @FXML
-    private TextField VrachtOntbijt;
+    private TextField VulnormOntbijt;
     @FXML
-    private TextField VrachtZuivel;
+    private TextField VulnormZuivel;
     @FXML
-    private TextField VrachtVVP;
+    private TextField VulnormVVP;
     @FXML
-    private TextField VrachtDiepvries;
+    private TextField VulnormDiepvries;
 
     //Alle Labels
     @FXML
-    private Label inter;
+    private Label vinter;
     @FXML
-    private Label potjes;
+    private Label vpotjes;
     @FXML
-    private Label fris;
+    private Label vfris;
     @FXML
-    private Label bier;
+    private Label vbier;
     @FXML
-    private Label wijn;
+    private Label vwijn;
     @FXML
-    private Label chips;
+    private Label vchips;
     @FXML
-    private Label dierenvoeding;
+    private Label vdierenvoeding;
     @FXML
-    private Label cosmetica;
+    private Label vcosmetica;
     @FXML
-    private Label koek;
+    private Label vkoek;
     @FXML
-    private Label ontbijt;
+    private Label vontbijt;
     @FXML
-    private Label zuivel;
+    private Label vzuivel;
     @FXML
-    private Label vvp;
+    private Label vvvp;
     @FXML
-    private Label diepvries;
+    private Label vdiepvries;
 
     //switch statements
     @FXML
@@ -105,19 +105,19 @@ public class VulnormController extends AController implements Initializable {
 
     @FXML
     public void VulnormOpslaan() throws IOException {
-        Pad.setVulnorm(0, StringToInt(0, VrachtInternationaal.getText()));
-        Pad.setVulnorm(1, StringToInt(1, VrachtPotjes.getText()));
-        Pad.setVulnorm(2, StringToInt(2, VrachtFrisdrank.getText()));
-        Pad.setVulnorm(3, StringToInt(3, VrachtBier.getText()));
-        Pad.setVulnorm(4, StringToInt(4, VrachtWijn.getText()));
-        Pad.setVulnorm(5, StringToInt(5, VrachtChips.getText()));
-        Pad.setVulnorm(6, StringToInt(6, VrachtCosmetica.getText()));
-        Pad.setVulnorm(7, StringToInt(7, VrachtDierenvoeding.getText()));
-        Pad.setVulnorm(8, StringToInt(8, VrachtKoek.getText()));
-        Pad.setVulnorm(9, StringToInt(9, VrachtOntbijt.getText()));
-        Pad.setVulnorm(10, StringToInt(10, VrachtZuivel.getText()));
-        Pad.setVulnorm(11, StringToInt(11, VrachtVVP.getText()));
-        Pad.setVulnorm(12, StringToInt(12, VrachtDiepvries.getText()));
+        Pad.setVulnorm(0, StringToInt(0, VulnormInternationaal.getText()));
+        Pad.setVulnorm(1, StringToInt(1, VulnormPotjes.getText()));
+        Pad.setVulnorm(2, StringToInt(2, VulnormFrisdrank.getText()));
+        Pad.setVulnorm(3, StringToInt(3, VulnormBier.getText()));
+        Pad.setVulnorm(4, StringToInt(4, VulnormWijn.getText()));
+        Pad.setVulnorm(5, StringToInt(5, VulnormChips.getText()));
+        Pad.setVulnorm(6, StringToInt(6, VulnormCosmetica.getText()));
+        Pad.setVulnorm(7, StringToInt(7, VulnormDierenvoeding.getText()));
+        Pad.setVulnorm(8, StringToInt(8, VulnormKoek.getText()));
+        Pad.setVulnorm(9, StringToInt(9, VulnormOntbijt.getText()));
+        Pad.setVulnorm(10, StringToInt(10, VulnormZuivel.getText()));
+        Pad.setVulnorm(11, StringToInt(11, VulnormVVP.getText()));
+        Pad.setVulnorm(12, StringToInt(12, VulnormDiepvries.getText()));
         start();
     }
 
@@ -135,19 +135,19 @@ public class VulnormController extends AController implements Initializable {
     }
 
     public void start(){
-        inter.setText(Pad.getVulnormString(0));
-        potjes.setText(Pad.getVulnormString(1));
-        fris.setText(Pad.getVulnormString(2));
-        bier.setText(Pad.getVulnormString(3));
-        wijn.setText(Pad.getVulnormString(4));
-        chips.setText(Pad.getVulnormString(5));
-        cosmetica.setText(Pad.getVulnormString(6));
-        dierenvoeding.setText(Pad.getVulnormString(7));
-        koek.setText(Pad.getVulnormString(8));
-        ontbijt.setText(Pad.getVulnormString(9));
-        zuivel.setText(Pad.getVulnormString(10));
-        vvp.setText(Pad.getVulnormString(11));
-        diepvries.setText(Pad.getVulnormString(12));
+        vinter.setText(Pad.getVulnormString(0));
+        vpotjes.setText(Pad.getVulnormString(1));
+        vfris.setText(Pad.getVulnormString(2));
+        vbier.setText(Pad.getVulnormString(3));
+        vwijn.setText(Pad.getVulnormString(4));
+        vchips.setText(Pad.getVulnormString(5));
+        vcosmetica.setText(Pad.getVulnormString(6));
+        vdierenvoeding.setText(Pad.getVulnormString(7));
+        vkoek.setText(Pad.getVulnormString(8));
+        vontbijt.setText(Pad.getVulnormString(9));
+        vzuivel.setText(Pad.getVulnormString(10));
+        vvvp.setText(Pad.getVulnormString(11));
+        vdiepvries.setText(Pad.getVulnormString(12));
     }
 
     @Override

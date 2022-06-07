@@ -51,7 +51,7 @@ public class PlanningController extends AController implements Initializable {
     }
     @FXML
     private void switchToPlanningMedewerkers() throws IOException {
-        Main.show("medewerker", medewerker);
+        Main.show("MPlanning", medewerker);
     }
 
     //managing planningUsers leaderboard

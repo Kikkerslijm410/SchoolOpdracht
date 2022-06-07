@@ -51,8 +51,8 @@ public class MAddController extends AController implements Initializable{
 
     //switch statements
     @FXML
-    private void switchToMedewerker() throws IOException {
-        Main.show("medewerker", medewerker);
+    private void switchToMedewerker(String text) throws IOException {
+        Main.show(text, medewerker);
     }
     @FXML
     private void switchToPlanning() throws IOException {
