@@ -127,12 +127,12 @@ public class VulnormController extends AController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-       
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) {}
     
     //Override. Empty just because of the implementations
     @Override
-    void setUser(Medewerker medewerker) {}   
+    void setUser(Medewerker medewerker) {
+        start();
+    }   
 }
 

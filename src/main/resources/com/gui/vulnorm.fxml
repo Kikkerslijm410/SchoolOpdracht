@@ -18,134 +18,134 @@
       </AnchorPane>
       <AnchorPane layoutX="31.0" layoutY="26.0" prefHeight="518.0" prefWidth="418.0">
          <children>
-            <TextField fx:id="VrachtInternationaal" alignment="CENTER" layoutX="58.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Internationaal">
+            <TextField fx:id="VulnormInternationaal" alignment="CENTER" layoutX="58.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Internationaal">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtPotjes" alignment="CENTER" layoutX="58.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Potjes">
+            <TextField fx:id="VulnormPotjes" alignment="CENTER" layoutX="58.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Potjes">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtFrisdrank" alignment="CENTER" layoutX="58.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Frisdrank">
+            <TextField fx:id="VulnormFrisdrank" alignment="CENTER" layoutX="58.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Frisdrank">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtBier" alignment="CENTER" layoutX="58.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Bier">
+            <TextField fx:id="VulnormBier" alignment="CENTER" layoutX="58.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Bier">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtWijn" alignment="CENTER" layoutX="58.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Wijn">
+            <TextField fx:id="VulnormWijn" alignment="CENTER" layoutX="58.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Wijn">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtChips" alignment="CENTER" layoutX="58.0" layoutY="230.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Chips">
+            <TextField fx:id="VulnormChips" alignment="CENTER" layoutX="58.0" layoutY="230.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Chips">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtCosmetica" alignment="CENTER" layoutX="58.0" layoutY="270.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Cosmetica">
+            <TextField fx:id="VulnormCosmetica" alignment="CENTER" layoutX="58.0" layoutY="270.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Cosmetica">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtDierenvoeding" alignment="CENTER" layoutX="240.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Dierenvoeding">
+            <TextField fx:id="VulnormDierenvoeding" alignment="CENTER" layoutX="240.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Dierenvoeding">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtKoek" alignment="CENTER" layoutX="240.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Koek">
+            <TextField fx:id="VulnormKoek" alignment="CENTER" layoutX="240.0" layoutY="70.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Koek">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtOntbijt" alignment="CENTER" layoutX="240.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Ontbijt">
+            <TextField fx:id="VulnormOntbijt" alignment="CENTER" layoutX="240.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Ontbijt">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtZuivel" alignment="CENTER" layoutX="240.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Zuivel">
+            <TextField fx:id="VulnormZuivel" alignment="CENTER" layoutX="240.0" layoutY="150.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Zuivel">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtVVP" alignment="CENTER" layoutX="240.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="VVP">
+            <TextField fx:id="VulnormVVP" alignment="CENTER" layoutX="240.0" layoutY="190.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="VVP">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="VrachtDiepvries" alignment="CENTER" layoutX="240.0" layoutY="230.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Diepvries">
+            <TextField fx:id="VulnormDiepvries" alignment="CENTER" layoutX="240.0" layoutY="230.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onInputMethodTextChanged="#VulnormOpslaan" onKeyPressed="#VulnormOpslaan" onKeyReleased="#VulnormOpslaan" onKeyTyped="#VulnormOpslaan" prefHeight="33.0" prefWidth="111.0" promptText="Diepvries">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="468.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Opslaan" prefHeight="42.0" prefWidth="98.0" text="Opslaan" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="319.0" layoutY="468.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToVracht" prefHeight="42.0" prefWidth="98.0" text="Vracht" />
-            <Label fx:id="inter" alignment="CENTER" layoutX="175.0" layoutY="30.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vinter" alignment="CENTER" layoutX="175.0" layoutY="30.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="potjes" alignment="CENTER" layoutX="175.0" layoutY="70.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vpotjes" alignment="CENTER" layoutX="175.0" layoutY="70.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="fris" alignment="CENTER" layoutX="175.0" layoutY="110.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vfris" alignment="CENTER" layoutX="175.0" layoutY="110.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="bier" alignment="CENTER" layoutX="175.0" layoutY="150.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vbier" alignment="CENTER" layoutX="175.0" layoutY="150.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="wijn" alignment="CENTER" layoutX="175.0" layoutY="190.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vwijn" alignment="CENTER" layoutX="175.0" layoutY="190.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="chips" alignment="CENTER" layoutX="175.0" layoutY="230.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vchips" alignment="CENTER" layoutX="175.0" layoutY="230.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="cosmetica" alignment="CENTER" layoutX="175.0" layoutY="270.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vcosmetica" alignment="CENTER" layoutX="175.0" layoutY="270.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="dierenvoeding" alignment="CENTER" layoutX="357.0" layoutY="30.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vdierenvoeding" alignment="CENTER" layoutX="357.0" layoutY="30.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="koek" alignment="CENTER" layoutX="357.0" layoutY="70.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vkoek" alignment="CENTER" layoutX="357.0" layoutY="70.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="ontbijt" alignment="CENTER" layoutX="357.0" layoutY="110.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vontbijt" alignment="CENTER" layoutX="357.0" layoutY="110.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="zuivel" alignment="CENTER" layoutX="357.0" layoutY="150.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vzuivel" alignment="CENTER" layoutX="357.0" layoutY="150.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="vvp" alignment="CENTER" layoutX="357.0" layoutY="190.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vvvp" alignment="CENTER" layoutX="357.0" layoutY="190.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="diepvries" alignment="CENTER" layoutX="357.0" layoutY="230.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
+            <Label fx:id="vdiepvries" alignment="CENTER" layoutX="357.0" layoutY="230.0" prefHeight="35.0" prefWidth="58.0" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>

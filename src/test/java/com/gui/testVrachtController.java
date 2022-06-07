@@ -26,7 +26,7 @@ public class testVrachtController {
     void testReset() {
         Pad.setAantalDozen(0, 10);
         assertEquals(10, Pad.PadList.get(0).aantalDozen);
-        VrachtController.setZero();
+        VrachtController.setZero(1);
         assertEquals(0, Pad.PadList.get(0).aantalDozen);
     }
 

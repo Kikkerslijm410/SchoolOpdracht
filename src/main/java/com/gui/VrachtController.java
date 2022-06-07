@@ -86,7 +86,7 @@ public class VrachtController extends AController implements Initializable{
             }
         }else if( getal == 2){
             for (int i = 0; i < Pad.PadList.size(); i++){
-                Pad.setVulnorm(i, 0);
+                Pad.setVulnorm(i, 60);
             }
         }
     }
@@ -139,11 +139,11 @@ public class VrachtController extends AController implements Initializable{
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        
+    public void setUser(Medewerker medewerker) {
+        start();
     }
     
     //Override. Empty just because of the implementations
     @Override
-    public void setUser(Medewerker medewerker) {}  
+    public void initialize(URL url, ResourceBundle resourceBundle) {}  
 }
