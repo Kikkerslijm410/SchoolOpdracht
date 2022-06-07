@@ -35,31 +35,6 @@ public class PlanningController extends AController implements Initializable {
     @FXML
     private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
 
-    //switch statements
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
-
-    //managing planningUsers leaderboard
-    public void addPlanningUsers(int medewerker){
-        LeaderBoard.planningMedewerkers.add(LeaderBoard.medewerkers.get(medewerker-1));
-    }
-    public void deletePlanningUsers(int medewerker){
-        LeaderBoard.planningMedewerkers.remove(medewerker-1);
-    }
-    public void clearPlanningUsers(){
-        LeaderBoard.planningMedewerkers.clear();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         planningUsers = LeaderBoard.getPlanningUsers();

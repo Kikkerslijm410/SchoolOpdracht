@@ -49,24 +49,6 @@ public class MAddController extends AController implements Initializable{
     @FXML
     private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
 
-    //switch statements
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
-
     @FXML
     private void MedewerkerAdd() throws IOException {
         if (!naam.getText().isBlank() && !werktijd.getText().isBlank()){

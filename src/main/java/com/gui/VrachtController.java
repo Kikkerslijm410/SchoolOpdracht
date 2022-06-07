@@ -73,24 +73,6 @@ public class VrachtController extends AController implements Initializable{
     @FXML
     private Label diepvries;
 
-    //switch statements
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVulnorm() throws IOException {
-        super.switchToVulnorm();
-    }
-
     @FXML
     public void Reset() throws IOException {
         setZero();

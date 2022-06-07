@@ -12,24 +12,6 @@ import javafx.fxml.Initializable;
 public class MPlanning extends AController implements Initializable{
     Medewerker medewerker;
 
-    //switch statements
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
-
     //Parent methods overrides
     @Override
     public void initialize(URL location, ResourceBundle resources) {

@@ -73,24 +73,6 @@ public class VulnormController extends AController implements Initializable {
     @FXML
     private Label vdiepvries;
 
-    //switch statements
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
-
     @FXML
     public void Reset() throws IOException {
         setZero();

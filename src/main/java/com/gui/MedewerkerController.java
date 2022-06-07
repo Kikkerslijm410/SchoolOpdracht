@@ -35,28 +35,6 @@ public class MedewerkerController extends AController implements Initializable {
     @FXML
     private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
 
-    //switch statements
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToHome() throws IOException {
-        super.switchToHome();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
-    @FXML
-    public void switchToAdd() throws IOException {
-        super.switchToAdd();
-    }
-    @FXML
-    public void switchToDelete() throws IOException {
-        super.switchToDelete();
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = LeaderBoard.getUsers();

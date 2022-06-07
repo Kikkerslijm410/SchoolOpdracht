@@ -7,25 +7,10 @@ import java.util.ResourceBundle;
 import com.app.GsonManager;
 import com.app.Medewerker;
 
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 public class DashController extends AController implements Initializable{
     Medewerker medewerker;
-
-    //switch statement
-    @FXML
-    public void switchToMedewerker() throws IOException {
-        super.switchToMedewerker();
-    }
-    @FXML
-    public void switchToPlanning() throws IOException {
-        super.switchToPlanning();
-    }
-    @FXML
-    public void switchToVracht() throws IOException {
-        super.switchToVracht();
-    }
 
     //Parent methods overrides
     @Override
