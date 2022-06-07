@@ -99,7 +99,7 @@ public class VulnormController extends AController implements Initializable {
 
     public static void setZero(){
         for (int i = 0; i < Pad.PadList.size(); i++){
-            Pad.setVulnorm(i, 0);
+            Pad.setVulnorm(i, 60);
         }
     }
 

@@ -89,7 +89,7 @@ public class GsonManager {
         try{
             checkFS(savefile);
             FileWriter writer = new FileWriter(savefile,true);
-            try{savefile.createNewFile();}catch(Exception e){} //Simple Onliners good?
+            try{savefile.createNewFile();}catch(Exception e){System.out.println("Oops");} //Simple Onliners good?
             writer.append(makeString(object)+"\n");
             writer.close();
         }
@@ -124,7 +124,7 @@ public class GsonManager {
             }
             james.close();
         }
-        catch(Exception e){}
+        catch(Exception e){System.out.println("Oops");}
         return saveFileContents;
     }
 
