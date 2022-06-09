@@ -44,10 +44,19 @@ public class MDeleteController extends AController implements Initializable{
     private void MedewerkerDelete() throws IOException {
         if (!nummer.getText().isBlank()){
             int getal = Integer.parseInt(nummer.getText());
+            Pcheck(getal-1);
             LeaderBoard.medewerkers.remove(getal-1);
             GsonManager.saveFile();
         }
         Main.show("MDelete", medewerker);
+    }
+
+    private void Pcheck(int getal) {
+        for (int i = 0; i < LeaderBoard.planningMedewerkers.size(); i++){
+            if (LeaderBoard.medewerkers.get(getal).getNaam().equals(LeaderBoard.planningMedewerkers.get(i).getNaam())){
+                LeaderBoard.planningMedewerkers.remove(i);
+            }
+        }
     }
 
     @Override

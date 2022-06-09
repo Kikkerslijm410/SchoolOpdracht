@@ -3,8 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MPlanningController">
    <children>
@@ -12,7 +14,7 @@
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="70.0" prefWidth="97.0" text="Medewerkers" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToPlanning" prefHeight="70.0" prefWidth="97.0" text="Planning" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS" />
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="70.0" prefWidth="97.0" text="Home" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="315.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHome" prefHeight="70.0" prefWidth="97.0" text="Home" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
@@ -60,5 +62,17 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <AnchorPane layoutX="76.0" layoutY="273.0" prefHeight="136.0" prefWidth="328.0">
+         <children>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#PMDelete" prefHeight="48.0" prefWidth="97.0" text="Verwijderen" />
+            <TextField fx:id="nummer" alignment="CENTER" layoutX="14.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="290.0" promptText="Geef het nummer van de medewerker">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#PMAdd" prefHeight="48.0" prefWidth="97.0" text="Toevoegen" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="129.0" layoutY="76.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#PMClear" prefHeight="48.0" prefWidth="59.0" text="Clear" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

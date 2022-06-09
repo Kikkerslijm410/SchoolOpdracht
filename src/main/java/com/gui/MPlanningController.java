@@ -1,5 +1,6 @@
 package com.gui;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,8 +23,10 @@ public class MPlanningController extends AController implements Initializable{
     private List<Medewerker> users = new ArrayList<>();
     private List<Medewerker> planningusers = new ArrayList<>();
 
-
     Medewerker medewerker;
+
+    @FXML
+    private TextField nummer;
 
     //leaderboard 1 alle medewerkers
     @FXML
@@ -50,14 +54,24 @@ public class MPlanningController extends AController implements Initializable{
     @FXML
     private final TableColumn<Object, Object> PwerktijdColumn = new TableColumn<>();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    @FXML
+    void PMClear() throws IOException {
+        LeaderBoard.planningMedewerkers.clear();
+        Main.show("MPlanning", medewerker);
     }
 
-    //Parent methods overrides
-    @Override
-    public void setUser(Medewerker medewerker) {
-        start();       
+    @FXML
+    void PMDelete() throws IOException {
+        int getal = Integer.parseInt(nummer.getText());
+        LeaderBoard.addPlanningUsers(getal);
+        Main.show("MPlanning", medewerker);
+    }
+
+    @FXML
+    void PMAdd() throws IOException {
+        int getal = Integer.parseInt(nummer.getText());
+        LeaderBoard.addPlanningUsers(getal);
+        Main.show("MPlanning", medewerker);
     }
 
     public void start() {
@@ -68,12 +82,20 @@ public class MPlanningController extends AController implements Initializable{
         ObservableList<Medewerker> data = FXCollections.observableArrayList(users);
         leaderboard.setItems(data);
 
-        users = LeaderBoard.getPlanningUsers();
-        System.out.println(users.size());
-        PrankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+        planningusers = LeaderBoard.getPlanningUsers();
+        PrankColumn.setCellValueFactory(new PropertyValueFactory<>("Prank"));
         PnamesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
         PwerktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
-        ObservableList<Medewerker> Pdata = FXCollections.observableArrayList(users);
+        ObservableList<Medewerker> Pdata = FXCollections.observableArrayList(planningusers);
         Planningleaderboard.setItems(Pdata);
     }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        start();
+    }
+
+    //Override just here because implementations
+    @Override
+    public void setUser(Medewerker medewerker) {}
 }

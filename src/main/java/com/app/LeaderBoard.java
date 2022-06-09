@@ -21,10 +21,18 @@ public abstract class LeaderBoard {
         return planningMedewerkers;
     }
 
+    public static void addPlanningUsers(int user){
+        user -= 1;
+        if(user < medewerkers.size() && user >= 0){
+            planningMedewerkers.add(medewerkers.get(user));
+        }
+        Comparator<Medewerker> PuserComparator = Comparator.comparing(Medewerker::getWerktijd);
+        Collections.sort(planningMedewerkers, PuserComparator);
+    }
+
     private static void comparator(){
         Comparator<Medewerker> userComparator = Comparator.comparing(Medewerker::getWerktijd);
         Collections.sort(medewerkers, userComparator);
-        Collections.reverse(medewerkers);
         updateRanking();
     }
 

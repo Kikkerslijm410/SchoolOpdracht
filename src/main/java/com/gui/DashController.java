@@ -1,6 +1,5 @@
 package com.gui;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -12,7 +11,7 @@ import javafx.fxml.Initializable;
 public class DashController extends AController implements Initializable{
     Medewerker medewerker;
 
-    //Parent methods overrides
+    //Override just here because implementations
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         GsonManager.saveFile();
