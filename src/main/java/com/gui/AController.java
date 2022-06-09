@@ -47,7 +47,7 @@ public abstract class AController {
         Main.show("MDelete", medewerker);
     }
     @FXML
-    public void switchToPlanningMedewerkers() throws IOException {
+    public void switchToMPlanning() throws IOException {
         Main.show("MPlanning", medewerker);
     }
 }
