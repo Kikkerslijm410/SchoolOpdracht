@@ -13,9 +13,10 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="140.0" layoutY="146.0" prefHeight="200.0" prefWidth="200.0">
+      <AnchorPane layoutX="140.0" layoutY="146.0" prefHeight="254.0" prefWidth="200.0">
          <children>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="65.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMPlanning" prefHeight="70.0" prefWidth="148.0" text="Planning Medewerkers" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="157.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#maakPlanning" prefHeight="70.0" prefWidth="148.0" text="Maak Planning" />
          </children>
       </AnchorPane>
    </children>

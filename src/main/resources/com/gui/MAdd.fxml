@@ -30,7 +30,8 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerAdd" prefHeight="48.0" prefWidth="98.0" text="Opslaan" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="205.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerAdd" prefHeight="48.0" prefWidth="98.0" text="Opslaan" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="48.0" prefWidth="98.0" text="Terug" />
          </children>
       </AnchorPane>
       <TableView fx:id="Aleaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">

@@ -50,4 +50,8 @@ public abstract class AController {
     public void switchToMPlanning() throws IOException {
         Main.show("MPlanning", medewerker);
     }
+    @FXML
+    public void CloseProgram() throws IOException {
+        System.exit(1);
+    }
 }

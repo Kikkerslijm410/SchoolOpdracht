@@ -19,13 +19,11 @@ public abstract class ExcelManager {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet spreadsheet = workbook.createSheet(" Vulplanning ");
         System.out.println("Workbook completed");
-
         // creating a row object
         XSSFRow row;
-  
         // This data needs to be written (Object[])
         Map<String, Object[]> Vulplanning = new TreeMap<String, Object[]>();        
-  
+
         Vulplanning.put("1", new Object[] { "Medewerkers", "Pad naam", "Totale vultijd:", intToString(vulTijdTotaal()) });
   
         Vulplanning.put("2", new Object[] { "126", "Aditya", vulTijd("Internationaal") });
@@ -36,9 +34,10 @@ public abstract class ExcelManager {
   
         Vulplanning.put("5", new Object[] { "131", "Radha", "2nd year" });
 
-        Vulplanning.put("6", new Object[] { "", "", "" });
+        Vulplanning.put("6", new Object[] { "hallo", "", "" });
+
+        Vulplanning.put("7", new Object[] { "hallo dit is een nieuwe zin", "Gopal", "2nd year" });
   
-        Vulplanning.put("7", new Object[] { "132", "Gopal", "2nd year" });
   
         Set<String> keyid = Vulplanning.keySet();
   
@@ -46,17 +45,14 @@ public abstract class ExcelManager {
   
         // writing the data into the sheets...
         for (String key : keyid) {
-  
             row = spreadsheet.createRow(rowid++);
             Object[] objectArr = Vulplanning.get(key);
             int cellid = 0;
-  
             for (Object obj : objectArr) {
                 Cell cell = row.createCell(cellid++);
                 cell.setCellValue((String)obj);
             }
         }
-
         //Stuff for saving the Excel file        
         String dir = System.getProperty("user.dir")+"\\data\\";
         FileOutputStream out = new FileOutputStream(new File(dir+"Vulplanning.xlsx"));

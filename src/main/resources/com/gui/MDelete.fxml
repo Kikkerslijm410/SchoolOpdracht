@@ -42,12 +42,13 @@
       </TableView>
       <AnchorPane layoutX="76.0" layoutY="335.0" prefHeight="200.0" prefWidth="328.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerDelete" prefHeight="48.0" prefWidth="97.0" text="Verwijderen" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerDelete" prefHeight="48.0" prefWidth="97.0" text="Verwijderen" />
             <TextField fx:id="nummer" alignment="CENTER" layoutX="24.0" layoutY="46.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="49.0" prefWidth="280.0" promptText="Geef het nummer van de medewerker">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToMedewerker" prefHeight="48.0" prefWidth="97.0" text="Terug" />
          </children>
       </AnchorPane>
    </children>
