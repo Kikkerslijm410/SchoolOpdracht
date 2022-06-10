@@ -27,7 +27,7 @@ public class testVulnormController {
         Pad.setVulnorm(0, 10);
         assertEquals(10, Pad.PadList.get(0).vulnorm);
         VrachtController.setZero(2);
-        assertEquals(0, Pad.PadList.get(0).vulnorm);
+        assertEquals(60, Pad.PadList.get(0).vulnorm);
     }
 
     @Test

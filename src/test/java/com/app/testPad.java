@@ -23,23 +23,25 @@ public class testPad {
     }
 
     @Test
-    void testGetAantalDozenString() {
+    public void testGetAantalDozenString() {
         assertEquals("0", Pad.getAantalDozenString(0));
     }
 
     @Test
-    void testGetVulnormString() {
+    public void testGetVulnormString() {
         assertEquals("60", Pad.getVulnormString(0));
     }
 
     @Test
-    void testSetAantalDozen() {
+    public void testSetAantalDozen() {
+        assertEquals("0", Pad.getAantalDozenString(0));
         Pad.setAantalDozen(0, 10);
         assertEquals(10, Pad.PadList.get(0).getAantalDozen());
     }
 
     @Test
-    void testSetVulnorm() {
+    public void testSetVulnorm() {
+        assertEquals("60", Pad.getVulnormString(0));
         Pad.setVulnorm(0, 10);
         assertEquals(10, Pad.PadList.get(0).getVulnorm());
     }

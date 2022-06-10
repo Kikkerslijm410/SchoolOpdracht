@@ -52,7 +52,7 @@ public class MDeleteController extends AController implements Initializable{
     }
 
     //just here to make sure deleted users arent in the planningMedewerkers arraylist
-    private void Pcheck(int getal) {
+    public void Pcheck(int getal) {
         for (int i = 0; i < LeaderBoard.planningMedewerkers.size(); i++){
             if (LeaderBoard.medewerkers.get(getal).getNaam().equals(LeaderBoard.planningMedewerkers.get(i).getNaam())){
                 LeaderBoard.planningMedewerkers.remove(i);

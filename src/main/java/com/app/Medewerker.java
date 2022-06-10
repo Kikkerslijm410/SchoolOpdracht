@@ -7,7 +7,13 @@ public class Medewerker {
 
     public Medewerker(String naam, double werktijd){
         this.naam = naam;
-        this.werktijd = werktijd;
+
+        // bij false is het in minuten ingevoerd, bij true is het in uren ingevuld
+        if (werktijd < 10){
+            this.werktijd = werktijd * 60;
+        }else{
+            this.werktijd = werktijd;
+        }
         LeaderBoard.medewerkers.add(this);
     }
 
@@ -28,7 +34,11 @@ public class Medewerker {
     }
 
     public void setWerktijd(double werktijd){
-        this.werktijd = werktijd;
+        if (werktijd < 10){
+            this.werktijd = werktijd * 60;
+        }else{
+            this.werktijd = werktijd;
+        }
     }
 
     public void setRank(int rank) {
