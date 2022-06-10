@@ -33,19 +33,19 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="115.0" layoutY="141.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#MedewerkerAdd" prefHeight="48.0" prefWidth="98.0" text="Opslaan" />
          </children>
       </AnchorPane>
-      <TableView fx:id="leaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
+      <TableView fx:id="Aleaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
          <columns>
-            <TableColumn id="rankKolom" editable="false" prefWidth="65" text="">
+            <TableColumn id="ArankKolom" editable="false" prefWidth="65" text="">
                <cellValueFactory>
                   <PropertyValueFactory property="rank" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn id="namesKolom" editable="false" prefWidth="200" text="Naam">
+            <TableColumn id="AnamesKolom" editable="false" prefWidth="200" text="Naam">
                <cellValueFactory>
                   <PropertyValueFactory property="naam" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn id="werktijdColumn" editable="false" prefWidth="100" text="Werktijd">
+            <TableColumn id="AwerktijdColumn" editable="false" prefWidth="100" text="Werktijd">
                <cellValueFactory>
                   <PropertyValueFactory property="werktijd" />
                </cellValueFactory>

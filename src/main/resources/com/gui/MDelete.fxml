@@ -18,19 +18,19 @@
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#switchToVracht" prefHeight="70.0" prefWidth="97.0" text="Paden" />
          </children>
       </AnchorPane>
-      <TableView fx:id="leaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
+      <TableView fx:id="Dleaderboard" layoutX="56.0" layoutY="32.0" prefHeight="302.0" prefWidth="367.0">
          <columns>
-            <TableColumn id="rankKolom" editable="false" prefWidth="65" text="">
+            <TableColumn id="DrankKolom" editable="false" prefWidth="65" text="">
                <cellValueFactory>
                   <PropertyValueFactory property="rank" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn id="namesKolom" editable="false" prefWidth="200" text="Naam">
+            <TableColumn id="DnamesKolom" editable="false" prefWidth="200" text="Naam">
                <cellValueFactory>
                   <PropertyValueFactory property="naam" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn id="werktijdColumn" editable="false" prefWidth="100" text="Werktijd">
+            <TableColumn id="DwerktijdColumn" editable="false" prefWidth="100" text="Werktijd">
                <cellValueFactory>
                   <PropertyValueFactory property="werktijd" />
                </cellValueFactory>

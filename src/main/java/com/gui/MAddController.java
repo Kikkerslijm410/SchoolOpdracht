@@ -38,16 +38,16 @@ public class MAddController extends AController implements Initializable{
     private Label MedewerkerNaam;
 
     @FXML
-    private TableView<Medewerker> leaderboard;
+    private TableView<Medewerker> Aleaderboard;
 
     @FXML
-    private final TableColumn<Object, Object> rankColumn = new TableColumn<>();
+    private final TableColumn<Object, Object> ArankColumn = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
+    private final TableColumn<Object, Object> AnamesKolom = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
+    private final TableColumn<Object, Object> AwerktijdColumn = new TableColumn<>();
 
     @FXML
     private void MedewerkerAdd() throws IOException {
@@ -94,11 +94,11 @@ public class MAddController extends AController implements Initializable{
         addNumberLimiter();
         addTextLimiter(3);
         users = LeaderBoard.getUsers();
-        rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
-        namesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
-        werktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
+        ArankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+        AnamesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
+        AwerktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
         ObservableList<Medewerker> data = FXCollections.observableArrayList(users);
-        leaderboard.setItems(data);
+        Aleaderboard.setItems(data);
     }
 
     //Override just here because implementations

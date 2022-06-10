@@ -29,16 +29,16 @@ public class MDeleteController extends AController implements Initializable{
     private TextField nummer;
 
     @FXML
-    private TableView<Medewerker> leaderboard;
+    private TableView<Medewerker> Dleaderboard;
 
     @FXML
-    private final TableColumn<Object, Object> rankColumn = new TableColumn<>();
+    private final TableColumn<Object, Object> DrankColumn = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Object, Object> namesKolom = new TableColumn<>();
+    private final TableColumn<Object, Object> DnamesKolom = new TableColumn<>();
 
     @FXML
-    private final TableColumn<Object, Object> werktijdColumn = new TableColumn<>();
+    private final TableColumn<Object, Object> DwerktijdColumn = new TableColumn<>();
 
     @FXML
     private void MedewerkerDelete() throws IOException {
@@ -51,6 +51,7 @@ public class MDeleteController extends AController implements Initializable{
         Main.show("MDelete", medewerker);
     }
 
+    //just here to make sure deleted users arent in the planningMedewerkers arraylist
     private void Pcheck(int getal) {
         for (int i = 0; i < LeaderBoard.planningMedewerkers.size(); i++){
             if (LeaderBoard.medewerkers.get(getal).getNaam().equals(LeaderBoard.planningMedewerkers.get(i).getNaam())){
@@ -62,11 +63,11 @@ public class MDeleteController extends AController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         users = LeaderBoard.getUsers();
-        rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
-        namesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
-        werktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
+        DrankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
+        DnamesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));
+        DwerktijdColumn.setCellValueFactory(new PropertyValueFactory<>("werktijd"));
         ObservableList<Medewerker> data = FXCollections.observableArrayList(users);
-        leaderboard.setItems(data);
+        Dleaderboard.setItems(data);
     }
 
     //Override just here because implementations
