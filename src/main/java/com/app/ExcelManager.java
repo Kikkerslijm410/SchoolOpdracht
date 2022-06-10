@@ -22,13 +22,10 @@ public abstract class ExcelManager {
         // creating a row object
         XSSFRow row;
         // This data needs to be written (Object[])
-        Map<String, Object[]> Vulplanning = new TreeMap<String, Object[]>();        
-
-        Vulplanning.put("1", new Object[] { "Medewerkers", "Pad naam", "Totale vultijd:", intToString(vulTijdTotaal()) });
-  
-        Vulplanning.put("2", new Object[] { "126", "Aditya", vulTijd("Internationaal") });
-  
-        Vulplanning.put("3", new Object[] { "129", "Narayana", "hoi dit is een test" });
+        Map<String, Object[]> Vulplanning = new TreeMap<>();
+        Vulplanning.put("1", new Object[] {});
+        Vulplanning.put("2", new Object[] { "", "Totale:", "Vultijd:", vultijdTotaal(), "Vracht:", vrachtTotaal()  });
+        Vulplanning.put("3", new Object[] { "", "Medewerkers:", "Paden", "Vracht", "Vultijd" });
   
         Vulplanning.put("4", new Object[] { "130", "Mohan", "2nd year" });
   
@@ -60,26 +57,31 @@ public abstract class ExcelManager {
         out.close();
     }
 
-    public static String vulTijd (String padNaam){
+    public static int vultijdTotaal (){
+        int counter = 0;
+        for (Pad e : Pad.PadList){
+            int i = e.getAantalDozen() / e.getVulnorm() * 60;
+            counter += i;
+        }
+        return counter;
+    }
+
+    public static int vrachtTotaal (){
+        int counter = 0;
+        for (Pad e : Pad.PadList){
+            counter += e.getAantalDozen();
+        }
+        return counter;
+    }
+
+    public static String vultijd (String padNaam){
         for (Pad e : Pad.PadList){
             if(padNaam.equals(e.getPadNaam())){
-                int i = 0;
-                i = e.getAantalDozen() / e.getVulnorm();
-                i = i * 60;
+                int i = e.getAantalDozen() / e.getVulnorm() * 60;
                 return "" + i;
             }
         }
         return "Error";
-    }
-
-    public static int vulTijdTotaal (){
-        int counter = 0;
-        for (Pad e : Pad.PadList){
-            int i = e.getAantalDozen() / e.getVulnorm();
-            i = i * 60;
-            counter += i;
-        }
-        return counter;
     }
 
     public static String intToString(int getal){
