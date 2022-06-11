@@ -23,7 +23,7 @@ public class testVulnormController {
     }
 
     @Test
-    void testReset() {
+    public void testReset() {
         Pad.setVulnorm(0, 10);
         assertEquals(10, Pad.PadList.get(0).vulnorm);
         VrachtController.setZero(2);
@@ -31,7 +31,7 @@ public class testVulnormController {
     }
 
     @Test
-    void testStringToInt() {
+    public void testStringToInt() {
         assertEquals(60, VulnormController.StringToInt(0, ""));
         Pad.setAantalDozen(0, 10);
         assertEquals(10, VulnormController.StringToInt(0, "10"));

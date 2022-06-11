@@ -23,7 +23,7 @@ public class testVrachtController {
     }
 
     @Test
-    void testReset() {
+    public void testReset() {
         Pad.setAantalDozen(0, 10);
         assertEquals(10, Pad.PadList.get(0).aantalDozen);
         VrachtController.setZero(1);
@@ -31,7 +31,7 @@ public class testVrachtController {
     }
 
     @Test
-    void testStringToInt() {
+    public void testStringToInt() {
         assertEquals(0, VrachtController.StringToInt(0, ""));
         Pad.setAantalDozen(0, 10);
         assertEquals(10, VrachtController.StringToInt(0, "10"));
