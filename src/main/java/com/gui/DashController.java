@@ -9,7 +9,6 @@ import com.app.Medewerker;
 import javafx.fxml.Initializable;
 
 public class DashController extends AController implements Initializable{
-    Medewerker medewerker;
 
     //Override just here because implementations
     @Override

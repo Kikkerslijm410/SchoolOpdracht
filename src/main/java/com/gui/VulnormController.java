@@ -15,8 +15,6 @@ import javafx.scene.control.TextField;
 
 public class VulnormController extends AController implements Initializable {
 
-    Medewerker medewerker;
-
     //Alle textfields
     @FXML
     private TextField VulnormInternationaal;

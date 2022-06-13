@@ -26,8 +26,6 @@ public class MAddController extends AController implements Initializable{
 
     private List<Medewerker> users = new ArrayList<>();
     
-    Medewerker medewerker;
-
     @FXML
     private TextField naam;
 

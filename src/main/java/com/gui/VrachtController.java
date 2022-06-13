@@ -15,8 +15,6 @@ import javafx.scene.control.TextField;
 
 public class VrachtController extends AController implements Initializable{
     
-    Medewerker medewerker;
-
     //Alle textfields
     @FXML
     private TextField VrachtInternationaal;

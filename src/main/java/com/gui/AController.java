@@ -8,7 +8,7 @@ import javafx.fxml.FXML;
 
 public abstract class AController {
 
-    private Medewerker medewerker;
+    public Medewerker medewerker;
 
     abstract void setUser(Medewerker medewerker);
 

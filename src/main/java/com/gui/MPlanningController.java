@@ -23,8 +23,6 @@ public class MPlanningController extends AController implements Initializable{
     private List<Medewerker> users = new ArrayList<>();
     private List<Medewerker> planningusers = new ArrayList<>();
 
-    Medewerker medewerker;
-
     @FXML
     private TextField nummer;
 

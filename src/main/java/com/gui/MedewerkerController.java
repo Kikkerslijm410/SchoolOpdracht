@@ -20,8 +20,6 @@ public class MedewerkerController extends AController implements Initializable {
 
     private List<Medewerker> users = new ArrayList<>();
 
-    Medewerker medewerker;
-
     @FXML
     private TableView<Medewerker> leaderboard;
 
