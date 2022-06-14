@@ -31,8 +31,8 @@ public abstract class AController {
         Main.show("dashboard", medewerker);
     }
     @FXML
-    public void switchToVracht() throws IOException {
-        Main.show("vracht", medewerker);
+    public void switchToPad() throws IOException {
+        Main.show("pad", medewerker);
     }
     @FXML
     public void switchToVulnorm() throws IOException {

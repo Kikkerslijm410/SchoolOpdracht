@@ -12,7 +12,7 @@ public class testPad {
 
     @BeforeEach
     public void start(){
-        inter = new Pad("Internationaal", 60, 0);
+        inter = new Pad("Internationaal", 60, 0, 0);
         Pad.setAantalDozen(0, 0);
         Pad.setVulnorm(0, 60);
     }

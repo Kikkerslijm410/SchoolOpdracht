@@ -7,12 +7,14 @@ public class Pad {
     public String padNaam;
     public int vulnorm;
     public int aantalDozen;
+    public int Spiegeltijd;
     public static ArrayList <Pad> PadList = new ArrayList<>();
 
-    public Pad (String padNaam, int vulnorm, int dozen){
+    public Pad (String padNaam, int vulnorm, int dozen, int Spiegeltijd){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
         this.aantalDozen = dozen;
+        this.Spiegeltijd = Spiegeltijd;
         PadList.add(this);
     }
 
@@ -24,12 +26,24 @@ public class Pad {
         PadList.get(pad).aantalDozen = dozen;
     }
 
+    public static void setSpiegeltijd(int pad, int Spiegeltijd){
+        PadList.get(pad).Spiegeltijd = Spiegeltijd;
+    }
+
     public int getVulnorm(){
         return this.vulnorm;
     }
 
     public int getAantalDozen(){
         return this.aantalDozen;
+    }
+
+    public int getspiegeltijd() {
+        return this.Spiegeltijd;
+    }
+
+    public String getPadNaam(){
+        return this.padNaam;
     }
 
     public static String getVulnormString(int pad){
@@ -40,7 +54,7 @@ public class Pad {
         return "" + PadList.get(pad).getAantalDozen();
     }
 
-    public String getPadNaam(){
-        return this.padNaam;
+    public static String getSpiegeltijdString(int pad){
+        return "" + PadList.get(pad).getspiegeltijd();
     }
 }

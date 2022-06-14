@@ -20,9 +20,9 @@ public class testExcelManager {
         testMedewerker = new Medewerker("test", 3);
         testMedewerker2 = new Medewerker("test2", 3);
         testMedewerker3 = new Medewerker("test3", 3);
-        inter = new Pad("Internationaal", 60, 0);
-        potjes = new Pad("Potjes", 60, 40);
-        fris = new Pad("Frisdrank", 60, 50);
+        inter = new Pad("Internationaal", 60, 0, 0);
+        potjes = new Pad("Potjes", 60, 40, 0);
+        fris = new Pad("Frisdrank", 60, 50, 0);
     }
     @AfterEach
     public void end(){

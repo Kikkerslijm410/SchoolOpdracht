@@ -14,7 +14,7 @@ public class testVrachtController {
 
     @BeforeEach
     public void start(){
-        inter = new Pad("Internationaal", 60, 0);
+        inter = new Pad("Internationaal", 60, 0, 0);
         Pad.setAantalDozen(0, 0);
     }
     @AfterEach
@@ -26,14 +26,14 @@ public class testVrachtController {
     public void testReset() {
         Pad.setAantalDozen(0, 10);
         assertEquals(10, Pad.PadList.get(0).aantalDozen);
-        VrachtController.setZero(1);
+        //PadController.setZero();
         assertEquals(0, Pad.PadList.get(0).aantalDozen);
     }
 
     @Test
     public void testStringToInt() {
-        assertEquals(0, VrachtController.StringToInt(0, ""));
+        assertEquals(0, PadController.StringToInt(0, ""));
         Pad.setAantalDozen(0, 10);
-        assertEquals(10, VrachtController.StringToInt(0, "10"));
+        assertEquals(10, PadController.StringToInt(0, "10"));
     }
 }
