@@ -41,7 +41,7 @@ public class PadController extends AController implements Initializable{
     }
 
     @FXML
-    public void Reset() throws IOException {
+    private void Reset() throws IOException {
         setZero();
         Opslaan();
     }

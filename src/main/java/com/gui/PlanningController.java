@@ -13,7 +13,7 @@ import javafx.fxml.Initializable;
 public class PlanningController extends AController implements Initializable {
 
     @FXML
-    public void maakPlanning() throws IOException {
+    private void maakPlanning() throws IOException {
         ExcelManager.Start();
     }
 

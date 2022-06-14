@@ -12,11 +12,6 @@ public abstract class AController {
 
     abstract void setUser(Medewerker medewerker);
 
-    //just here cause errors
-    public void fuckdit(){
-        System.out.println(medewerker);
-    }
-
     //switch statements
     @FXML
     public void switchToMedewerker() throws IOException {
@@ -33,10 +28,6 @@ public abstract class AController {
     @FXML
     public void switchToPad() throws IOException {
         Main.show("pad", medewerker);
-    }
-    @FXML
-    public void switchToVulnorm() throws IOException {
-        Main.show("vulnorm", medewerker);
     }
     @FXML
     public void switchToAdd() throws IOException {

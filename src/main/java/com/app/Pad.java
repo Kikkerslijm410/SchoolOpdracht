@@ -10,11 +10,11 @@ public class Pad {
     public int Spiegeltijd;
     public static ArrayList <Pad> PadList = new ArrayList<>();
 
-    public Pad (String padNaam, int vulnorm, int dozen, int Spiegeltijd){
+    public Pad (String padNaam, int vulnorm, int dozen, int STijd){
         this.padNaam = padNaam;
         this.vulnorm = vulnorm;
         this.aantalDozen = dozen;
-        this.Spiegeltijd = Spiegeltijd;
+        this.Spiegeltijd = STijd;
         PadList.add(this);
     }
 

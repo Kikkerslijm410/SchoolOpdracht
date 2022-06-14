@@ -53,26 +53,26 @@ public class MPlanningController extends AController implements Initializable{
     private final TableColumn<Object, Object> PwerktijdColumn = new TableColumn<>();
 
     @FXML
-    void PMClear() throws IOException {
+    private void PMClear() throws IOException {
         LeaderBoard.planningMedewerkers.clear();
         Main.show("MPlanning", medewerker);
     }
 
     @FXML
-    void PMDelete() throws IOException {
+    private void PMDelete() throws IOException {
         int getal = Integer.parseInt(nummer.getText());
         LeaderBoard.removePlanningUsers(getal);
         Main.show("MPlanning", medewerker);
     }
 
     @FXML
-    void PMAdd() throws IOException {
+    private void PMAdd() throws IOException {
         int getal = Integer.parseInt(nummer.getText());
         LeaderBoard.addPlanningUsers(getal);
         Main.show("MPlanning", medewerker);
     }
 
-    public void start() {
+    private void start() {
         users = LeaderBoard.getUsers();
         rankColumn.setCellValueFactory(new PropertyValueFactory<>("rank"));
         namesKolom.setCellValueFactory(new PropertyValueFactory<>("naam"));

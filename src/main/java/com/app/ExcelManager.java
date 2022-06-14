@@ -15,8 +15,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public abstract class ExcelManager {
 
-    static int getal = 0;
-    static String Swerktijd = "";
+    public static int getal = 0;
+    public static String Swerktijd = "";
 
     public static void Start() throws IOException{
         if(LeaderBoard.planningMedewerkers.size() > 0){
