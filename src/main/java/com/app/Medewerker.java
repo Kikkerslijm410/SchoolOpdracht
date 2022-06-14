@@ -7,7 +7,6 @@ public class Medewerker {
 
     public Medewerker(String naam, double werktijd){
         this.naam = naam;
-
         // bij false is het in minuten ingevoerd, bij true is het in uren ingevuld
         if (werktijd < 10){
             this.werktijd = werktijd * 60;

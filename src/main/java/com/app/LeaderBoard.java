@@ -30,7 +30,6 @@ public abstract class LeaderBoard {
         Collections.sort(planningMedewerkers, PuserComparator);
     }
 
-    
     public static void removePlanningUsers(int user) {
         user -= 1;
         planningMedewerkers.remove(user);
