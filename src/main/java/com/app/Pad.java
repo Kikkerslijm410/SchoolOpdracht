@@ -38,7 +38,7 @@ public class Pad {
         return this.aantalDozen;
     }
 
-    public int getspiegeltijd() {
+    public int getSpiegeltijd() {
         return this.Spiegeltijd;
     }
 
@@ -55,6 +55,6 @@ public class Pad {
     }
 
     public static String getSpiegeltijdString(int pad){
-        return "" + PadList.get(pad).getspiegeltijd();
+        return "" + PadList.get(pad).getSpiegeltijd();
     }
 }

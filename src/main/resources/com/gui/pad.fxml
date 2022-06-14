@@ -151,12 +151,12 @@
                </font>
             </Label>
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="161.0" layoutY="481.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Reset" prefHeight="42.0" prefWidth="98.0" text="Reset" />
-            <Label fx:id="ScreenLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="14.0" prefHeight="42.0" prefWidth="98.0">
+            <Label fx:id="ScreenLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="17.0" layoutY="14.0" prefHeight="42.0" prefWidth="385.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="427.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setVulnorm" prefHeight="42.0" prefWidth="98.0" text="Vulnorm" />
+            <Button alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="427.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setNorm" prefHeight="42.0" prefWidth="98.0" text="Vulnorm" />
             <Button alignment="CENTER" contentDisplay="CENTER" layoutX="9.0" layoutY="374.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#setVracht" prefHeight="42.0" prefWidth="98.0" text="Vracht" />
          </children>
       </AnchorPane>

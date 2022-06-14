@@ -16,13 +16,12 @@ import javafx.scene.control.TextField;
 
 public class PadController extends AController implements Initializable{
 
-    @FXML
-    private Label ScreenLabel;
-
     private static ArrayList <Label> LabelList = new ArrayList<>();
     private static ArrayList <TextField> TextFieldList = new ArrayList<>();
 
-    
+    @FXML
+    private Label ScreenLabel;
+
     //Alle textfields
     @FXML
     private TextField Internationaal, Potjes, Frisdrank, Bier, Wijn, Chips, Cosmetica, Dierenvoeding, Koek, Ontbijt, Zuivel, VVP, Diepvries;
@@ -34,7 +33,11 @@ public class PadController extends AController implements Initializable{
     @FXML 
     private void Opslaan() throws IOException {
         GsonManager.saveFile();
-        Main.show("pad", medewerker);
+        ScreenLabel.setText("Kies een optie om deze aan te passen.");
+        LabelList.clear();
+        TextFieldList.clear();
+        setUser(medewerker);
+        Clear();
     }
 
     @FXML
@@ -53,7 +56,7 @@ public class PadController extends AController implements Initializable{
         Vracht();
     }
     @FXML
-    private void setVulnorm() {
+    private void setNorm() {
         Vulnorm();
     }
 
@@ -62,27 +65,55 @@ public class PadController extends AController implements Initializable{
         if (ScreenLabel.getText().equals("Vracht")){
             int i = 0;
             for (TextField e : TextFieldList){
-                Pad.setAantalDozen(i, StringToInt(i, e.getText()));
+                if (!e.getText().isBlank()){
+                    Pad.setAantalDozen(i, StringToInt(i, e.getText()));
+                }else{
+                    Pad.setAantalDozen(i, Pad.PadList.get(i).getAantalDozen());
+                }
                 i++;
                 Vracht();
             }
         }else if(ScreenLabel.getText().equals("Vulnorm")){
             int i = 0;
             for (TextField e : TextFieldList){
-                Pad.setAantalDozen(i, StringToInt(i, e.getText()));
+                if (!e.getText().isBlank()){
+                    Pad.setVulnorm(i, StringToInt(i, e.getText()));
+                }else{
+                    Pad.setVulnorm(i, Pad.PadList.get(i).getVulnorm());
+                }
                 i++;
                 Vulnorm();
             }
         }else if(ScreenLabel.getText().equals("Spiegeltijd")){
             int i = 0;
             for (TextField e : TextFieldList){
-                Pad.setAantalDozen(i, StringToInt(i, e.getText()));
+                if (!e.getText().isBlank()){
+                    Pad.setSpiegeltijd(i, StringToInt(i, e.getText()));
+                }else{
+                    Pad.setSpiegeltijd(i, Pad.PadList.get(i).getSpiegeltijd());
+                }
                 i++;
                 Spiegel();
             }
         }else{
             ScreenLabel.setText("Kies een optie om deze aan te passen.");
         }
+    }
+
+    private void Clear(){
+        Internationaal.clear();
+        Potjes.clear();
+        Frisdrank.clear();
+        Bier.clear();
+        Wijn.clear();
+        Chips.clear();
+        Cosmetica.clear();
+        Dierenvoeding.clear();
+        Koek.clear();
+        Ontbijt.clear();
+        Zuivel.clear();
+        VVP.clear();
+        Diepvries.clear();
     }
 
     public void setZero(){
@@ -114,7 +145,10 @@ public class PadController extends AController implements Initializable{
         ScreenLabel.setText("Vracht");
         int i = 0;
         for (Label e : LabelList){
-            e.setText(Pad.getSpiegeltijdString(i));
+            e.setText(Pad.getAantalDozenString(i));
+            if (i  == 13){
+                break;
+            }
             i++;
         }
     }
@@ -123,6 +157,9 @@ public class PadController extends AController implements Initializable{
         int i = 0;
         for (Label e : LabelList){
             e.setText(Pad.getVulnormString(i));
+            if (i  == 13){
+                break;
+            }
             i++;
         }
     }
@@ -130,22 +167,24 @@ public class PadController extends AController implements Initializable{
         ScreenLabel.setText("Spiegeltijd");
         int i = 0;
         for (Label e : LabelList){
-            e.setText(Pad.getVulnormString(i));
+            e.setText(Pad.getSpiegeltijdString(i));
+            if (i  == 13){
+                break;
+            }
             i++;
         }
     }
 
     @Override
     public void setUser(Medewerker medewerker) {
-        ScreenLabel.setText("Kies een optie om deze aan te passen.");
         LabelList.add(inter);
         LabelList.add(potjes);
         LabelList.add(fris);
         LabelList.add(bier);
-        LabelList.add(wijn);
         LabelList.add(chips);
-        LabelList.add(cosmetica);
+        LabelList.add(wijn);
         LabelList.add(dierenvoeding);
+        LabelList.add(cosmetica);
         LabelList.add(koek);
         LabelList.add(ontbijt);
         LabelList.add(zuivel);
@@ -156,10 +195,10 @@ public class PadController extends AController implements Initializable{
         TextFieldList.add(Potjes);
         TextFieldList.add(Frisdrank);
         TextFieldList.add(Bier);
-        TextFieldList.add(Wijn);
         TextFieldList.add(Chips);
-        TextFieldList.add(Cosmetica);
+        TextFieldList.add(Wijn);
         TextFieldList.add(Dierenvoeding);
+        TextFieldList.add(Cosmetica);
         TextFieldList.add(Koek);
         TextFieldList.add(Ontbijt);
         TextFieldList.add(Zuivel);
@@ -167,7 +206,8 @@ public class PadController extends AController implements Initializable{
         TextFieldList.add(Diepvries);
     }
     
-    //Override. Empty just because of the implementations
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {}  
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ScreenLabel.setText("Kies een optie om deze aan te passen.");
+    }  
 }
