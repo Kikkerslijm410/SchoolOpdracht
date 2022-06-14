@@ -16,9 +16,12 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public abstract class ExcelManager {
 
     static int getal = 0;
+    static String Swerktijd = "";
 
     public static void Start() throws IOException{
         if(LeaderBoard.planningMedewerkers.size() > 0){
+            getal = 0;
+            Swerktijd = "";
             Excel();
         }else{
             System.out.println("================");//Debug
@@ -33,32 +36,32 @@ public abstract class ExcelManager {
             Map<Integer, Object[]> Vulplanning = new TreeMap<Integer, Object[]>();
                 Vulplanning.put(1, new Object[] {});
                 Vulplanning.put(2, new Object[] { "", "Totale:", "Vultijd:", vultijdTotaal(), "Vracht:", vrachtTotaal()  });
-                Vulplanning.put(3, new Object[] { "", "Ploeg:", "Paden", "Vracht", "Vultijd" });
-                Vulplanning.put(4, new Object[] { "", getMedewerker(true), "Internationaal", Pad.getAantalDozenString(0), getVultijd(0)});
+                Vulplanning.put(3, new Object[] { "", "Ploeg:", "Paden", "Vracht", "Vultijd", "Taken" });
+                Vulplanning.put(4, new Object[] { "", getMedewerker(true), "Internationaal", Pad.getAantalDozenString(0), getVultijd(0), taken(getal, 0, 45), null, null, Swerktijd});
                 Vulplanning.put(5, new Object[] {});
-                Vulplanning.put(6, new Object[] {"", getMedewerker(false), "Potjes", Pad.getAantalDozenString(1), getVultijd(1)});
+                Vulplanning.put(6, new Object[] {"", getMedewerker(false), "Potjes", Pad.getAantalDozenString(1), getVultijd(1), taken(getal, 1, 30), null, null, Swerktijd});
                 Vulplanning.put(7, new Object[] {});
-                Vulplanning.put(8, new Object[] {"", getMedewerker(false), "Frisdrank", Pad.getAantalDozenString(2), getVultijd(2)});
+                Vulplanning.put(8, new Object[] {"", getMedewerker(false), "Frisdrank", Pad.getAantalDozenString(2), getVultijd(2), taken(getal, 2, 45), null, null, Swerktijd});
                 Vulplanning.put(9, new Object[] {});
-                Vulplanning.put(10, new Object[] {"", getMedewerker(false), "Bier", Pad.getAantalDozenString(3), getVultijd(3)});
+                Vulplanning.put(10, new Object[] {"", getMedewerker(false), "Bier", Pad.getAantalDozenString(3), getVultijd(3), taken(getal, 3, 15), null, null, Swerktijd});
                 Vulplanning.put(11, new Object[] {});
-                Vulplanning.put(12, new Object[] {"", getMedewerker(false), "Wijn", Pad.getAantalDozenString(4), getVultijd(4)});
+                Vulplanning.put(12, new Object[] {"", getMedewerker(false), "Wijn", Pad.getAantalDozenString(4), getVultijd(4), taken(getal, 4, 15), null, null, Swerktijd});
                 Vulplanning.put(13, new Object[] {});
-                Vulplanning.put(14, new Object[] {"", getMedewerker(false), "Chips", Pad.getAantalDozenString(5), getVultijd(5)});
+                Vulplanning.put(14, new Object[] {"", getMedewerker(false), "Chips", Pad.getAantalDozenString(5), getVultijd(5), taken(getal, 5, 15), null, null, Swerktijd});
                 Vulplanning.put(15, new Object[] {});
-                Vulplanning.put(16, new Object[] {"", getMedewerker(false), "Cosmetica", Pad.getAantalDozenString(6), getVultijd(6)});
+                Vulplanning.put(16, new Object[] {"", getMedewerker(false), "Cosmetica", Pad.getAantalDozenString(6), getVultijd(6), taken(getal, 6, 20), null, null, Swerktijd});
                 Vulplanning.put(17, new Object[] {});
-                Vulplanning.put(18, new Object[] {"", getMedewerker(false), "Dierenvoeding", Pad.getAantalDozenString(7), getVultijd(7)});
+                Vulplanning.put(18, new Object[] {"", getMedewerker(false), "Dierenvoeding", Pad.getAantalDozenString(7), getVultijd(7), taken(getal, 7, 40), null, null, Swerktijd});
                 Vulplanning.put(19, new Object[] {});
-                Vulplanning.put(20, new Object[] {"", getMedewerker(false), "Koek", Pad.getAantalDozenString(8), getVultijd(8)});
+                Vulplanning.put(20, new Object[] {"", getMedewerker(false), "Koek", Pad.getAantalDozenString(8), getVultijd(8), taken(getal, 8, 45), null, null, Swerktijd});
                 Vulplanning.put(21, new Object[] {});
-                Vulplanning.put(22, new Object[] {"", getMedewerker(false), "Ontbijt", Pad.getAantalDozenString(9), getVultijd(9)});
+                Vulplanning.put(22, new Object[] {"", getMedewerker(false), "Ontbijt", Pad.getAantalDozenString(9), getVultijd(9), taken(getal, 9, 30), null, null, Swerktijd});
                 Vulplanning.put(23, new Object[] {});
-                Vulplanning.put(24, new Object[] {"", getMedewerker(false), "Zuivel", Pad.getAantalDozenString(10), getVultijd(10)});
+                Vulplanning.put(24, new Object[] {"", getMedewerker(false), "Zuivel", Pad.getAantalDozenString(10), getVultijd(10), taken(getal, 10, 30), null, null, Swerktijd});
                 Vulplanning.put(25, new Object[] {});
-                Vulplanning.put(26, new Object[] {"", getMedewerker(false), "VVP", Pad.getAantalDozenString(11), getVultijd(11)});
+                Vulplanning.put(26, new Object[] {"", getMedewerker(false), "VVP", Pad.getAantalDozenString(11), getVultijd(11), taken(getal, 11, 20), null, null, Swerktijd});
                 Vulplanning.put(27, new Object[] {});
-                Vulplanning.put(28, new Object[] {"", getMedewerker(false), "Diepvries", Pad.getAantalDozenString(12), getVultijd(12)});
+                Vulplanning.put(28, new Object[] {"", getMedewerker(false), "Diepvries", Pad.getAantalDozenString(12), getVultijd(12), taken(getal, 12, 20), null, null, Swerktijd});
                 Vulplanning.put(29, new Object[] {});
             Set<Integer> keyid = Vulplanning.keySet();
         int rowid = 0;
@@ -81,12 +84,32 @@ public abstract class ExcelManager {
         System.out.println("Workbook Completed");
     }
 
+    private static String taken(int getal2, int pad, int spiegelTijd ){
+        if (getal == 0){
+            Swerktijd = "";
+            return "";
+        }
+        double getal = LeaderBoard.planningMedewerkers.get(getal2-1).getWerktijd();
+        int werktijd = getVultijd2(pad) + spiegelTijd;
+        if(getal > werktijd && getal > 0){
+            Swerktijd = "" + werktijd;
+            return "Spiegelen " + Pad.PadList.get(pad).getPadNaam();
+        }else{
+            Swerktijd = "";
+            return "";
+        }
+    }
+
     public static String getVultijd(int pad) {
+        return "" + getVultijd2(pad);
+    }
+
+    public static int getVultijd2(int pad){
         int werktijd = 0;
         int dozen = Pad.PadList.get(pad).getAantalDozen();
         int norm = Pad.PadList.get(pad).getVulnorm();
         werktijd = dozen / norm;
-        return "" + werktijd;
+        return werktijd;
     }
 
     public static String vultijdTotaal (){
@@ -125,13 +148,8 @@ public abstract class ExcelManager {
             getal = 0;
             return "-1"; //debug and testing
         }else{
-            for(Medewerker e : LeaderBoard.planningMedewerkers){
-                if(e.getNaam().equals(LeaderBoard.planningMedewerkers.get(getal).getNaam())){
-                    getal++;
-                    return e.getNaam();
-                }
-            }
+            getal++;
+            return LeaderBoard.planningMedewerkers.get(getal -1).getNaam();
         }
-        return "Error"; //debug and testing
     }
 }

@@ -30,6 +30,12 @@ public abstract class LeaderBoard {
         Collections.sort(planningMedewerkers, PuserComparator);
     }
 
+    
+    public static void removePlanningUsers(int user) {
+        user -= 1;
+        planningMedewerkers.remove(user);
+    }
+
     private static void comparator(){
         Comparator<Medewerker> userComparator = Comparator.comparing(Medewerker::getWerktijd);
         Collections.sort(medewerkers, userComparator);

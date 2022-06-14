@@ -61,7 +61,7 @@ public class MPlanningController extends AController implements Initializable{
     @FXML
     void PMDelete() throws IOException {
         int getal = Integer.parseInt(nummer.getText());
-        LeaderBoard.addPlanningUsers(getal);
+        LeaderBoard.removePlanningUsers(getal);
         Main.show("MPlanning", medewerker);
     }
 
