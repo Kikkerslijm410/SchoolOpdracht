@@ -40,14 +40,19 @@ public class testExcelManager {
         assertEquals("test3", ExcelManager.getMedewerker(false));
         LeaderBoard.planningMedewerkers.clear();
         assertEquals("-1", ExcelManager.getMedewerker(false));
-        ExcelManager.getal = -1;
-        assertEquals("Error", ExcelManager.getMedewerker(false));
         ExcelManager.getal = 0;
     }
 
     @Test
     public void testGetVultijd() {
         assertEquals("0", ExcelManager.getVultijd(0));
+        Pad.setAantalDozen(0, 60);
+        assertEquals("1", ExcelManager.getVultijd(0));
+    }
+
+    @Test
+    public void testGetVultijd2() {
+        assertEquals("0", ExcelManager.getVultijd2(0));
         Pad.setAantalDozen(0, 60);
         assertEquals("1", ExcelManager.getVultijd(0));
     }

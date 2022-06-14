@@ -4,30 +4,22 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import com.google.gson.Gson;
-
 /**
  * Sizable class that contains all the logic for reading and writing saves
  */
 public class GsonManager {
-    //Methods for points/reis may be unneccesary
     public static Gson gson = new Gson();
     static String dirt = System.getProperty("user.dir")+"\\data\\"; //dirt
     static ArrayList<File> fileList = new ArrayList<>(seedSaveFiles());
-
-    //Temp solution
     public static ArrayList<File> seedSaveFiles() {
         ArrayList<File> fileList = new ArrayList<>();
         fileList.add(new File(dirt+"Medewerker.json"));
         fileList.add(new File(dirt+"Pad.json"));
         return fileList;
     }
-
-    /**
-     * Saves the currently existing Users & Transportmidddelen to their resective files
-     */
-    public static void saveFile() {
+    // Saves the currently existing Users & Transportmidddelen to their resective files
+        public static void saveFile() {
         System.out.println("================");//Debug
         System.out.println("Making savestate");//Debug
         cleanAllFiles();
@@ -38,10 +30,7 @@ public class GsonManager {
             GsonManager.writeToSave(t);
         }
     }
-
-    /**
-     * Loads the saved data from the respective savefiles
-     */
+    // Loads the saved data from the respective savefile
     public static void loadAllFiles() {
         System.out.println("================");
         System.out.println("Loading files");
@@ -50,7 +39,6 @@ public class GsonManager {
             ArrayList<String> readLines = readFile(f);
 
             for(String s : readLines){
-                //Not clean or efficient in the slightest but afaik its impossible to store Class.class .
                 if(f.getName().contains("Medewerker")){
                     LeaderBoard.medewerkers.add(gson.fromJson(s, Medewerker.class));
                 }
@@ -60,7 +48,6 @@ public class GsonManager {
             }
         }
     }
-
     /**
      * Writes the given {@link Medewerker} in JSON format to the Medewerker file.
      * @param medewerker the to be written User object
@@ -77,7 +64,6 @@ public class GsonManager {
         File savefile = new File(dirt+"Pad.json");
         write(savefile, pad);
     }
-
     /**
      * Support method
      * <p>
@@ -97,7 +83,6 @@ public class GsonManager {
             System.out.println(e);
         }
     }
-
     /**
      * Returns an object as a JSON-formatted string
      * @param object
@@ -106,7 +91,6 @@ public class GsonManager {
     public static String makeString(Object object) {
         return gson.toJson(object);
     }
-
     /**
      * Reads the lines of an JSON file located in ~\data\ and returns them as entries in an ArrayList
      * @param file
@@ -127,7 +111,6 @@ public class GsonManager {
         catch(Exception e){System.out.println("Oops");}
         return saveFileContents;
     }
-
     /**
      * Cleans a file by deleting & remaking it.
      * @param savefile the {@link File} object to be cleaned.
@@ -150,7 +133,6 @@ public class GsonManager {
             return false;
         }
     }
-
     /**
      * Cleans all the files made by SaveManager.
      * @return {@code True} if succesfull.<p>
@@ -167,7 +149,6 @@ public class GsonManager {
         catch(Exception e){System.out.println(e);}
         return false;        
     }
-
     /**
      * Checks if the file/filesystem exists. If not it calls {@link #generateFS(File)}.
      * @param file
@@ -188,7 +169,6 @@ public class GsonManager {
         catch(Exception e){System.out.println(e);}
         return false;    
     }
-
     /**
      * Generates the Filesystem for a specified file.
      * @param file

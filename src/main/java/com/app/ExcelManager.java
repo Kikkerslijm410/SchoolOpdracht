@@ -84,13 +84,13 @@ public abstract class ExcelManager {
         System.out.println("Workbook Completed");
     }
 
-    private static String taken(int getal2, int pad, int spiegelTijd ){
+    public static String taken(int getal2, int pad, int spiegelTijd ){
         if (getal == 0){
             Swerktijd = "";
             return "";
         }
         double getal = LeaderBoard.planningMedewerkers.get(getal2-1).getWerktijd();
-        int werktijd = getVultijd2(pad) + spiegelTijd;
+        double werktijd = getVultijd2(pad) + spiegelTijd;
         if(getal > werktijd && getal > 0){
             Swerktijd = "" + werktijd;
             return "Spiegelen " + Pad.PadList.get(pad).getPadNaam();
@@ -104,10 +104,10 @@ public abstract class ExcelManager {
         return "" + getVultijd2(pad);
     }
 
-    public static int getVultijd2(int pad){
-        int werktijd = 0;
-        int dozen = Pad.PadList.get(pad).getAantalDozen();
-        int norm = Pad.PadList.get(pad).getVulnorm();
+    public static double getVultijd2(int pad){
+        double werktijd = 0;
+        double dozen = Pad.PadList.get(pad).getAantalDozen();
+        double norm = Pad.PadList.get(pad).getVulnorm();
         werktijd = dozen / norm;
         return werktijd;
     }
