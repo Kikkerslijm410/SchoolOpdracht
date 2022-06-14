@@ -45,16 +45,16 @@ public class testExcelManager {
 
     @Test
     public void testGetVultijd() {
-        assertEquals("0", ExcelManager.getVultijd(0));
+        assertEquals("0.0", ExcelManager.getVultijd(0));
         Pad.setAantalDozen(0, 60);
-        assertEquals("1", ExcelManager.getVultijd(0));
+        assertEquals("1.0", ExcelManager.getVultijd(0));
     }
 
     @Test
     public void testGetVultijd2() {
-        assertEquals("0", ExcelManager.getVultijd2(0));
+        assertEquals(0.0, ExcelManager.getVultijd2(0));
         Pad.setAantalDozen(0, 60);
-        assertEquals("1", ExcelManager.getVultijd(0));
+        assertEquals(1.0, ExcelManager.getVultijd2(0));
     }
 
     @Test

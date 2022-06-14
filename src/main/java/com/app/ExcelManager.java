@@ -108,7 +108,11 @@ public abstract class ExcelManager {
         double werktijd = 0;
         double dozen = Pad.PadList.get(pad).getAantalDozen();
         double norm = Pad.PadList.get(pad).getVulnorm();
-        werktijd = dozen / norm;
+        if (dozen <= 0){
+            werktijd = 0;
+        }else{
+            werktijd = dozen / norm;
+        }
         return werktijd;
     }
 
