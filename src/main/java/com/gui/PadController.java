@@ -63,42 +63,56 @@ public class PadController extends AController implements Initializable{
     @FXML
     private void VrachtOpslaan()throws IOException {
         if (ScreenLabel.getText().equals("Vracht")){
-            int i = 0;
-            for (TextField e : TextFieldList){
-                if (!e.getText().isBlank()){
-                    Pad.setAantalDozen(i, StringToInt(i, e.getText()));
-                }else{
-                    Pad.setAantalDozen(i, Pad.PadList.get(i).getAantalDozen());
-                }
-                i++;
-                Vracht();
-            }
+            vrachtOpslaan();
         }else if(ScreenLabel.getText().equals("Vulnorm")){
-            int i = 0;
-            for (TextField e : TextFieldList){
-                if (!e.getText().isBlank()){
-                    Pad.setVulnorm(i, StringToInt(i, e.getText()));
-                }else{
-                    Pad.setVulnorm(i, Pad.PadList.get(i).getVulnorm());
-                }
-                i++;
-                Vulnorm();
-            }
+            vulnormOpslaan();
         }else if(ScreenLabel.getText().equals("Spiegeltijd")){
-            int i = 0;
-            for (TextField e : TextFieldList){
-                if (!e.getText().isBlank()){
-                    Pad.setSpiegeltijd(i, StringToInt(i, e.getText()));
-                }else{
-                    Pad.setSpiegeltijd(i, Pad.PadList.get(i).getSpiegeltijd());
-                }
-                i++;
-                Spiegel();
-            }
+            spiegeltijdOpslaan();
         }else{
             ScreenLabel.setText("Kies een optie om deze aan te passen.");
         }
     }
+
+    private void spiegeltijdOpslaan() {
+        int i = 0;
+        for (TextField e : TextFieldList){
+            if (!e.getText().isBlank()){
+                Pad.setSpiegeltijd(i, StringToInt(i, e.getText()));
+            }else{
+                Pad.setSpiegeltijd(i, Pad.PadList.get(i).getSpiegeltijd());
+            }
+            i++;
+            Spiegel();
+        }
+    }
+
+    private void vulnormOpslaan() {
+        int i = 0;
+        for (TextField e : TextFieldList){
+            if (!e.getText().isBlank()){
+                Pad.setVulnorm(i, StringToInt(i, e.getText()));
+            }else{
+                Pad.setVulnorm(i, Pad.PadList.get(i).getVulnorm());
+            }
+            i++;
+            Vulnorm();
+        }
+    }
+
+    private void vrachtOpslaan() {
+        int i = 0;
+        for (TextField e : TextFieldList){
+            if (!e.getText().isBlank()){
+                Pad.setAantalDozen(i, StringToInt(i, e.getText()));
+            }else{
+                Pad.setAantalDozen(i, Pad.PadList.get(i).getAantalDozen());
+            }
+            i++;
+            Vracht();
+        }
+    }
+
+
 
     private void Clear(){
         Internationaal.clear();
